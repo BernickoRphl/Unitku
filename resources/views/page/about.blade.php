@@ -5,11 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-*{
+        *{
     margin: 0;padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -17,6 +16,19 @@
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem;
+    background: #D3D3D3;
+}
+
+.heading span{
+    color: #FFFDD0;
 }
 
 :root{
@@ -79,6 +91,8 @@ section {
     background:var(--antiquewhite)
 }
 
+
+
 @media(max-width: 991px){
     html{
     font-size: 85%;
@@ -90,23 +104,87 @@ section {
     html{
     font-size: 60%;
 
+    .heading{
+        font-size: 3rem;
+    }
 }
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.about .row .video-container{
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.about .row .video-container video{
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+}
+
+.about .row .video-container h3{
+    position: absolute;
+    top: 50%; transform:  translateY(-50);
+    font-size: 3rem;
+    color: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+
+.about .row .video-container img{
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+}
+
+.about .row .content{
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: #333;
+}
+.about .row .content p{
+    font-size: 1.5rem;
+    color: #999;
+
 }
 
     </style>
 </head>
 <body>
+    <section class="about" id="about">
 
-    <section class="home" id="home">
+        <h1 class="heading"><span> About </span> Us </h1>
+
+        <div class="row">
+
+            <div class="video-container">
+                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
+                {{-- <video src="https://youtu.be/ilFg9XpDX8c" loop autoplay muted></video> --}}
+                <h3>best cloth sellers</h3>
+            </div>
+        </div>
 
         <div class="content">
-            <h3>INTRIC</h3>
-            <span>Best Fashioned Cloth</span>
+            <h3>why choose us?</h3>
             <p>Intric is a detachable clothing company created in late 2022 and based in Indonesia. it focuses on making simple but intricately designed functional clothing in the form of a shirt with detachable parts. Intric aims to create clothing that is flexible towards the customer's taste by allowing customisation to the detachable areas. The concept has been around for quite some time, but Intric is the first one to do it here in Indonesia. Quite cool right?</p>
-            <a href="/product" class="btn">Shop Now</a>
+            <a class="btn" href="/product">learn more</a>
         </div>
 
     </section>
-
 </body>
 </html>
