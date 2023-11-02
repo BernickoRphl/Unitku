@@ -28,7 +28,7 @@
 }
 
 .heading span{
-    color: #FFFDD0;
+    color: #ffffff;
 }
 
 :root{
@@ -133,9 +133,10 @@ section {
 
 .about .row .video-container h3{
     position: absolute;
-    top: 50%; transform:  translateY(-50);
+    top: 50%; transform: translateY(-50%);
     font-size: 3rem;
-    color: #fff;
+    color: #333;
+    background: #fff;
     width: 100%;
     padding: 1rem 2rem;
     text-align: center;
@@ -177,14 +178,16 @@ section {
                 {{-- <video src="https://youtu.be/ilFg9XpDX8c" loop autoplay muted></video> --}}
                 <h3>best cloth sellers</h3>
             </div>
-        </div>
 
         <div class="content">
             <h3>why choose us?</h3>
             <p>Intric is a detachable clothing company created in late 2022 and based in Indonesia. it focuses on making simple but intricately designed functional clothing in the form of a shirt with detachable parts. Intric aims to create clothing that is flexible towards the customer's taste by allowing customisation to the detachable areas. The concept has been around for quite some time, but Intric is the first one to do it here in Indonesia. Quite cool right?</p>
             <a class="btn" href="/product">learn more</a>
         </div>
+    </div>
 
     </section>
 </body>
 </html>
+
+@include('layouts.footer')
