@@ -1,2 +1,2 @@
-@include('layouts.template')
+@include('layouts.navbar')
 ~
