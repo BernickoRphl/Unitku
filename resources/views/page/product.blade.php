@@ -118,12 +118,11 @@ section {
 }
 
 .product .box-container .box{
-    flex: 1 1 30rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 1);
-    border-radius: 5rem;
-    border: .1rem solid rgba(0, 0, 0, 1);
+    flex:1 1 20rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
     position: relative;
-
 }
 
 .product .box-container .box .discount{
@@ -131,7 +130,7 @@ section {
     top: 1rem; left: 1rem;
     padding: .7rem 1rem;
     font-size: 2rem;
-    color:var(--white);
+    color:var(--pink);
     background: rgba(255, 51, 153, .05);
     z-index: 1;
     border-radius: .5rem;
@@ -141,14 +140,18 @@ section {
     position: relative;
     text-align: center;
     padding-top: 2rem;
+    /* padding-left: 1rem; */
     overflow: hidden;
+    max-width: 100%;
+
 }
 
 .product .box-container .box .image img{
-    height: 25rem
+    height: 25rem;
+    width: 100%;
 }
 .product .box-container .box:hover .image img{
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 .product .box-container .box .image .icons{
@@ -210,7 +213,7 @@ section {
             <div class="box">
                 <span class="discount">-15%</span>
                 <div class="image">
-                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg" alt="" />
+                    <img src="https://id-live.slatic.net/p/f18a2567983a809773c0ceec2b62288b.jpg" alt="" />
                     <div class="icons">
                          <a href="" class="fas fa-heart"></a>
                          <a href="" class="cart-btn">add to cart</a>
@@ -234,7 +237,7 @@ section {
                     </div>
                 </div>
                 <div class="content">
-                    <h3>Cloth 1</h3>
+                    <h3>Cloth 2</h3>
                     <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
                 </div>
             </div>
@@ -250,7 +253,7 @@ section {
                     </div>
                 </div>
                 <div class="content">
-                    <h3>Cloth 1</h3>
+                    <h3>Cloth 3</h3>
                     <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
                 </div>
             </div>
@@ -266,29 +269,10 @@ section {
                     </div>
                 </div>
                 <div class="content">
-                    <h3>Cloth 1</h3>
+                    <h3>Cloth 4</h3>
                     <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
                 </div>
             </div>
-
-            <div class="box">
-                <span class="discount">-15%</span>
-                <div class="image">
-                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg" alt="" />
-                    <div class="icons">
-                         <a href="" class="fas fa-heart"></a>
-                         <a href="" class="cart-btn">add to cart</a>
-                         <a href="" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Cloth 1</h3>
-                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
-                </div>
-            </div>
-
-        </div>
-
     </section>
 
 </body>
