@@ -1,0 +1,12 @@
+section {
+    padding: 2rem;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background:url() no-repeat;
+    background-size: cover;
+    background-position: center;
+}
