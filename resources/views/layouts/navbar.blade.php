@@ -5,23 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="resources/css/navbar.css">
     <title>Document</title>
-
-    <style>
-        #profileMenu {
-            display: none;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        #profileMenu.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-
 </head>
 
 <body>
@@ -59,7 +44,7 @@
 
                     <div class="flex flex-shrink-0 items-center">
 
-                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        <img class="h-8 w-auto" src="resources/images/Logo Dark.png"
                             alt="Your Company">
 
                     </div>
