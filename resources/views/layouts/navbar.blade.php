@@ -45,7 +45,7 @@
 
                     <div class="flex flex-shrink-0 items-center">
 
-                        <img class="h-12 w-auto" src="resources/images/Logo Dark.png" alt="Your Company">
+                        <img class="h-12 w-auto" src="resources/images/Logo Transparent White.png" alt="Your Company">
 
                     </div>
 
