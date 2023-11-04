@@ -110,4 +110,5 @@ section {
 
 </body>
 </html>
+
 @include('layouts.footer')

@@ -5,32 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="resources/css/navbar.css">
+    @yield('link')
     <title>Document</title>
-
-    <style>
-        #profileMenu {
-            display: none;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        #profileMenu.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-
 </head>
 
 <body>
 
     <nav class="bg-gray-800">
 
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-8xl px-2 sm:px-6 lg:px-40">
 
-            <div class="relative flex h-16 items-center justify-between">
+            <div class="relative flex h-20 items-center justify-between">
 
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
@@ -59,22 +45,23 @@
 
                     <div class="flex flex-shrink-0 items-center">
 
-                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                            alt="Your Company">
+                        <img class="h-12 w-auto" src="resources/images/Logo Transparent White.png" alt="Your Company">
 
                     </div>
 
                     <div class="hidden sm:ml-6 sm:block">
 
                         <div class="flex space-x-4">
-                            <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                aria-current="page">Home</a>
+
+                            <a href="/"
+                                class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Home</a>
                             <a href="/product"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Products</a>
+                                class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
                             <a href="/team"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
+                                class="{{ request()->is('team') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Team</a>
                             <a href="/about"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                                class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
+
                         </div>
 
                     </div>
@@ -88,7 +75,7 @@
 
                         <span class="absolute -inset-1.5"></span>
                         <span class="sr-only">View notifications</span>
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                             aria-hidden="true">
 
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -108,7 +95,7 @@
 
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full"
+                                <img class="h-10 w-10 rounded-full"
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     alt="">
 
@@ -157,6 +144,14 @@
         </div>
 
     </nav>
+
+    <div>
+
+        @yield('content')
+
+    </div>
+
+    @include('layouts.footer')
 
     <script src="resources/js/app.js" defer></script>
 
