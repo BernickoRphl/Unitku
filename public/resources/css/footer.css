@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-
+    padding-bottom: 1.5rem;
 }
 
 .box-container .box {
@@ -33,7 +33,6 @@
 
 .credit {
     text-align: center;
-    padding-bottom: 1rem;
     margin-top: 1.5 rem;
     padding-top: 2.5rem;
     color: #7a7a7a;
