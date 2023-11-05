@@ -76,5 +76,22 @@
                     <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
                 </div>
             </div>
+
+            <div class="box">
+                <span class="discount">-15%</span>
+                <div class="image">
+                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg"
+                        alt="" />
+                    <div class="icons">
+                        <a href="" class="fas fa-heart"></a>
+                        <a href="" class="cart-btn">add to cart</a>
+                        <a href="" class="fas fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Cloth 4</h3>
+                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
+                </div>
+            </div>
     </section>
 @endsection

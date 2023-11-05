@@ -20,7 +20,7 @@
 }
 
 .heading span {
-    color: gray;
+    color:gray;
 }
 
 :root {
@@ -104,14 +104,14 @@ section {
 }
 
 
-.product .box-container {
+.team .box-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     /* align-content: center; */
 }
 
-.product .box-container .box {
+.team .box-container .box {
     flex: 1 1 20rem;
     box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
     border-radius: .5rem;
@@ -122,37 +122,39 @@ section {
 
 }
 
-.product .box-container .box .discount {
+.team .box-container .box .classification {
     position: absolute;
     top: 1rem;
     left: 1rem;
     padding: .7rem 1rem;
     font-size: 2rem;
-    color: var(--antiquewhite);
-    background: rgba(141, 166, 187, 0.05);
+    color: var(--pink);
+    background: rgba(255, 51, 153, .05);
     z-index: 1;
     border-radius: .5rem;
 }
 
-.product .box-container .box .image {
+.team .box-container .box .image {
     position: relative;
     text-align: center;
     padding-top: 2rem;
     overflow: hidden;
     /* max-width: 100%; */
-
 }
 
-.product .box-container .box .image img {
+.team .box-container .box .image img {
     height: 25rem;
     width: 100%;
+    overflow: hidden;
+    object-fit: cover; /* Melakukan cropping agar gambar sesuai dengan kotak */
+    object-position: center center;
 }
 
-.product .box-container .box:hover .image img {
+.team .box-container .box:hover .image img {
     transform: scale(1.1);
 }
 
-.product .box-container .box .image .icons {
+.team .box-container .box .image .icons {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -160,7 +162,7 @@ section {
     display: flex;
 }
 
-.product .box-container .box .image .icons a {
+.team .box-container .box .image .icons a {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -169,34 +171,29 @@ section {
     color: #fff;
 }
 
-.product .box-container .box .image .icons .cart-btn {
+.team .box-container .box .image .icons .cart-btn {
     border-left: 1rem solid #fff7;
     border-right: 1rem solid #fff7;
     width: 100%
 }
 
-.product .box-container .box .image .icons a:hover {
+.team .box-container .box .image .icons a:hover {
     background: #333;
 }
 
-.product .box-container .box .content {
+.team .box-container .box .content {
     padding: 2rem;
     text-align: center;
 }
 
-.product .box-container .box .content h3 {
-    font-size: 2.5rem;
+.team .box-container .box .content h3 {
+    font-size: 1.5rem;
     color: #333;
+    font-weight: lighter;
 }
 
-.product .box-container .box .content .price {
-    font-size: 2.5rem;
-    color: #333;
-    font-weight: bolder;
-    padding-top: 1rem;
-}
 
-.product .box-container .box .content .price span {
+.team .box-container .box .content .price span {
     font-size: 1.5rem;
     color: #999999;
     font-weight: lighter;

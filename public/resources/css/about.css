@@ -81,7 +81,7 @@ section {
 }
 
 .btn:hover {
-    background: var(--antiquewhite)
+    background: grey;
 }
 
 
@@ -157,4 +157,8 @@ section {
     font-size: 1.5rem;
     color: #999;
 
+}
+
+.content a:hover {
+    color: black;
 }
