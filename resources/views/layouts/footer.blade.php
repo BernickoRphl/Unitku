@@ -65,13 +65,12 @@
 
             <div class="credit">
 
-                created by <span> Bernicko Raphael & Widhyastanto Rahmadian</span> | all rights
-                reserved
+                <p>Copyright © 2023 Bernicko Raphael & Widhyastanto Rahmadian | all rights reserved</p>
 
             </div>
 
         </section>
-        
+
     </footer>
 
 </body>
