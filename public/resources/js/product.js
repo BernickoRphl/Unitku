@@ -1,9 +1,9 @@
-let slideIndex = 0;
+var slideIndex = 0;
 showSlides();
 
 function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
@@ -12,5 +12,5 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000);
+    setTimeout(showSlides, 2000); // Ganti slide setiap 2 detik (2000 milidetik)
 }

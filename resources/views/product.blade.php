@@ -2,6 +2,7 @@
 
 @section('link')
     <link rel="stylesheet" href="resources/css/product.css">
+    <script href="resources/js/product.css"></script>
 @endsection
 
 @section('content')
@@ -31,6 +32,15 @@
                 <div class="image">
                     <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg"
                         alt="" />
+                        {{-- <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <img src="https://id-live.slatic.net/p/f18a2567983a809773c0ceec2b62288b.jpg">
+                            </div>
+                            <div class="mySlides fade">
+                                <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg">
+                            </div>
+                            <!-- Tambahkan slide lainnya di sini -->
+                        </div> --}}
                     <div class="icons">
                         <a href="" class="fas fa-heart"></a>
                         <a href="" class="cart-btn">add to cart</a>

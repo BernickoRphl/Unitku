@@ -33,7 +33,7 @@ section {
     background: url("https://wallpaperset.com/w/full/b/c/8/395710.jpg") no-repeat;
     background-size: cover;
     background-position: center;
-    animation: backgroundSlideshow 10s linear infinite;
+    animation: backgroundSlideshow 20s linear infinite;
 }
 
 .home .content {
@@ -93,7 +93,10 @@ section {
     50% {
         background-image: url("https://img.freepik.com/free-photo/gray-surface-with-white-cloth_114579-30381.jpg?size=626&ext=jpg&ga=GA1.1.153618704.1699328592&semt=ais");
     }
-    100% {
+    95% {
         background-image: url("https://img.freepik.com/free-photo/smooth-red-textile-brown-fabric-background_23-2147921511.jpg?size=626&ext=jpg&ga=GA1.1.153618704.1699328592&semt=ais");
+    }
+    95% {
+        background-image: url("https://wallpaperset.com/w/full/b/c/8/395710.jpg");
     }
 }
