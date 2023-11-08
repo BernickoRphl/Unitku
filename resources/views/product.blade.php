@@ -6,102 +6,79 @@
 @endsection
 
 @section('content')
-    <section class="product" id="product">
-        <h1 class="heading">latest <span>product</span></h1>
+    <section class="about" id="about">
+        <h1 class="heading"><span>Sustain
+            Clothes for </span>  Your Daily Wear </h1>
 
-        <div class="box-container">
+        <div class="video-container">
+            {{-- <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt=""> --}}
+            <video src="/resources/video/videointric.mp4" loop autoplay muted></video>
+            {{-- <h3>best cloth sellers</h3> --}}
+        </div>
+        <div class="row">
+            <div class="content">
+                <h3>MADE OF 100% COTTON</h3>
+                <p>Our product was so soft and will sustain for a long-term, so you don't need to buy more clothes! By purchasing our product, you are also supporting SDG for a better world!</p>
+            </div>
+        </div>
 
-            <div class="box">
-                <span class="discount">-15%</span>
-                <div class="image">
-                    <img src="https://id-live.slatic.net/p/f18a2567983a809773c0ceec2b62288b.jpg" alt="" />
-                    <div class="icons">
-                        <a href="" class="fas fa-heart"></a>
-                        <a href="" class="cart-btn">add to cart</a>
-                        <a href="" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Cloth 1</h3>
-                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
-                </div>
+        <h1 class="heading"><span> Our </span> Products </h1>
+
+        <div class="row">
+            <div class="video-container">
+                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
+                {{-- <video src="https://youtu.be/ilFg9XpDX8c" loop autoplay muted></video> --}}
+                {{-- <h3>best cloth sellers</h3> --}}
+            </div>
+            <div class="content">
+                <h3>SHIRT (ZIPPER)</h3>
+                <p>Unique and customable shirt or longsleeves-shirt by take the zipper off-and-on based o n your moods and
+                    needs!
+
+
+                    Available in: XS, S, M, L, XL
+
+                    Color: Black, White, Grey, Brown</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3>PANTS</h3>
+                <p>Pants that made of twirl cottons.
+
+
+                    Available in: XS, S, M, L, XL
+
+                    Color: Black, White, Grey, Brown</p>
             </div>
 
-            <div class="box">
-                <span class="discount">-15%</span>
-                <div class="image">
-                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg"
-                        alt="" />
-                        {{-- <div class="slideshow-container">
-                            <div class="mySlides fade">
-                                <img src="https://id-live.slatic.net/p/f18a2567983a809773c0ceec2b62288b.jpg">
-                            </div>
-                            <div class="mySlides fade">
-                                <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg">
-                            </div>
-                            <!-- Tambahkan slide lainnya di sini -->
-                        </div> --}}
-                    <div class="icons">
-                        <a href="" class="fas fa-heart"></a>
-                        <a href="" class="cart-btn">add to cart</a>
-                        <a href="" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Cloth 2</h3>
-                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
-                </div>
+            <div class="video-container">
+                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
+                {{-- <video src="https://youtu.be/ilFg9XpDX8c" loop autoplay muted></video> --}}
+                {{-- <h3>best cloth sellers</h3> --}}
             </div>
 
-            <div class="box">
-                <span class="discount">-15%</span>
-                <div class="image">
-                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg"
-                        alt="" />
-                    <div class="icons">
-                        <a href="" class="fas fa-heart"></a>
-                        <a href="" class="cart-btn">add to cart</a>
-                        <a href="" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Cloth 3</h3>
-                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
-                </div>
+        </div>
+
+        <div class="row">
+
+            <div class="video-container">
+                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
+                {{-- <video src="https://youtu.be/ilFg9XpDX8c" loop autoplay muted></video> --}}
+                {{-- <h3>best cloth sellers</h3> --}}
+
             </div>
 
-            <div class="box">
-                <span class="discount">-15%</span>
-                <div class="image">
-                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg"
-                        alt="" />
-                    <div class="icons">
-                        <a href="" class="fas fa-heart"></a>
-                        <a href="" class="cart-btn">add to cart</a>
-                        <a href="" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Cloth 4</h3>
-                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
-                </div>
-            </div>
+            <div class="content">
+                <h3>JACKET</h3>
+                <p>This jacket can be mix matched with your pants and clothes.
 
-            <div class="box">
-                <span class="discount">-15%</span>
-                <div class="image">
-                    <img src="https://i.pinimg.com/originals/43/8b/59/438b5946ed50d930c507cc323f412c8a.jpg"
-                        alt="" />
-                    <div class="icons">
-                        <a href="" class="fas fa-heart"></a>
-                        <a href="" class="cart-btn">add to cart</a>
-                        <a href="" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Cloth 4</h3>
-                    <div class="price"> Rp500.000,00 <span>Rp550.000,00</span></div>
-                </div>
+
+                    Available in: XS, S, M, L, XL
+
+                    Color: Black, White, Grey, Brown</p>
             </div>
+        </div>
     </section>
 @endsection

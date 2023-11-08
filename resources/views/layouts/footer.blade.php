@@ -27,7 +27,7 @@
                     <a href="">contacts</a>
 
                 </div>
-
+{{--
                 <div class="box">
 
                     <h3>extra links</h3>
@@ -37,7 +37,7 @@
                     <a href="">extra4</a>
                     <a href="">extra5</a>
 
-                </div>
+                </div> --}}
 
                 <div class="box">
 

@@ -15,7 +15,7 @@
                 aims to create clothing that is flexible towards the customer's taste by allowing customisation to the
                 detachable areas. The concept has been around for quite some time, but Intric is the first one to do it
                 here in Indonesia. Quite cool right?</p>
-            <a href="/product" class="btn">Shop Now</a>
+            <a href="/product" class="btn">See Product</a>
         </div>
 
     </section>

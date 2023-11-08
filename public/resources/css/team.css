@@ -145,7 +145,7 @@ section {
 }
 
 .team .box-container .box .image img {
-    height: 25rem;
+    height: 35rem;
     width: 100%;
     overflow: hidden;
     object-fit: cover; /* Melakukan cropping agar gambar sesuai dengan kotak */
