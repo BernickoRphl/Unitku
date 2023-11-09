@@ -43,3 +43,67 @@
 .credit span {
     color: var(--antiquewhite)
 }
+Add to your stylesheet
+
+.bg-layers {
+    -webkit-animation: filter-animation 4s infinite;
+    animation: filter-animation 4s infinite;
+}
+
+.bg-scale {
+    -webkit-animation: filter-animation 8s infinite;
+    animation: filter-scale 8s infinite;
+}
+
+.models h3 {
+    color: #7c7c7c;
+    padding: 0.5rem 0;
+    text-align: center;
+    line-height: 1.5; /* Adjust the line-height as needed */
+}
+.models h3 {
+    color: #7c7c7c;
+    font-size: 3.5rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@-webkit-keyframes filter-animation {
+    0% {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    50% {
+      -webkit-filter: hue-rotate(45deg);
+    }
+
+    100% {
+      -webkit-filter: hue-rotate(0deg);
+    }
+}
+
+@keyframes filter-animation {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      filter: hue-rotate(45deg);
+    }
+    100% {
+      filter: hue-rotate(0deg);
+    }
+}
+
+@keyframes filter-scale {
+    0% {
+      transform:scale(1);
+    }
+    50% {
+      transform:scale(1.4);
+    }
+    100% {
+        transform:scale(.8);
+    }
+}

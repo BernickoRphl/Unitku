@@ -55,6 +55,8 @@ section {
 .home .content p {
     font-size: 1.5rem;
     color: var(--antiquewhite);
+    text-transform: none;
+
 }
 
 .btn {

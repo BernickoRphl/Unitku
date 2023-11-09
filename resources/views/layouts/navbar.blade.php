@@ -12,7 +12,7 @@
 
 <body>
 
-    <nav class="bg-gray-800">
+    <nav class="bg-gray-800 fixed w-full top-0 z-10">
 
         <div class="mx-auto max-w-8xl px-2 sm:px-6 lg:px-40">
 
@@ -153,7 +153,7 @@
 
     </nav>
 
-    <div>
+    <div class="mt-16 pt-0">
 
         @yield('content')
 

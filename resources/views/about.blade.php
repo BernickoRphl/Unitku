@@ -2,12 +2,116 @@
 
 @section('link')
     <link rel="stylesheet" href="resources/css/about.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 @endsection
 
 @section('content')
+<!-- component -->
+<head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+      <script>
+        var cont=0;
+    function loopSlider(){
+      var xx= setInterval(function(){
+            switch(cont)
+            {
+            case 0:{
+                $("#slider-1").fadeOut(400);
+                $("#slider-2").delay(400).fadeIn(400);
+                $("#sButton1").removeClass("bg-blue-800");
+                $("#sButton2").addClass("bg-blue-800");
+            cont=1;
+
+            break;
+            }
+            case 1:
+            {
+
+                $("#slider-2").fadeOut(400);
+                $("#slider-1").delay(400).fadeIn(400);
+                $("#sButton2").removeClass("bg-blue-800");
+                $("#sButton1").addClass("bg-blue-800");
+
+            cont=0;
+
+            break;
+            }
+
+
+            }},8000);
+
+    }
+
+    function reinitLoop(time){
+    clearInterval(xx);
+    setTimeout(loopSlider(),time);
+    }
+
+
+
+    function sliderButton1(){
+
+        $("#slider-2").fadeOut(400);
+        $("#slider-1").delay(400).fadeIn(400);
+        $("#sButton2").removeClass("bg-blue800");
+        $("#sButton1").addClass("bg-blue-800");
+        reinitLoop(4000);
+        cont=0
+
+        }
+
+        function sliderButton2(){
+        $("#slider-1").fadeOut(400);
+        $("#slider-2").delay(400).fadeIn(400);
+        $("#sButton1").removeClass("bg-blue-800");
+        $("#sButton2").addClass("bg-blue-800");
+        reinitLoop(4000);
+        cont=1
+
+        }
+
+        $(window).ready(function(){
+            $("#slider-2").hide();
+            $("#sButton1").addClass("bg-blue-800");
+            loopSlider();
+        });
+      </script>
+    </head>
+    <body>
+      <div class="sliderAx h-auto">
+          <div id="slider-1" class="container mx-auto">
+            <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,q_auto:good,w_1920/legacy_dam/en-au/S001667837/MXP-24803-Holiday-Banner-Promo-Product-Desktop-001?cb=a5f9c53cbe235e515e96440bc08d4e282a379ca3)">
+           <div class="md:w-1/2">
+            <p class="font-bold text-sm uppercase">Services</p>
+            <p class="text-3xl font-bold">About Us</p>
+            <p class="text-2xl mb-10 leading-none">Get to know us more!</p>
+            <a href="https://wa.me/085234983438" class="bg-blue-950 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+            </div>
+        </div> <!-- container -->
+          <br>
+          </div>
+
+          <div id="slider-2" class="container mx-auto">
+            <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url(https://t4.ftcdn.net/jpg/06/34/09/69/360_F_634096945_nT013AXOaokOmXXU0mRlfSLmnSbbmZXw.jpg)">
+
+      <p class="font-bold text-sm uppercase">Services</p>
+            <p class="text-3xl font-bold">About Us</p>
+            <p class="text-2xl mb-10 leading-none">Get to know us more!</p>
+            <a href="https://wa.me/085234983438" class="bg-blue-950 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+
+        </div> <!-- container -->
+          <br>
+          </div>
+        </div>
+     <div  class="flex justify-between w-12 mx-auto pb-2">
+            <button id="sButton1" onclick="sliderButton1()" class="bg-blue-400 rounded-full w-4 pb-2 " ></button>
+        <button id="sButton2" onclick="sliderButton2() " class="bg-blue-400 rounded-full w-4 p-2"></button>
+      </div>
+
+    </body>
     <section class="about" id="about">
 
-        <h1 class="heading"><span> About </span> Us </h1>
+        {{-- <h1 class="heading"><span> About </span> Us </h1> --}}
 
         <div class="row">
 
@@ -24,7 +128,7 @@
                     parts. Intric aims to create clothing that is flexible towards the customer's taste by allowing
                     customisation to the detachable areas. The concept has been around for quite some time, but Intric
                     is the first one to do it here in Indonesia. Quite cool right?</p>
-                <a class="btn" href="https://wa.me/ 085234983438" target="_blank">contact us</a>
+                {{-- <a class="btn" href="https://wa.me/085234983438" target="_blank">contact us</a> --}}
             </div>
         </div>
 
@@ -67,29 +171,5 @@
                     <div class="price"> I'm good at managing financial.</div>
                 </div>
             </div>
-    </section>
-
-    <section class="contact" id="contact">
-
-        <h1 class="heading"><span> Contact </span> Us </h1>
-
-        <div class="row">
-
-            <form action="">
-            <input type="text" placeholder="name" class="box">
-            <input type="email" placeholder="email" class="box">
-            <input type="number" placeholder="number" class="box">
-            <textarea name="" placeholder="message" id="" cols="30" rows="10" class="box">
-
-            </textarea>
-            <input type="submit" value="send message" class="btn">
-        </form>
-
-        <div class="image">
-            <img src="https://i.pinimg.com/564x/fd/07/d0/fd07d0725f28aa4ff7de5a9db36457be.jpg" alt="">
-        </div>
-        </div>
-
-
     </section>
 @endsection
