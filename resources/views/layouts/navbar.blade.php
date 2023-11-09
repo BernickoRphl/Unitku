@@ -12,7 +12,7 @@
 
 <body>
 
-    <nav class="bg-gray-800 fixed w-full top-0 z-10">
+    <nav class="bg-gray-800 fixed w-full top-0 z-50">
 
         <div class="mx-auto max-w-8xl px-2 sm:px-6 lg:px-40">
 
