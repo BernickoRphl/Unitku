@@ -24,9 +24,72 @@
                     parts. Intric aims to create clothing that is flexible towards the customer's taste by allowing
                     customisation to the detachable areas. The concept has been around for quite some time, but Intric
                     is the first one to do it here in Indonesia. Quite cool right?</p>
-                <a class="btn" href="https://wa.me/628113308457" target="_blank">contact us</a>
+                <a class="btn" href="https://wa.me/ 085234983438" target="_blank">contact us</a>
             </div>
         </div>
+
+    </section>
+
+    <section class="team" id="team">
+        <h1 class="heading">Our <span>Team</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <span class="classification">CEO</span>
+                <div class="image">
+                    <img src="/resources/images/daniel.png" alt="" />
+                </div>
+                <div class="content">
+                    <h3>DANIEL KARIYADI</h3>
+                    <div class="price"> I'm part of JCI and several experiences on clothing industry.</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="classification">CTO</span>
+                <div class="image">
+                    <img src="/resources/images/bry.png" alt="" />
+                </div>
+                <div class="content">
+                    <h3>BRYANNA JERSEY</h3>
+                    <div class="price"> I have several exoeriences on branding products.</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="classification">CFO</span>
+                <div class="image">
+                    <img src="/resources/images/jj.png" alt="" />
+                </div>
+                <div class="content">
+                    <h3>ALDRICH JEREMIAH</h3>
+                    <div class="price"> I'm good at managing financial.</div>
+                </div>
+            </div>
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"><span> Contact </span> Us </h1>
+
+        <div class="row">
+
+            <form action="">
+            <input type="text" placeholder="name" class="box">
+            <input type="email" placeholder="email" class="box">
+            <input type="number" placeholder="number" class="box">
+            <textarea name="" placeholder="message" id="" cols="30" rows="10" class="box">
+
+            </textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+
+        <div class="image">
+            <img src="https://i.pinimg.com/564x/fd/07/d0/fd07d0725f28aa4ff7de5a9db36457be.jpg" alt="">
+        </div>
+        </div>
+
 
     </section>
 @endsection

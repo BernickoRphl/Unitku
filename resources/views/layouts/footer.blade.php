@@ -20,10 +20,9 @@
                 <div class="box">
 
                     <h3>quick links</h3>
-                    <a href="">home</a>
-                    <a href="">products</a>
-                    <a href="">team</a>
-                    <a href="">about</a>
+                    <a href="/">home</a>
+                    <a href="/product">products</a>
+                    <a href="/about">about</a>
                     <a href="">contacts</a>
 
                 </div>
@@ -42,23 +41,17 @@
                 <div class="box">
 
                     <h3>locations</h3>
-                    <a href="">Indonesia</a>
-                    <a href="">Surabaya</a>
-                    <a href="">Location1</a>
-                    <a href="">Location2</a>
-                    <a href="">Location3</a>
+                    <a href="https://www.google.com/maps/place/Indonesia/data=!4m2!3m1!1s0x2c4c07d7496404b7:0xe37b4de71badf485?sa=X&ved=2ahUKEwjjob2us7aCAxXcUGwGHewlDCUQ8gF6BAgVEAA" target="_blank">Indonesia</a>
+                    <a href="https://www.google.com/maps/place/Jl.+Citraland+Surabaya,+Surabaya,+Jawa+Timur/data=!4m2!3m1!1s0x2dd7fdc1deaa805d:0xdc50fa662e034666?sa=X&ved=2ahUKEwiUquyYs7aCAxWEcWwGHQYWA0wQ8gF6BAhMEAA" target="_blank">Citraland, Surabaya</a>
 
                 </div>
 
                 <div class="box">
-
                     <h3>contact info</h3>
                     <a href="">Line</a>
-                    <a href="">Number</a>
+                    <a href="https://wa.me/085234983438" target="_blank">Number</a>
                     <a href="">Email</a>
-                    <a href="">Instagram</a>
-                    <a href="">contacts</a>
-
+                    <a href="https://www.instagram.com/intric.id/" target="_blank">Instagram</a>
                 </div>
 
             </div>
