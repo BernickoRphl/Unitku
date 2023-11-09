@@ -19,11 +19,17 @@
 
             <div class="content">
                 <h3>Services Available</h3>
-                <p>Intric is a detachable clothing company created in late 2022 and based in Indonesia. it focuses on
-                    making simple but intricately designed functional clothing in the form of a shirt with detachable
-                    parts. Intric aims to create clothing that is flexible towards the customer's taste by allowing
-                    customisation to the detachable areas. The concept has been around for quite some time, but Intric
-                    is the first one to do it here in Indonesia. Quite cool right?</p>
+                <p>1. Product Design and Development:
+
+                    Creating and designing clothing items, considering current fashion trends, customer preferences, and market demands.
+                   <br>
+                    2. Manufacturing and Production:
+
+                    The actual production of clothing items, including sourcing materials, cutting, sewing, and quality control.
+                    <br>
+                    3. Quality Assurance:
+
+                    Ensuring that all clothing items meet quality standards and specifications through rigorous testing and inspection.</p>
                 <a class="btn" href="https://wa.me/628113308457" target="_blank">more info</a>
             </div>
         </div>

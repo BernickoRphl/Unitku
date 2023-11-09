@@ -169,6 +169,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .contact .row form {
@@ -178,11 +179,10 @@ section {
     border: .1rem solid rgba(0, 0, 0, 1);
     background: #fff;
     border-radius: 0.5rem;
-    ;
 }
 
 .contact .row .image {
-    flex: 1 1 40rem;
+    flex: 1 1 20rem;
 }
 
 .contact .row .image img {
