@@ -12,5 +12,6 @@ class product extends Model
     protected $filllable =
     ['product_name',
     'product_desc',
+    'product_image',
     ];
 }

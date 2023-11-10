@@ -12,6 +12,6 @@ class team extends Model
     protected $filllable =
     ['name',
     'position',
-    'position',
+    'team_image',
     ];
 }
