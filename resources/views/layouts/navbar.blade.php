@@ -153,7 +153,7 @@
 
     </nav>
 
-    <div class="mt-16 pt-0">
+    <div class="mt-16">
 
         @yield('content')
 

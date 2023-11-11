@@ -39,6 +39,10 @@ section {
     /* background-color: #fbfbfb; */
 }
 
+.team {
+    padding: 5rem;
+}
+
 .home {
     display: flex;
     align-items: center;

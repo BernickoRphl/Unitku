@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <div class="sliderAx h-auto">
+    <div class="sliderAx h-auto pt-40">
         <div id="slider-1" class="container mx-auto">
             <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill"
                 style="background-image: url(https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,q_auto:good,w_1920/legacy_dam/en-au/S001667837/MXP-24803-Holiday-Banner-Promo-Product-Desktop-001?cb=a5f9c53cbe235e515e96440bc08d4e282a379ca3)">
