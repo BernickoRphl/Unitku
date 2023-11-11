@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\team;
+use App\Models\Team;
 use App\Http\Requests\StoreteamRequest;
 use App\Http\Requests\UpdateteamRequest;
 
@@ -35,9 +35,14 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(team $team)
+    public function showTeam($id)
     {
-        //
+        return view(
+            'about',
+            [
+                'team' => Team::getTeam($id)
+            ]
+        );
     }
 
     /**

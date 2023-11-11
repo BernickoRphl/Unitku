@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,7 @@ Route::get('/team', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [TeamController::class, 'showTeam']);
 });
 
 Route::get('/product_cart', function () {

@@ -9,6 +9,11 @@ class team extends Model
 {
     use HasFactory;
 
+    public static function getTeam($id)
+    {
+        return self::teams() -> firstWhere('id', $id);
+    }
+
     protected $filllable =
     [
         'name',
