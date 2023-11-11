@@ -10,8 +10,9 @@ class team extends Model
     use HasFactory;
 
     protected $filllable =
-    ['name',
-    'position',
-    'team_image',
+    [
+        'name',
+        'position',
+        'team_image',
     ];
 }
