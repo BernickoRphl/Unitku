@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class team extends Model
+class Team extends Model
 {
     use HasFactory;
 
     public static function getTeam($id)
     {
-        return self::teams() -> firstWhere('id', $id);
+        return self::find($id);
     }
 
-    protected $filllable =
-    [
+    protected $fillable = [
         'name',
         'position',
         'team_image',
+        'desc',
     ];
 }

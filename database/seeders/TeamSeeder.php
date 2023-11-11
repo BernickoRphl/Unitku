@@ -17,7 +17,8 @@ class TeamSeeder extends Seeder
             [
                 'name' => 'DANIEL KARIYADI',
                 'position' => 'CEO',
-                'team_image' => 'daniel.png'
+                'team_image' => 'daniel.png',
+                'desc' => 'Im part of JCI and several experiences on clothing industry.',
             ]
         );
 
@@ -25,7 +26,8 @@ class TeamSeeder extends Seeder
             [
                 'name' => 'BRYANNA JERSEY',
                 'position' => 'CTO',
-                'team_image' => 'bry.png'
+                'team_image' => 'bry.png',
+                'desc' => 'I have several experiences on branding products.',
             ]
         );
 
@@ -33,7 +35,8 @@ class TeamSeeder extends Seeder
             [
                 'name' => 'ALDRICH JEREMIAH',
                 'position' => 'CFO',
-                'team_image' => 'jj.png'
+                'team_image' => 'jj.png',
+                'desc' => 'Im good at managing financial.',
             ]
         );
     }
