@@ -158,7 +158,7 @@
                 <div class="w-10/12 m-auto  mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
                     <span class="block text-gray-300">We are the first detachable clothing in Indonesia!</span>
 
-                    <span class="block text-gray-300">Bernicko Raphael % Widhyastanto Rahmadian &copy; 2021</span>
+                    <span class="block text-gray-300">Bernicko Raphael % Widhyastanto Rahmadian &copy; 2023</span>
 
                     {{-- <span class="flex justify-between text-white">
                         <a href="#" class="font-semibold">Terms of Use </a>
