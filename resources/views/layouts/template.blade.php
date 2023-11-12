@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="resources/css/navbar.css">
-    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/template.css">
     @yield('link')
     <title>INTRIC</title>
 </head>
