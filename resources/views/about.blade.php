@@ -8,8 +8,8 @@
 @endsection
 
 @section('content')
-    <div class="sliderAx h-auto pt-40">
-        <div id="slider-1" class="container mx-auto">
+<div class="sliderAx h-auto pt-40">
+    <div id="slider-1" class="container mx-auto">
             <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill"
                 style="background-image: url(https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,q_auto:good,w_1920/legacy_dam/en-au/S001667837/MXP-24803-Holiday-Banner-Promo-Product-Desktop-001?cb=a5f9c53cbe235e515e96440bc08d4e282a379ca3)">
                 <div class="md:w-1/2">
@@ -69,6 +69,45 @@
 
     </section>
 
+    {{-- <section class="team" id="team">
+        <h1 class="heading">Our <span>Team</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <span class="classification">CEO</span>
+                <div class="image">
+                    <img src="/resources/images/daniel.png" alt="" />
+                </div>
+                <div class="content">
+                    <h3>DANIEL KARIYADI</h3>
+                    <div class="price"> I'm part of JCI and several experiences on clothing industry.</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="classification">CTO</span>
+                <div class="image">
+                    <img src="/resources/images/bry.png" alt="" />
+                </div>
+                <div class="content">
+                    <h3>BRYANNA JERSEY</h3>
+                    <div class="price"> I have several exoeriences on branding products.</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="classification">CFO</span>
+                <div class="image">
+                    <img src="/resources/images/jj.png" alt="" />
+                </div>
+                <div class="content">
+                    <h3>ALDRICH JEREMIAH</h3>
+                    <div class="price"> I'm good at managing financial.</div>
+                </div>
+            </div>
+    </section> --}}
+
     <h1 class="heading">Our <span>Team</span></h1>
 
     <div class="box-container">
@@ -87,4 +126,3 @@
             </section>
         @endforeach
     </div>
-
