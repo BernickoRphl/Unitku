@@ -44,56 +44,6 @@
             </div>
         @endforeach
 
-        {{-- <div class="row">
-            <div class="video-container">
-                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
-            </div>
-            <div class="content">
-                <h3>SHIRT (ZIPPER)</h3>
-                <p>Unique and customable shirt or longsleeves-shirt by take the zipper off-and-on based o n your moods and
-                    needs!
-
-
-                    Available in: XS, S, M, L, XL
-
-                    Color: Black, White, Grey, Brown</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="content">
-                <h3>PANTS</h3>
-                <p>Pants that made of twirl cottons.
-
-
-                    Available in: XS, S, M, L, XL
-
-                    Color: Black, White, Grey, Brown</p>
-            </div>
-
-            <div class="video-container">
-                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="video-container">
-                <img src="https://wallpapers.com/images/hd/clothes-background-ot7pkynbf8g28jsr.jpg" alt="">
-            </div>
-
-            <div class="content">
-                <h3>JACKET</h3>
-                <p>This jacket can be mix matched with your pants and clothes.
-
-
-                    Available in: XS, S, M, L, XL
-
-                    Color: Black, White, Grey, Brown</p>
-            </div>
-        </div> --}}
-
-        <!-- carousel -->
         <div class="models">
             <h3>Models</h3>
         </div>

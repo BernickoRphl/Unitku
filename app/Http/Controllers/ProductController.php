@@ -42,6 +42,13 @@ class ProductController extends Controller
         return view('product', ['products' => $products]);
     }
 
+    public function showProductOrdered()
+    {
+        $products = Product::all();
+
+        return view('order_history', ['products' => $products]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

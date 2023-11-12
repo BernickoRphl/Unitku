@@ -21,28 +21,6 @@ Route::get('/', function () {
 
 Route::get('/product', [ProductController::class, 'showProduct']);
 
-Route::get('/team', function () {
-    return view('team');
-});
-
 Route::get('/about', [TeamController::class, 'showTeam']);
 
-Route::get('/product_cart', function () {
-    return view('product_cart');
-});
-
-Route::get('/order', function () {
-    return view('order');
-});
-
-Route::get('/order_history', function () {
-    return view('order_history');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/services', function () {
-    return view('services');
-});
+Route::get('/order_history', [ProductController::class, 'showProductOrdered']);
