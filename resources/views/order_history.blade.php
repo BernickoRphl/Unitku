@@ -48,12 +48,10 @@
                                     <div class="flex justify-start items-start flex-col space-y-2">
 
                                         <p class="text-sm dark:text-white leading-none text-gray-800"><span
-                                                class="dark:text-gray-400 text-gray-300">Style: </span> Italic Minimal
-                                            Design
+                                                class="dark:text-gray-400 text-gray-300">Description: </span>
+                                            {{ $product->product_desc }}
                                         </p>
 
-                                        <p class="text-sm dark:text-white leading-none text-gray-800"><span
-                                                class="dark:text-gray-400 text-gray-300">Size: </span> Small</p>
                                         <p class="text-sm dark:text-white leading-none text-gray-800"><span
                                                 class="dark:text-gray-400 text-gray-300">Color: </span>
                                             {{ $product->color }}</p>
