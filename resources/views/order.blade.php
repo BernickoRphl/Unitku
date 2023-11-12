@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.template')
 
 @section('link')
     <link rel="stylesheet" href="resources/css/contact.css">
