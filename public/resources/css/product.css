@@ -91,17 +91,18 @@ section {
 @media(max-width: 991px) {
     html {
         font-size: 85%;
-
+    }
+    .about .heading {
+        padding-top: 5rem;
     }
 }
 
 @media(max-width: 450px) {
     html {
         font-size: 60%;
-
-        .heading {
-            font-size: 3rem;
-        }
+    }
+    .about .heading {
+        padding-top: 10rem;
     }
 }
 
@@ -115,7 +116,7 @@ section {
 }
 
 .about .row .video-container {
-    flex: 1 1 40rem;
+    flex: 1 1 20rem;
     position: relative;
 }
 
