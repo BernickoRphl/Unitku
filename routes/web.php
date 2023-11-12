@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/product', [ProductController::class, 'showProduct']);
 
 Route::get('/team', function () {
     return view('team');

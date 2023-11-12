@@ -36,21 +36,11 @@ class TeamController extends Controller
      * Display the specified resource.
      */
     public function showTeam()
-{
-    $teams = Team::all();
+    {
+        $teams = Team::all();
 
-    return view('about', ['teams' => $teams]);
-}
-
-// public function showTeam($id)
-//     {
-//         return view(
-//             'about',
-//             [
-//                 'team' => Team::getTeam($id)
-//             ]
-//         );
-//     }
+        return view('about', ['teams' => $teams]);
+    }
 
     /**
      * Show the form for editing the specified resource.
