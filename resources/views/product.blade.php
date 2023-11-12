@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <h1 class="heading"><span> Our </span> Products </h1>
+        <h1 class="heading2"><span> Our </span> Products </h1>
 
         @foreach ($products as $product)
             <div class="row">

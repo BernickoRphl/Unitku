@@ -19,8 +19,20 @@
     margin: 2rem;
     background: #D3D3D3;
 }
+.heading2 {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem;
+    background: #D3D3D3;
+}
 
 .heading span {
+    color: #ffffff;
+}
+
+.heading2 span {
     color: #ffffff;
 }
 
@@ -92,7 +104,7 @@ section {
     html {
         font-size: 85%;
     }
-    .about .heading {
+    .about  .heading {
         padding-top: 5rem;
     }
 }
