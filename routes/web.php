@@ -26,10 +26,6 @@ Route::get('/team', function () {
     return view('team');
 });
 
-// Route::get('/about', function () {
-//     return view('about', [TeamController::class, 'showTeam']);
-// });
-
 Route::get('/about', [TeamController::class, 'showTeam']);
 
 Route::get('/product_cart', function () {
@@ -43,8 +39,3 @@ Route::get('/contact', function () {
 Route::get('/services', function () {
     return view('services');
 });
-
-// Route::get('/about',
-//     [
-//         TeamController::class, 'showTeam'
-//     ]);
