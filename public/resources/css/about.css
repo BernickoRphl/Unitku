@@ -43,6 +43,11 @@ section {
     padding: 2rem;
 }
 
+.paddings {
+    padding-top: 0rem;
+}
+
+
 .home {
     display: flex;
     align-items: center;
@@ -102,10 +107,20 @@ section {
     html {
         font-size: 60%;
 
-        .heading {
-            font-size: 3rem;
-        }
     }
+    .paddings {
+        padding-top: 10rem;
+
+}
+}
+
+@media(max-width: 640px) {
+    html {
+        font-size: 60%;
+    }
+    .paddings {
+        padding-top: 9rem;
+}
 }
 
 .about .row {

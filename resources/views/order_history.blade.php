@@ -1,10 +1,11 @@
 @extends('layouts.template')
 
 @section('link')
-    <link rel="stylesheet" href="resources/css/contact.css">
+    <link rel="stylesheet" href="resources/css/about.css">
 @endsection
 
 @section('content')
+<div class="paddings">
     <div class="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
 
         <div class="flex justify-start item-start space-y-2 flex-col">
@@ -81,4 +82,5 @@
         </div>
 
     </div>
+</div>
 @endsection
