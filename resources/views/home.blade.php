@@ -2,6 +2,7 @@
 
 @section('link')
     <link rel="stylesheet" href="resources/css/home.css">
+    <script src="resources/js/app.js"></script>
 @endsection
 
 @section('content')
