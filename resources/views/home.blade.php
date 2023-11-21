@@ -10,7 +10,7 @@
 
         <div class="content">
             <h3>INTRIC</h3>
-            <span>Best Fashioned Cloth</span>
+            <span>What is it?</span>
             <p>Intric is a detachable clothing company created in late 2022 and based in Indonesia. it focuses on making
                 simple but intricately designed functional clothing in the form of a shirt with detachable parts. Intric
                 aims to create clothing that is flexible towards the customer's taste by allowing customisation to the

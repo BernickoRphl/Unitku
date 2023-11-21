@@ -7,8 +7,7 @@
 
 @section('content')
     <section class="about" id="about">
-        <h1 class="heading"><span>Sustain
-                Clothes for </span> Your Daily Wear </h1>
+        <h1 class="heading"><span>INTRICATELY </span> DESIGNED</h1>
 
         <div class="video-container">
             <video src="/resources/video/videointric.mp4" loop autoplay muted></video>
@@ -31,12 +30,9 @@
                 </div>
                 <div class="content">
                     <h3>{{ $product->product_name }}</h3>
-                    <p>Unique and customable shirt or longsleeves-shirt by take the zipper off-and-on based o n your moods
+                    <p>Unique and customable shirt or longsleeves-shirt by take the buttons off-and-on based on your moods
                         and
                         needs!
-
-                        Available in: XS, S, M, L, XL
-
                     </p>
 
                     <p>Color: {{ $product->color }}</p>
