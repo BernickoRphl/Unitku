@@ -8,14 +8,13 @@
 @section('content')
     <section class="about" id="about">
         <h1 class="heading"><span>INTRICATELY </span> DESIGNED</h1>
-
+        <div class="row">
         <div class="video-container">
-            <video src="/resources/video/videointric.mp4" loop autoplay muted></video>
+            <video src="/resources/video/intripost.mp4" loop autoplay muted></video>
             {{-- <h3>best cloth sellers</h3> --}}
         </div>
-        <div class="row">
             <div class="content">
-                <h3>MADE OF 100% COTTON</h3>
+                <h3>MADE OF 100% FABRIC</h3>
                 <p>Our product was so soft and will sustain for a long-term, so you don't need to buy more clothes! By
                     purchasing our product, you are also supporting SDG for a better world!</p>
             </div>

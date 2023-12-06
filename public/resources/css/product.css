@@ -128,15 +128,15 @@ section {
 }
 
 .about .row .video-container {
-    flex: 1 1 20rem;
+    flex: 1 1 5rem;
     position: relative;
 }
 
 .about .row .video-container video {
     width: 100%;
-    border: 1.5rem solid #fff;
+    border: .05rem solid #fff;
     border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+    box-shadow: 0 .5rem .7rem rgba(0, 0, 0, 1);
 }
 
 .about .row .video-container h3 {
@@ -154,9 +154,9 @@ section {
 
 .about .row .video-container img {
     width: 100%;
-    border: 1.5rem solid #fff;
+    border: .05rem solid #fff;
     border-radius: .5rem;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 1);
 }
 
 .about .row .content {

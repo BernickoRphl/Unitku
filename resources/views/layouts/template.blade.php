@@ -59,6 +59,8 @@
                                 class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
                             <a href="/about"
                                 class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
+                                <a href="https://www.jotform.com/form/231542125038447"
+                                class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
 
                         </div>
 
@@ -133,6 +135,8 @@
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Products</a>
                 <a href="/about"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
+                    <a href="https://www.jotform.com/form/231542125038447"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Order</a>
 
             </div>
 

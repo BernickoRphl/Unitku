@@ -76,6 +76,7 @@ section {
 
 .home .content p {
     font-size: 1.5rem;
+    text-align: justify;
     color: var(--antiquewhite);
 }
 
@@ -176,6 +177,10 @@ section {
 .about .row .content p {
     font-size: 1.5rem;
     color: #999;
+    text-align: justify;
+    text-transform: none;
+
+
 
 }
 
