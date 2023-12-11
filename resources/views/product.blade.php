@@ -8,44 +8,10 @@
 @section('content')
     <section class="about" id="about">
         <h1 class="heading"><span>INTRICATELY </span> DESIGNED</h1>
-        <div class="row">
-        <div class="video-container">
-            <video src="/resources/video/intripost.mp4" loop autoplay muted></video>
-            {{-- <h3>best cloth sellers</h3> --}}
-        </div>
-            <div class="content">
-                <h3>MADE OF 100% FABRIC</h3>
-                <p>Our product was so soft and will sustain for a long-term, so you don't need to buy more clothes! By
-                    purchasing our product, you are also supporting SDG for a better world!</p>
-            </div>
-        </div>
 
-        <h1 class="heading2"><span> Our </span> Products </h1>
-
-        @foreach ($products as $product)
-            <div class="row">
-                <div class="video-container">
-                    <img src="/resources/images/{{ $product->product_image }}" alt="product images" class="productImages">
-                </div>
-                <div class="content">
-                    <h3>{{ $product->product_name }}</h3>
-                    <p>Unique and customable shirt or longsleeves-shirt by take the buttons off-and-on based on your moods
-                        and
-                        needs!
-                    </p>
-
-                    <p>Color: {{ $product->color }}</p>
-                </div>
-            </div>
-        @endforeach
-
-        <div class="models">
-            <h3>Models</h3>
-        </div>
-
-        <div class="max-w-2xl mx-auto">
+        <div class="w-full">
             <div id="carousel-container" class="relative" data-carousel="static">
-                <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                <div class="overflow-hidden relative h-screen rounded-lg sm:h-screen xl:h-screen 2xl:h-screen">
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <span
                             class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First
@@ -96,12 +62,54 @@
                     </span>
                 </button>
             </div>
-
-            <p class="mt-5">This is our product available now, more to come. You can see the details in the <a
+<br>
+<br>
+<br>
+            {{-- <p class="mt-5">This is our product available now, more to come. You can see the details in the <a
                     class="text-blue-600 hover:underline" href="https://www.instagram.com/intric.id/" target="_blank">Intric
                     documentation</a>.
-            </p>
+            </p> --}}
             <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
         </div>
+
+        <div class="row">
+        <div class="video-container">
+            <video src="/resources/video/intripost.mp4" loop autoplay muted></video>
+            {{-- <h3>best cloth sellers</h3> --}}
+        </div>
+            <div class="content">
+                <h3>MADE OF 100% FABRIC</h3>
+                <p>Our product was so soft and will sustain for a long-term, so you don't need to buy more clothes! By
+                    purchasing our product, you are also supporting SDG for a better world!</p>
+            </div>
+        </div>
+
+        <h1 class="heading2"><span> Our </span> Products </h1>
+
+        @foreach ($products as $product)
+            <div class="row">
+                <div class="video-container">
+                    <img src="/resources/images/{{ $product->product_image }}" alt="product images" class="productImages">
+                </div>
+                <div class="content">
+                    <h3>{{ $product->product_name }}</h3>
+                    <p>Unique and customable shirt or longsleeves-shirt by take the buttons off-and-on based on your moods
+                        and
+                        needs!
+                    </p>
+
+                    <p>Color: {{ $product->color }}</p>
+                </div>
+            </div>
+        @endforeach
+
+        {{-- <div class="models">
+            <h3>Models</h3>
+        </div> --}}
+        <p class="mt-5">This is our product available now, more to come. You can see the details in the <a
+            class="text-blue-600 hover:underline" href="https://www.instagram.com/intric.id/" target="_blank">Intric
+            documentation</a>.
+    </p>
+
     </section>
 @endsection

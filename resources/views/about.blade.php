@@ -17,7 +17,7 @@
                     <p class="font-bold text-sm uppercase">Services</p>
                     <p class="text-3xl font-bold">About Us</p>
                     <p class="text-2xl mb-10 leading-none">Get to know us more!</p>
-                    <a href="https://wa.me/085234983438"
+                    <a href="https://wa.me/082124187011" target="_blank"
                         class="bg-blue-950 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
                         us</a>
                 </div>
@@ -32,7 +32,7 @@
                 <p class="font-bold text-sm uppercase">Services</p>
                 <p class="text-3xl font-bold">About Us</p>
                 <p class="text-2xl mb-10 leading-none">Get to know us more!</p>
-                <a href="https://wa.me/085234983438"
+                <a href="https://wa.me/082124187011" target="_blank"
                     class="bg-blue-950 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
                     us</a>
 

@@ -60,7 +60,7 @@
                             <a href="/about"
                                 class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
                                 <a href="https://www.jotform.com/form/231542125038447"
-                                class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
+                                class="{{ request()->is('order') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
 
                         </div>
 
@@ -165,14 +165,14 @@
                             <li><a href="/" class="hover:text-sky-400 transition">Home</a></li>
                             <li><a href="/product" class="hover:text-sky-400 transition">Product</a></li>
                             <li><a href="/about" class="hover:text-sky-400 transition">About</a></li>
-                            <li><a href="https://wa.me/085234983438" target="_blank"
+                            <li><a href="https://wa.me/082124187011" target="_blank"
                                     class="hover:text-sky-400 transition">Contact</a></li>
 
                         </ul>
 
                         <ul role="list" class="space-y-8">
 
-                            <li>
+                            {{-- <li>
 
                                 <a href="#" class="flex items-center space-x-3 hover:text-sky-400 transition">
 
@@ -185,9 +185,9 @@
 
                                 </a>
 
-                            </li>
+                            </li> --}}
 
-                            <li>
+                            {{-- <li>
 
                                 <a href="#" class="flex items-center space-x-3 hover:text-sky-400 transition">
 
@@ -200,9 +200,9 @@
 
                                 </a>
 
-                            </li>
+                            </li> --}}
 
-                            <li>
+                            {{-- <li>
 
                                 <a href="#" class="flex items-center space-x-3 hover:text-sky-400 transition">
 
@@ -215,11 +215,11 @@
 
                                 </a>
 
-                            </li>
+                            </li> --}}
 
                             <li>
 
-                                <a href="https://wa.me/085234983438" target="_blank"
+                                <a href="https://wa.me/082124187011" target="_blank"
                                     class="flex items-center space-x-3 hover:text-sky-400 transition">
                                     <img class="w-5 h-5"
                                         src="https://seeklogo.com/images/W/whatsapp-logo-8AE44BBBB0-seeklogo.com.png"
@@ -255,7 +255,7 @@
 
                         <span class="block text-gray-300">Bernicko Raphael & Widhyastanto Ramadhian © 2023</span>
 
-                        <span class="block text-gray-300">Need help? <a href="https://wa.me/085234983438"
+                        <span class="block text-gray-300">Need help? <a href="https://wa.me/082124187011"
                                 target="_blank" class="font-semibold text-white"> Contact Us</a></span>
                     </div>
 
