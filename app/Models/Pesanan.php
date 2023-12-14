@@ -9,11 +9,6 @@ class Pesanan extends Model
 {
     use HasFactory;
 
-    public static function getTeam($id)
-    {
-        return self::find($id);
-    }
-
     public function detail_pesanan()
     {
         return $this->hasOne(Detail_Pesanan::class);

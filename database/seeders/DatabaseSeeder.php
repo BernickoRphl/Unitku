@@ -19,14 +19,13 @@ class DatabaseSeeder extends Seeder
         RoleSeeder::class,
         UserSeeder::class,
         CategorySeeder::class,
+        CustomerSeeder::class,
+        ProductSeeder::class,
         PesananSeeder::class,
         DetailPesananSeeder::class,
-        PesananSeeder::class,
         TeamSeeder::class,
         ValidasiSeeder::class,
         ReviewSeeder::class,
-        CustomerSeeder::class,
-        ProductSeeder::class,
        ]);
        Model::reguard();
     }

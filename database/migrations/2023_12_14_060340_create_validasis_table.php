@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('validasis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pesanan_id')->constrained()->cascadeOnDelete();
+            $table->string('description');
             $table->timestamps();
         });
     }

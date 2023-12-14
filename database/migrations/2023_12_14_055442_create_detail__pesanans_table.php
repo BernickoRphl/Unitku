@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('detail__pesanans', function (Blueprint $table) {
             $table->id();
+            $table->string('jumlah');
+            $table->foreignId('pesanan_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
