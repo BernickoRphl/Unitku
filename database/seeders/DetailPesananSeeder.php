@@ -29,7 +29,7 @@ class DetailPesananSeeder extends Seeder
 
         // Insert detail__pesanans into the 'detail__pesanans' table
         foreach ($detailPesanans as $detailPesanan) {
-            DB::table('detail__pesanans')->insert($detailPesanan);
+            DB::table('detail_pesanans')->insert($detailPesanan);
         }
     }
 }
