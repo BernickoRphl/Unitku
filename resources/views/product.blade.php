@@ -92,7 +92,9 @@
                     <img src="/resources/images/{{ $product->product_image }}" alt="product images" class="productImages">
                 </div>
                 <div class="content">
-                    <h3>{{ $product->product_name }}</h3>
+                    <a href="/product/{{$product['id']}}">
+                    <h3>{{ $product->product_name }}</h3>                              </a>
+                </a>
                     <p>Unique and customable shirt or longsleeves-shirt by take the buttons off-and-on based on your moods
                         and
                         needs!

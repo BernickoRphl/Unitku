@@ -25,6 +25,9 @@ Route::get('/about', [TeamController::class, 'showTeam']);
 
 Route::get('/order_history', [ProductController::class, 'showProductOrdered']);
 
+Route::get('/product/{product}',[ProductController::class,'show_product']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

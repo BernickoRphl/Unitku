@@ -56,5 +56,11 @@ class ProductController extends Controller
 
         return view('order_history', ['products' => $products]);
     }
-
+    public function show_product(Product $product){
+        return view('product_detail',
+            [
+                'product' => $product
+            ],
+        );
+    }
 }
