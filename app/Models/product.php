@@ -15,6 +15,11 @@ class product extends Model
         return $this->belongsTo(Customer::class);
     }
 
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     protected $filllable =
     [
         'product_name',
