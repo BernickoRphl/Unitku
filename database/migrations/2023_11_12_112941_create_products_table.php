@@ -15,13 +15,13 @@ return new class extends Migration
             'products',
             function (Blueprint $table) {
                 $table->id();
-                $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
+                // $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
                 $table->timestamps();
-                $table->string('product_name');
-                $table->text('product_desc');
-                $table->string('product_image');
-                $table->string('price');
-                $table->string('color');
+                $table->string('product_name')->nullable(true);
+                $table->text('product_desc')->nullable(true);
+                $table->string('product_image')->nullable(true);
+                $table->string('price')->nullable(true);
+                $table->string('color')->nullable(true);
             }
         );
     }

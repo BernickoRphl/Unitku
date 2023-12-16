@@ -23,7 +23,7 @@ class ProductController extends Controller
     public function create(Request $request)
     {
         Product::create([
-            'customer_id'=>$request->customer_id,
+            'customer_id' => auth()->user()->id,
             'product_name'=>$request->product_name,
             'product_desc'=>$request->product_desc,
             'product_image'=>$request->product_image,
@@ -32,36 +32,47 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
+{
+    // Validasi input sesuai kebutuhan
+    $request->validate([
+        'customer_id' => 'required',
+        'product_name' => 'required',
+        'product_desc' => 'required',
+        'product_image' => 'required',
+        'price' => 'required',
+        'color' => 'required',
+    ]);
+
+    // Ambil produk berdasarkan ID
+    $product = Product::findOrFail($id);
+
+    // Perbarui data produk menggunakan metode PATCH
+    $product->update([
+        'product_name' => $request->product_name,
+        'product_desc' => $request->product_desc,
+        'product_image' => $request->product_image,
+        'price' => $request->price,
+        'color' => $request->color,
+    ]);
+
+    // Beri respons atau lakukan redirect sesuai kebutuhan
+    return response()->json(['message' => 'Product updated successfully']);
+}
+
+    public function delete($id)
     {
-        Product::edit([
-            'customer_id'=>$request->customer_id,
-            'product_name'=>$request->product_name,
-            'product_desc'=>$request->product_desc,
-            'product_image'=>$request->product_image,
-            'price'=>$request->price,
-            'color'=>$request->color,
-        ]);
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        $product->delete();
+
+        return response()->json(['message' => 'Product deleted successfully']);
     }
 
-    public function delete(Request $request)
-    {
-        Product::delete([
-
-        ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function showProduct()
     {
         $products = Product::all();

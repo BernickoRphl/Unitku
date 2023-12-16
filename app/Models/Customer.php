@@ -16,7 +16,7 @@ class Customer extends Model
         'phone_number'
     ];
 
-    public function products() {
-        return $this->hasMany(product::class);
-    }
+    // public function products() {
+    //     return $this->hasMany(product::class);
+    // }
 }

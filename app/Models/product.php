@@ -10,10 +10,10 @@ class product extends Model
 {
     use HasFactory;
 
-    public function customer()
-    {
-        return $this->belongsTo(Customer::class);
-    }
+    // public function customer()
+    // {
+    //     return $this->belongsTo(Customer::class);
+    // }
 
     public function review()
     {
@@ -25,7 +25,7 @@ class product extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    protected $filllable =
+    protected $fillable =
     [
         'product_name',
         'product_desc',

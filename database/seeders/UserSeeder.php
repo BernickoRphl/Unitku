@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'email' => 'bruh@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('12345678'),
-            'role_id' => 1,
+            'role_id' => 2,
             'is_login' => '0',
             'is_active' => '1',
             'remember_token' => Str::random(10),
