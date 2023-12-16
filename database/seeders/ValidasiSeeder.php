@@ -12,6 +12,6 @@ class ValidasiSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }

@@ -14,7 +14,6 @@ class Customer extends Model
         'name',
         'email',
         'phone_number'
-
     ];
 
     public function products() {

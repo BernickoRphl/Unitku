@@ -24,10 +24,8 @@ class DetailPesananSeeder extends Seeder
                 'pesanan_id' => 2,
                 'product_id' => 2,
             ],
-            // Add more detail__pesanans as needed
         ];
 
-        // Insert detail__pesanans into the 'detail__pesanans' table
         foreach ($detailPesanans as $detailPesanan) {
             DB::table('detail_pesanans')->insert($detailPesanan);
         }
