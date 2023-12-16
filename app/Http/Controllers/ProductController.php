@@ -32,6 +32,25 @@ class ProductController extends Controller
         ]);
     }
 
+    public function edit(Request $request)
+    {
+        Product::edit([
+            'customer_id'=>$request->customer_id,
+            'product_name'=>$request->product_name,
+            'product_desc'=>$request->product_desc,
+            'product_image'=>$request->product_image,
+            'price'=>$request->price,
+            'color'=>$request->color,
+        ]);
+    }
+
+    public function delete(Request $request)
+    {
+        Product::delete([
+
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
