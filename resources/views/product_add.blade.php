@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="card-body">
-        <h1>hallo</h1>
-        {{-- <form method="POST" action="{{ route('product_add') }}">
+        <form method="POST" action="{{ route('product.create') }}">
             @csrf
 
             <div class="row mb-3">
@@ -68,6 +67,6 @@
                     </button>
                 </div>
             </div>
-        </form> --}}
+        </form>
     </div>
 @endsection

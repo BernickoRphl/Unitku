@@ -20,7 +20,8 @@
     <div class="text-end">
         <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group me-2" role="group" aria-label="Basic example">
-                <form method="GET" action="{{ route('product.create') }}">
+                <form method="POST" action="{{ route('product.create') }}">
+                    @csrf
                     <button class="btn btn-primary text-black" type="submit">
                         Tambah
                     </button>

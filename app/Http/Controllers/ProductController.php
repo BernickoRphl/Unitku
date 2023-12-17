@@ -23,14 +23,27 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
+        // Validate the request data as needed
+        $request->validate([
+            'product_name' => 'required',
+            'product_desc' => 'required',
+            'product_image' => 'required',
+            'price' => 'required',
+            'color' => 'required',
+        ]);
+
+        // Create a new product
         Product::create([
             'customer_id' => auth()->user()->id,
-            'product_name'=>$request->product_name,
-            'product_desc'=>$request->product_desc,
-            'product_image'=>$request->product_image,
-            'price'=>$request->price,
-            'color'=>$request->color,
+            'product_name' => $request->product_name,
+            'product_desc' => $request->product_desc,
+            'product_image' => $request->product_image,
+            'price' => $request->price,
+            'color' => $request->color,
         ]);
+
+        // Redirect to a specific page after creation
+        return redirect('/list_product')->with('status', 'Product created successfully');
     }
 
     public function edit(Request $request, $id)
