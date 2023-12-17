@@ -21,7 +21,7 @@ class ListProdukController extends Controller
         }
 
         return view(
-            'list_product',
+            'product_list',
             [
                 'product' => $product
             ],
@@ -34,7 +34,7 @@ class ListProdukController extends Controller
     }
 
     public function showproduct(product $product){
-        return view('list_product',
+        return view('product_list',
             [
                 'product' => $product
             ],

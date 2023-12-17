@@ -21,7 +21,7 @@
         <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group me-2" role="group" aria-label="Basic example">
                 <form method="GET" action="{{ route('product.create') }}">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary text-black" type="submit">
                         Tambah
                     </button>
                 </form>
@@ -71,7 +71,7 @@
                                 <form method="POST" action="{{ route('product.delete', $pro['id']) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                    <button class="btn btn-danger  text-black" type="submit">Delete</button>
                                 </form>
                             </td>>
                         </tr>

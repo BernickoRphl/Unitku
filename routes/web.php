@@ -28,7 +28,7 @@ Route::get('/order_history', [ProductController::class, 'showProductOrdered']);
 
 
 //PRODUCT
-Route::get('/create-product', [ProductController::class, 'create'])->name('product.create');
+Route::get('/product_add', [ProductController::class, 'create'])->name('product.create');
 Route::get('/product/{product}', [ProductController::class, 'show_product']);
 Route::patch('/products/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::delete('/products/{id}', [ProductController::class, 'delete'])->name('product.delete');
