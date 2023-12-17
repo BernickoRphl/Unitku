@@ -26,7 +26,7 @@
 
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
 
-                    <form method="POST" action="{{ route('product.create') }}">
+                    <form method="POST" action="/product_add">
                         @csrf
                         <button class="btn btn-primary text-black" type="submit">
                             Tambah Produk

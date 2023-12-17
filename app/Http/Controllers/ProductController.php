@@ -43,7 +43,7 @@ class ProductController extends Controller
         ]);
 
         // Redirect to a specific page after creation
-        return redirect('/list_product')->with('status', 'Product created successfully');
+        return redirect('/product_list')->with('status', 'Product created successfully');
     }
 
     public function edit(Request $request, $id)
