@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <form action="/list_product" method="GET" class="form-inline w-25 d-flex gap-2">
+    <form action="/list_prod" method="GET" class="form-inline w-25 d-flex gap-2">
         <input type="form-control" type="search" name="search" placeholder="search">
         <button type="submit" class="btn btn-outline-success">Search</button>
     </form>
@@ -43,6 +43,7 @@
                         <th scope="col">Price</th>
                         <th scope="col">Color</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,21 +62,18 @@
                             <td>{{ $pro['color'] }}</td>
                             <td>{{ $pro['product_image'] }}</td>
                             <td>
-                                <button class="btn btn-warning">Update</button>
-                                <button class="btn btn-danger">Delete</button>
-                            </td>
-                            {{-- <td>
-                                <form method="GET" action="{{ route('product.edit', $pro['id']) }}">
+                                <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
                                     @csrf
+                                    @method('PATCH') <!-- Add this line to specify the HTTP method -->
                                     <button class="btn btn-warning" type="submit">Update</button>
-
                                 </form>
+
                                 <form method="POST" action="{{ route('product.delete', $pro['id']) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit">Delete</button>
                                 </form>
-                            </td> --}}
+                            </td>>
                         </tr>
                     @endforeach
                 </tbody>
