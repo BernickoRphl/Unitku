@@ -64,10 +64,24 @@
                 </div>
             </div>
 
+            <div class="row mb-3">
+                <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
+
+                <div class="col-md-6">
+                    <select name="category" id="category" required>
+                        @foreach ($product->categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                </p>
+                            @endforeach
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
             <div class="row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary text-black">
-                        {{ __('Register') }}
+                        {{ __('Submit') }}
                     </button>
                 </div>
             </div>

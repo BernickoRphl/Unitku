@@ -31,6 +31,7 @@ class product extends Model
         'product_desc',
         'product_image',
         'price',
-        'color'
+        'color',
+        'category_id',
     ];
 }

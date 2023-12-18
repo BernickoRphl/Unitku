@@ -155,7 +155,6 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                // 'customer_id' => '2',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
                 'product_image' => 'full set white.JPG',
@@ -166,7 +165,6 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
                 'product_image' => 'sheets.JPG',
@@ -177,7 +175,6 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
                 'product_image' => 'sheets black.JPG',
@@ -187,7 +184,6 @@ class ProductSeeder extends Seeder
         );
         DB::table('products')->insert(
             [
-                // 'customer_id' => '1',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
                 'product_image' => 'full set.JPG',
@@ -198,7 +194,6 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                // 'customer_id' => '2',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
                 'product_image' => 'full set white.JPG',
@@ -209,7 +204,6 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
                 'product_image' => 'sheets.JPG',
@@ -220,7 +214,6 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
-                // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
                 'product_image' => 'sheets black.JPG',

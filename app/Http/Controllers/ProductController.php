@@ -21,29 +21,21 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function store(Request $request)
     {
-        // Validate the request data as needed
-        $request->validate([
-            'product_name' => 'required',
-            'product_desc' => 'required',
-            'product_image' => 'required',
-            'price' => 'required',
-            'color' => 'required',
-        ]);
-
+        // $products = Product::all();
+        // return view('product_list', compact('products'));
         // Create a new product
         Product::create([
-            'customer_id' => auth()->user()->id,
             'product_name' => $request->product_name,
             'product_desc' => $request->product_desc,
             'product_image' => $request->product_image,
             'price' => $request->price,
             'color' => $request->color,
+            'category_id' => $request->category_id,
         ]);
 
-        // Redirect to a specific page after creation
-        return redirect('/product_list')->with('status', 'Product created successfully');
+        return redirect()->route('product.store');
     }
 
     public function edit(Request $request, $id)
@@ -78,14 +70,14 @@ public function delete($id)
 {
     $product = Product::find($id);
 
-    if (!$product) {
-        return response()->json(['message' => 'Product not found'], 404);
-    }
+    // if (!$product) {
+    //     return response()->json(['message' => 'Product not found'], 404);
+    // }
 
     $product->delete();
 
     // Redirect to a specific page after deletion
-    return redirect('/list_product')->with('status', 'Product deleted successfully');
+    return redirect('/product_list')->with('status', 'Product deleted successfully');
 }
     public function showProduct()
     {
@@ -106,5 +98,11 @@ public function delete($id)
                 'product' => $product
             ],
         );
+    }
+    public function index1()
+    {
+        $products = Product::with('categories')->get();
+
+        return view('product.create', compact('products'));
     }
 }
