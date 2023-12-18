@@ -68,7 +68,8 @@
                                 @endif
                                 @if (Auth::user()->isAdmin())
                                     <a href="/product_list"
-                                        class="{{ request()->is('product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List Produk</a>
+                                        class="{{ request()->is('product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                                        Produk</a>
                                 @endif
 
                             @endauth
@@ -82,20 +83,22 @@
 
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
+                            <li class="nav-item hover:text-gray-400">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
-                            <li class="nav-item">
+                            <li class="nav-item hover:text-gray-400">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
                         <div class="relative ml-3">
 
-                            <div>
+                            <div class="flex flex-row">
+
+                                <h2 class="block px-4 py-2 text-md text-gray-200">{{ Auth::user()->name }}</h2>
 
                                 <button type="button" id="profileButton"
                                     class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -116,10 +119,12 @@
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                 tabindex="-1">
 
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                    tabindex="-1" id="user-menu-item-1">Settings</a>
+                                <h2 class="block px-4 py-2 text-md text-black">{{ Auth::user()->name }}</h2>
 
-                                <a class="dropdown-item text-black block px-4 py-2 text-sm text-gray-700"
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+
+                                <a class="dropdown-item text-black block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
                                     href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
