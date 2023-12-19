@@ -21,15 +21,29 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function store(Request $request)
+
+
+    public function add_form()
     {
-        // $products = Product::all();
-        // return view('product_list', compact('products'));
+        return view('/product_add');
+    }
+
+    public function create(Request $request)
+    {
+        // Validate the request data as needed
+        $request->validate([
+            'product_name' => 'required',
+            'product_desc' => 'required',
+            'product_image' => 'required',
+            'price' => 'required',
+            'color' => 'required',
+        ]);
+
         // Create a new product
         Product::create([
             'product_name' => $request->product_name,
             'product_desc' => $request->product_desc,
-            'product_image' => $request->product_image,
+            'product_image' => basename($imagePath),
             'price' => $request->price,
             'color' => $request->color,
             'category_id' => $request->category_id,
@@ -66,18 +80,18 @@ class ProductController extends Controller
         return response()->json(['message' => 'Product updated successfully']);
     }
 
-public function delete($id)
-{
-    $product = Product::find($id);
+    public function delete($id)
+    {
+        $product = Product::find($id);
 
-    // if (!$product) {
-    //     return response()->json(['message' => 'Product not found'], 404);
-    // }
+    if (!$product) {
+        return response()->json(['message' => 'Product not found'], 404);
+    }
 
-    $product->delete();
+        $product->delete();
 
     // Redirect to a specific page after deletion
-    return redirect('/product_list')->with('status', 'Product deleted successfully');
+    return redirect('/list_product')->with('status', 'Product deleted successfully');
 }
     public function showProduct()
     {
@@ -92,8 +106,10 @@ public function delete($id)
 
         return view('order_history', ['products' => $products]);
     }
-    public function show_product(Product $product){
-        return view('product_detail',
+    public function show_product(Product $product)
+    {
+        return view(
+            'product_detail',
             [
                 'product' => $product
             ],

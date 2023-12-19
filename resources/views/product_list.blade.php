@@ -26,12 +26,9 @@
 
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
 
-                    <form method="POST" action="/product_add">
-                        @csrf
-                        <button class="btn btn-primary text-black" type="submit">
-                            Tambah Produk
-                        </button>
-                    </form>
+                    <button class="btn btn-primary text-black" type="submit">
+                        <a href="{{route('product.form')}}">Tambah Produk</a>
+                    </button>
 
                 </div>
 
@@ -39,7 +36,7 @@
 
         </div>
 
-        <form action="/list_prod" method="GET" class="form-inline w-25 d-flex gap-2">
+        <form action="/product_list" method="GET" class="form-inline w-25 d-flex gap-2">
 
             <input type="form-control" type="search" name="search" placeholder="search">
             <button type="submit" class="btn btn-outline-success">Search</button>
