@@ -27,7 +27,7 @@
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
 
                     <button class="btn btn-primary text-black" type="submit">
-                        <a href="{{route('product.form')}}">Tambah Produk</a>
+                        <a href="{{ route('product.form') }}">Tambah Produk</a>
                     </button>
 
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -23,33 +24,39 @@ class ProductController extends Controller
      */
 
 
-    public function add_form()
-    {
-        return view('/product_add');
-    }
+     public function add_form()
+     {
+         $product = new Product(); // Instantiate an empty Product
+         $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
+
+         return view('product_add', ['product' => $product, 'categories' => $categories]);
+     }
 
     public function create(Request $request)
     {
         // Validate the request data as needed
-        $request->validate([
-            'product_name' => 'required',
-            'product_desc' => 'required',
-            'product_image' => 'required',
-            'price' => 'required',
-            'color' => 'required',
-        ]);
+       $request->validate([
+        'product_name' => 'required',
+        'product_desc' => 'required',
+        'product_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'price' => 'required',
+        'color' => 'required',
+    ]);
 
-        // Create a new product
-        Product::create([
-            'product_name' => $request->product_name,
-            'product_desc' => $request->product_desc,
-            'product_image' => basename($imagePath),
-            'price' => $request->price,
-            'color' => $request->color,
-            'category_id' => $request->category_id,
-        ]);
+    // Handle file upload
+    $imagePath = $request->file('product_image')->store('images');
 
-        return redirect()->route('product.store');
+    // Create a new product
+    Product::create([
+        'product_name' => $request->product_name,
+        'product_desc' => $request->product_desc,
+        'product_image' => basename($imagePath),
+        'price' => $request->price,
+        'color' => $request->color,
+        'category_id' => $request->category_id,
+    ]);
+
+    return redirect()->route('product.store');
     }
 
     public function edit(Request $request, $id)
