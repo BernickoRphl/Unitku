@@ -24,39 +24,41 @@ class ProductController extends Controller
      */
 
 
-     public function add_form()
-     {
-         $product = new Product(); // Instantiate an empty Product
-         $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
+    public function add_form()
+    {
+        $product = new Product(); // Instantiate an empty Product
+        $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
 
-         return view('product_add', ['product' => $product, 'categories' => $categories]);
-     }
+        return view('product_add', ['product' => $product, 'categories' => $categories]);
+    }
 
     public function create(Request $request)
     {
+        dd($request->all());
         // Validate the request data as needed
-       $request->validate([
-        'product_name' => 'required',
-        'product_desc' => 'required',
-        'product_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'price' => 'required',
-        'color' => 'required',
-    ]);
+        $request->validate([
+            'product_name' => 'required',
+            'product_desc' => 'required',
+            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'price' => 'required',
+            'color' => 'required',
+            'category_id' => 'required',
+        ]);
 
-    // Handle file upload
-    $imagePath = $request->file('product_image')->store('images');
+        // Handle file upload
+        $imagePath = $request->file('product_image')->store('images');
 
-    // Create a new product
-    Product::create([
-        'product_name' => $request->product_name,
-        'product_desc' => $request->product_desc,
-        'product_image' => basename($imagePath),
-        'price' => $request->price,
-        'color' => $request->color,
-        'category_id' => $request->category_id,
-    ]);
+        // Create a new product
+        Product::create([
+            'product_name' => $request->product_name,
+            'product_desc' => $request->product_desc,
+            'product_image' => basename($imagePath),
+            'price' => $request->price,
+            'color' => $request->color,
+            'category_id' => $request->category_id,
+        ]);
 
-    return redirect()->route('product.store');
+        return redirect()->route('product.store');
     }
 
     public function edit(Request $request, $id)
@@ -91,15 +93,15 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-    if (!$product) {
-        return response()->json(['message' => 'Product not found'], 404);
-    }
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
 
         $product->delete();
 
-    // Redirect to a specific page after deletion
-    return redirect('/list_product')->with('status', 'Product deleted successfully');
-}
+        // Redirect to a specific page after deletion
+        return redirect('/list_product')->with('status', 'Product deleted successfully');
+    }
     public function showProduct()
     {
         $products = Product::all();
