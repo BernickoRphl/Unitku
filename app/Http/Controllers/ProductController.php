@@ -48,13 +48,20 @@ class ProductController extends Controller
     }
 
     public function edit(Product $product)
-    {
-        $productEdit = Product::where('id', $product->id)->first();
-        $categories = Category::all();
+{
+    // Attempt to find the product by its ID
+    $productEdit = Product::find($product->id);
 
-        return view('product_edit', compact('productEdit', 'categories'));
+    // Check if the product exists
+    if (!$productEdit) {
+        // Handle the case where the product is not found
+        return abort(404); // You can customize this based on your needs
     }
 
+    $categories = Category::all();
+
+    return view('product_edit', compact('productEdit', 'categories'));
+}
     public function delete($id)
     {
         $product = Product::find($id);
