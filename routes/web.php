@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::get('/detail_pesanan/{detail_pesanan}', [ProductController::class, 'show_detail_pesanan']);
+
 //SHOW
 Route::get('/product', [ProductController::class, 'showProduct']);
 Route::get('/about', [TeamController::class, 'showTeam']);
@@ -25,14 +28,12 @@ Route::get('/order_history', [ProductController::class, 'showProductOrdered']);
 
 
 //PRODUCT
+Route::get('/product/{product}', [ProductController::class, 'show_product']);
 Route::get('/product_add', [ProductController::class, 'add_form'])->name('product.form');
 Route::post('/product_add', [ProductController::class, 'create'])->name('product.add');
-Route::get('/product/{product}', [ProductController::class, 'show_product']);
+Route::get('/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
 Route::patch('/products/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::delete('/products/{id}', [ProductController::class, 'delete'])->name('product.delete');
-Route::get('/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
 // Route::get('/product_add', [ProductController::class, 'store'])->name('product.store');
-
-Route::get('/detail_pesanan/{detail_pesanan}', [ProductController::class, 'show_detail_pesanan']);
 
 Auth::routes();

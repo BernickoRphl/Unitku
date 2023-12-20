@@ -34,31 +34,17 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        dd($request->all());
-        // Validate the request data as needed
-        $request->validate([
-            'product_name' => 'required',
-            'product_desc' => 'required',
-            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'price' => 'required',
-            'color' => 'required',
-            'category_id' => 'required',
-        ]);
+            // Create a new product
+            Product::create([
+                'product_name' => $request->product_name,
+                'product_desc' => $request->product_desc,
+                'product_image' => $request->product_image,
+                'price' => $request->price,
+                'color' => $request->color,
+                'category_id' => $request->category_id,
+            ]);
 
-        // Handle file upload
-        $imagePath = $request->file('product_image')->store('images');
-
-        // Create a new product
-        Product::create([
-            'product_name' => $request->product_name,
-            'product_desc' => $request->product_desc,
-            'product_image' => basename($imagePath),
-            'price' => $request->price,
-            'color' => $request->color,
-            'category_id' => $request->category_id,
-        ]);
-
-        return redirect()->route('product.store');
+        return redirect()->route('product.list');
     }
 
     public function edit(Request $request, $id)
