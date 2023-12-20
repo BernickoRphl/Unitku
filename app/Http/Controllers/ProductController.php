@@ -47,32 +47,12 @@ class ProductController extends Controller
         return redirect()->route('product.list');
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Product $product)
     {
-        // Validasi input sesuai kebutuhan
-        $request->validate([
-            'customer_id' => 'required',
-            'product_name' => 'required',
-            'product_desc' => 'required',
-            'product_image' => 'required',
-            'price' => 'required',
-            'color' => 'required',
-        ]);
+        $productEdit = Product::where('id', $product->id)->first();
+        $categories = Category::all();
 
-        // Ambil produk berdasarkan ID
-        $product = Product::findOrFail($id);
-
-        // Perbarui data produk menggunakan metode PATCH
-        $product->update([
-            'product_name' => $request->product_name,
-            'product_desc' => $request->product_desc,
-            'product_image' => $request->product_image,
-            'price' => $request->price,
-            'color' => $request->color,
-        ]);
-
-        // Beri respons atau lakukan redirect sesuai kebutuhan
-        return response()->json(['message' => 'Product updated successfully']);
+        return view('product_edit', compact('productEdit', 'categories'));
     }
 
     public function delete($id)
