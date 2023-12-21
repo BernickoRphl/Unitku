@@ -84,6 +84,10 @@ class ProductController extends Controller
     //     dd($product->id);
 
     //     $productEdit = Product::find($product->id);
+{
+        // dd($product->id);
+
+    $productEdit = Product::find($product->id);
 
     //     if (!$productEdit) {
     //         return redirect()->route('product.list')->with('error', 'Product not found');
