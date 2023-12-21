@@ -18,6 +18,7 @@
 
 @section('content')
     <div class="container mt-5 mb-5">
+
         <h1>List Product</h1>
 
         <div class="text-end">
@@ -27,7 +28,9 @@
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
 
                     <button class="btn btn-primary text-black" type="submit">
+
                         <a href="{{ route('product.form') }}">Tambah Produk</a>
+
                     </button>
 
                 </div>
@@ -73,7 +76,9 @@
                             <td>
 
                                 <a href="/product/{{ $pro['id'] }}">
+
                                     {{ $pro['product_name'] }}
+
                                 </a>
 
                             </td>
@@ -81,22 +86,33 @@
                             <td>{{ $pro['product_desc'] }}</td>
                             <td>{{ $pro['price'] }}</td>
                             <td>{{ $pro['color'] }}</td>
-                            <td>{{ $pro['product_image'] }}</td>
+
+                            <td>
+                                <img src="/resources/images/{{ $pro['product_image'] }}" alt="images" class="w-40 h-auto">
+                            </td>
+
                             <td>
 
                                 <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
+
                                     @csrf
                                     @method('PATCH')
+
                                     <button class="btn btn-warning" type="submit">Update</button>
+
                                 </form>
 
                                 <form method="POST" action="{{ route('product.delete', $pro['id']) }}">
+
                                     @csrf
                                     @method('DELETE')
+
                                     <button class="btn btn-danger  text-black" type="submit">Delete</button>
+
                                 </form>
 
                             </td>
+
                         </tr>
                     @endforeach
 
