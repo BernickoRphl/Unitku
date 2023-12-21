@@ -48,19 +48,49 @@ class ProductController extends Controller
     }
 
     public function edit(Product $product)
+    {
+        $productEdit = Product::where('id', $product->id)->first();
+        $products = Product::all();
+        $categories = Category::all();
+
+        return view('product_edit', compact('productEdit', 'products', 'categories'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $product->update(
+            [
+                'product_name' => $request->product_name,
+                'product_desc' => $request->product_desc,
+                'product_image' => $request->product_image,
+                'price' => $request->price,
+                'color' => $request->color,
+                'category_id' => $request->category_id
+            ]
+        );
+
+        return redirect()->route('/list_product');
+    }
+
+    // public function edit(Product $product)
+    // {
+    //     dd($product->id);
+
+    //     $productEdit = Product::find($product->id);
 {
         // dd($product->id);
 
     $productEdit = Product::find($product->id);
 
-    if (!$productEdit) {
-        return redirect()->route('product.list')->with('error', 'Product not found');
-    }
+    //     if (!$productEdit) {
+    //         return redirect()->route('product.list')->with('error', 'Product not found');
+    //     }
 
-    $categories = Category::all();
+    //     $categories = Category::all();
 
-    return view('product.edit', compact('productEdit', 'categories'));
-}
+    //     return view('product_edit', compact('productEdit', 'categories'));
+    // }
+
     public function delete($id)
     {
         $product = Product::find($id);
