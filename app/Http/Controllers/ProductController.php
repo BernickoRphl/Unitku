@@ -58,18 +58,25 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
+        if ($request->hasFile('product_image')) {
+            $imageName = time() . '.' . $request->product_image->extension();
+            $request->product_image->move(public_path('uploads'), $imageName);
+        } else {
+            $imageName = $product->product_image;
+        }
+
         $product->update(
             [
                 'product_name' => $request->product_name,
                 'product_desc' => $request->product_desc,
-                'product_image' => $request->product_image,
+                'product_image' => $imageName,
                 'price' => $request->price,
                 'color' => $request->color,
                 'category_id' => $request->category_id
             ]
         );
 
-        return redirect()->route('/list_product');
+        return redirect()->route('product.list')->with('success', 'Product updated successfully');
     }
 
     // public function edit(Product $product)
