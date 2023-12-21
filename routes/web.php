@@ -32,8 +32,8 @@ Route::get('/product/{product}', [ProductController::class, 'show_product']);
 Route::get('/product_add', [ProductController::class, 'add_form'])->name('product.form');
 Route::post('/product_add', [ProductController::class, 'create'])->name('product.add');
 Route::get('/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
-Route::put('/products/edit/{product}', [ProductController::class, 'update'])->name('product.update');
 Route::patch('/products/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+Route::put('/products/update/{product}', [ProductController::class, 'update'])->name('product.update');
 Route::delete('/products/{id}', [ProductController::class, 'delete'])->name('product.delete');
 // Route::get('/product_add', [ProductController::class, 'store'])->name('product.store');
 

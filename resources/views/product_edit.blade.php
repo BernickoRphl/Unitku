@@ -13,7 +13,7 @@
         @if ($productEdit)
             <form method="POST" action="{{ route('product.update', $productEdit) }}">
                 @csrf
-                @method('PATCH')
+                @method('PUT')
 
                 <div class="row mb-3">
                     <label for="product_name" class="col-md-4 col-form-label text-md-end">{{ __('Product Name') }}</label>
@@ -62,7 +62,7 @@
 
                     <div class="col-md-6">
                         <input id="color" type="text" class="form-control" name="color"
-                            value="{{ $productEdit->color }} required autocomplete="color">
+                            value="{{ $productEdit->color }}" required autocomplete="color">
                     </div>
                 </div>
 
@@ -70,18 +70,16 @@
                     <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
 
                     <div class="col-md-6">
-                        <select name="category_id" id="category" required>
+                        <select name="category" id="category" class="form-select" required>
+
                             @foreach ($categories as $category)
                                 @if (old('category_id', $productEdit->category_id) === $category->id)
                                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                                 @else
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endif
-                                {{-- <option value="{{ $category->id }}"
-                                    {{ $category->id == $productEdit->category_id ? 'selected' : '' }}>
-                                    {{ $category->name }}
-                                </option> --}}
                             @endforeach
+
                         </select>
                     </div>
                 </div>
