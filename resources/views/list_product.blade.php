@@ -59,6 +59,7 @@
                         <th scope="col">Description</th>
                         <th scope="col">Price</th>
                         <th scope="col">Color</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Image</th>
                         <th scope="col">Action</th>
 
@@ -84,6 +85,7 @@
                             <td>{{ $pro['product_desc'] }}</td>
                             <td>{{ $pro['price'] }}</td>
                             <td>{{ $pro['color'] }}</td>
+                            <td>{{ $pro['category'] }}</td>
                             <td>{{ $pro['product_image'] }}</td>
                             <td>
 
@@ -93,7 +95,8 @@
                                     <button class="btn btn-warning" type="submit">Update</button>
                                 </form> --}}
 
-                                <a href="{{ route('product.edit', $pro)}}"><button class="btn btn-warning  text-black" type="submit">Delete</button>
+                                <a href="{{ route('product.edit', $product) }}"><button class="btn btn-warning  text-black"
+                                        type="submit">Delete</button>
                                 </a>
 
                                 <form method="POST" action="{{ route('product.delete', $pro['id']) }}">

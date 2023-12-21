@@ -11,85 +11,91 @@
 @section('content')
     <div class="mt-40 mb-40">
         @if ($productEdit)
-            <form method="POST" action="{{ route('product.edit', ['id' => $productEdit->id]) }}">
+            <form method="POST" action="{{ route('product.update', $productEdit) }}">
                 @csrf
                 @method('PATCH')
+
                 <div class="row mb-3">
                     <label for="product_name" class="col-md-4 col-form-label text-md-end">{{ __('Product Name') }}</label>
 
                     <div class="col-md-6">
                         <input id="product_name" type="text" class="form-control @error('name') is-invalid @enderror"
-                            name="product_name" value="{{ $productEdit->product_name }}" required autocomplete="product_name"
-                            autofocus>
+                            name="product_name" value="{{ $productEdit->product_name }}" required
+                            autocomplete="product_name" autofocus>
                     </div>
                 </div>
 
 
-            <div class="row mb-3">
-                <label for="product_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+                <div class="row mb-3">
+                    <label for="product_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
 
-                <div class="col-md-6">
-                    <input id="product_desc" type="text" class="form-control" name="product_desc"
-                        value="{{ $productEdit->product_desc }}" required autocomplete="product_desc">
+                    <div class="col-md-6">
+                        <input id="product_desc" type="text" class="form-control" name="product_desc"
+                            value="{{ $productEdit->product_desc }}" required autocomplete="product_desc">
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
-                <div class="col-md-6">
-                    <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
-                        name="product_image" value="{{ $productEdit->product_image }}" required accept="image/*">
-                    @error('product_image')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                <div class="row mb-3">
+                    <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+                    <div class="col-md-6">
+                        <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
+                            name="product_image" value="{{ $productEdit->product_image }}" required accept="image/*">
+                        @error('product_image')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
+                <div class="row mb-3">
+                    <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
 
-                <div class="col-md-6">
-                    <input id="price" type="number" class="form-control" name="price"
-                        value="{{ $productEdit->price }}" required autocomplete="price">
+                    <div class="col-md-6">
+                        <input id="price" type="number" class="form-control" name="price"
+                            value="{{ $productEdit->price }}" required autocomplete="price">
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <label for="color" class="col-md-4 col-form-label text-md-end">{{ __('Color') }}</label>
+                <div class="row mb-3">
+                    <label for="color" class="col-md-4 col-form-label text-md-end">{{ __('Color') }}</label>
 
-                <div class="col-md-6">
-                    <input id="color" type="text" class="form-control" name="color"
-                        value="{{ $productEdit->color }} required autocomplete="color">
+                    <div class="col-md-6">
+                        <input id="color" type="text" class="form-control" name="color"
+                            value="{{ $productEdit->color }} required autocomplete="color">
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
+                <div class="row mb-3">
+                    <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
 
-                <div class="col-md-6">
-                    <select name="category_id" id="category" required>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}"
-                                {{ $category->id == $productEdit->category_id ? 'selected' : '' }}>
-                                {{ $category->name }}
-                            </option>
-                        @endforeach
-                    </select>
+                    <div class="col-md-6">
+                        <select name="category_id" id="category" required>
+                            @foreach ($categories as $category)
+                                @if (old('category_id', $productEdit->category_id) === $category->id)
+                                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                @else
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endif
+                                {{-- <option value="{{ $category->id }}"
+                                    {{ $category->id == $productEdit->category_id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option> --}}
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-0">
-                <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary text-black">
-                        {{ __('Edit') }}
-                    </button>
+                <div class="row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                        <button type="submit" class="btn btn-primary text-black">
+                            {{ __('Edit') }}
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
-    @else
-        <p>Product not found.</p>
-    @endif
-</div>
+            </form>
+        @else
+            <p>Product not found.</p>
+        @endif
+    </div>
 @endsection
