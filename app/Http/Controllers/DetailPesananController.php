@@ -13,5 +13,12 @@ class DetailPesananController extends Controller
                 'detail_pesanan' => $detail
             ],
         );
+
+    }
+    public function delete(Detail_Pesanan $detailPesanan)
+    {
+        $detailPesanan->delete();
+
+        return redirect()->route('pesanans.show', $detailPesanan->pesanan_id)->with('success', 'Detail Pesanan deleted successfully');
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DetailPesananController;
 use App\Http\Controllers\ListProdukController;
+use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/detail_pesanan/{detail_pesanan}', [ProductController::class, 'show_detail_pesanan']);
 
 //SHOW
 Route::get('/product', [ProductController::class, 'showProduct']);
@@ -37,4 +38,18 @@ Route::put('/products/update/{product}', [ProductController::class, 'update'])->
 Route::delete('/products/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 // Route::get('/product_add', [ProductController::class, 'store'])->name('product.store');
 
+
+//PESANAN
+Route::delete('detail_pesanans/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
+
+Route::delete('/pesanan/delete/{id}', [PesananController::class, 'delete'])->name('pesanan.delete');
+Route::patch('/pesanan/edit/{product}', [PesananController::class, 'edit'])->name('pesanan.edit');
+Route::put('/pesanan/update/{product}', [PesananController::class, 'update'])->name('pesanan.update');
+Route::get('/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
+Route::post('/pesanan_add', [PesananController::class, 'create'])->name('pesanan.add');
+Route::get('/pesanan_index', [PesananController::class, 'listPesananUser']);
+Route::get('/pesanan_list', [PesananController::class, 'listPesananUser'])->name('pesanan.list');
+// Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
+
 Auth::routes();
+
