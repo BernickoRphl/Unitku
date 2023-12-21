@@ -86,14 +86,8 @@
                             <td>{{ $pro['price'] }}</td>
                             <td>{{ $pro['color'] }}</td>
                             <td>{{ $pro['category'] }}</td>
-                            <td>{{ $pro['product_image'] }}</td>
+                            <td><img src="public/images/{{ $pro['product_image'] }}" alt="images"></td>
                             <td>
-
-                                {{-- <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button class="btn btn-warning" type="submit">Update</button>
-                                </form> --}}
 
                                 <a href="{{ route('product.edit', $product) }}"><button class="btn btn-warning  text-black"
                                         type="submit">Delete</button>

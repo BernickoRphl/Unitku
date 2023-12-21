@@ -79,24 +79,6 @@ class ProductController extends Controller
         return redirect()->route('product.list')->with('success', 'Product updated successfully');
     }
 
-    // public function edit(Product $product)
-    // {
-    //     dd($product->id);
-
-    //     $productEdit = Product::find($product->id);
-    // dd($product->id);
-
-    // $productEdit = Product::find($product->id);
-
-    //     if (!$productEdit) {
-    //         return redirect()->route('product.list')->with('error', 'Product not found');
-    //     }
-
-    //     $categories = Category::all();
-
-    //     return view('product_edit', compact('productEdit', 'categories'));
-    // }
-
     public function delete($id)
     {
         $product = Product::find($id);
@@ -108,7 +90,7 @@ class ProductController extends Controller
         $product->delete();
 
         // Redirect to a specific page after deletion
-        return redirect('/list_product')->with('status', 'Product deleted successfully');
+        return redirect('/product_list')->with('status', 'Product deleted successfully');
     }
     public function showProduct()
     {
