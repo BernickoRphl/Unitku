@@ -47,9 +47,8 @@ Route::patch('/pesanan/edit/{product}', [PesananController::class, 'edit'])->nam
 Route::put('/pesanan/update/{product}', [PesananController::class, 'update'])->name('pesanan.update');
 Route::get('/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
 Route::post('/pesanan_add', [PesananController::class, 'create'])->name('pesanan.add');
-Route::get('/pesanan_index', [PesananController::class, 'listPesananUser']);
+Route::get('/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
 Route::get('/pesanan_list', [PesananController::class, 'listPesananUser'])->name('pesanan.list');
 // Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
 
 Auth::routes();
-
