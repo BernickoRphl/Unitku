@@ -87,11 +87,14 @@
                             <td>{{ $pro['product_image'] }}</td>
                             <td>
 
-                                <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
+                                {{-- <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
                                     @csrf
                                     @method('PATCH')
                                     <button class="btn btn-warning" type="submit">Update</button>
-                                </form>
+                                </form> --}}
+
+                                <a href="{{ route('product.edit', $pro)}}"><button class="btn btn-warning  text-black" type="submit">Delete</button>
+                                </a>
 
                                 <form method="POST" action="{{ route('product.delete', $pro['id']) }}">
                                     @csrf

@@ -33,7 +33,7 @@ Route::get('/product_add', [ProductController::class, 'add_form'])->name('produc
 Route::post('/product_add', [ProductController::class, 'create'])->name('product.add');
 Route::get('/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
 Route::put('/products/edit/{id}', [ProductController::class, 'update'])->name('product.update');
-Route::patch('/products/{id}', [ProductController::class, 'edit'])->name('product.edit');
+Route::patch('/products//{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
 Route::delete('/products/{id}', [ProductController::class, 'delete'])->name('product.delete');
 // Route::get('/product_add', [ProductController::class, 'store'])->name('product.store');
 

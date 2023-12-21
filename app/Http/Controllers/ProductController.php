@@ -34,28 +34,27 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-            // Create a new product
-            Product::create([
-                'product_name' => $request->product_name,
-                'product_desc' => $request->product_desc,
-                'product_image' => $request->product_image,
-                'price' => $request->price,
-                'color' => $request->color,
-                'category_id' => $request->category_id,
-            ]);
+        // Create a new product
+        Product::create([
+            'product_name' => $request->product_name,
+            'product_desc' => $request->product_desc,
+            'product_image' => $request->product_image,
+            'price' => $request->price,
+            'color' => $request->color,
+            'category_id' => $request->category_id,
+        ]);
 
         return redirect()->route('product.list');
     }
 
     public function edit(Product $product)
 {
-    // Attempt to find the product by its ID
+    dd($product->id);
+
     $productEdit = Product::find($product->id);
 
-    // Check if the product exists
     if (!$productEdit) {
-        // Handle the case where the product is not found
-        return abort(404); // You can customize this based on your needs
+        return redirect()->route('product.list')->with('error', 'Product not found');
     }
 
     $categories = Category::all();
