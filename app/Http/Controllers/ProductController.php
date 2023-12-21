@@ -105,7 +105,7 @@ class ProductController extends Controller
         $product->delete();
 
         // Redirect to a specific page after deletion
-        return redirect('/list_product')->with('status', 'Product deleted successfully');
+        return redirect('/product_list')->with('status', 'Product deleted successfully');
     }
     public function showProduct()
     {
