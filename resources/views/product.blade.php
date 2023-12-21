@@ -12,6 +12,7 @@
         <div class="w-full">
             <div id="carousel-container" class="relative" data-carousel="static">
                 <div class="overflow-hidden relative h-screen rounded-lg sm:h-screen xl:h-screen 2xl:h-screen">
+                    {{-- <div class="overflow-hidden relative h-64 rounded-lg sm:h-96 xl:h-96 2xl:h-96"> --}}
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <span
                             class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First

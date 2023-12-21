@@ -49,7 +49,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)
 {
-    dd($product->id);
+        // dd($product->id);
 
     $productEdit = Product::find($product->id);
 
@@ -59,7 +59,7 @@ class ProductController extends Controller
 
     $categories = Category::all();
 
-    return view('product_edit', compact('productEdit', 'categories'));
+    return view('product.edit', compact('productEdit', 'categories'));
 }
     public function delete($id)
     {
