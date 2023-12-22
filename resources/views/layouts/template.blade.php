@@ -55,23 +55,23 @@
 
                         <div class="flex space-x-4">
 
-                            <a href="/"
+                            <a href="{{ route('home') }}"
                                 class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Home</a>
-                            <a href="/product"
+                            <a href="{{ route('product.show') }}"
                                 class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
-                            <a href="/about"
+                            <a href="{{ route('about') }}"
                                 class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
                             @auth
                                 @if (Auth::user()->isCustomer() || Auth::user()->isSuperadmin())
                                     {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
-                                    <a href="/pesanan_index"
+                                    <a href="{{ route('pesanan.index') }}"
                                         class="{{ request()->is('pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
                                 @endif
                                 @if (Auth::user()->isAdmin())
-                                    <a href="/product_list"
+                                    <a href="{{ route('product.list') }}"
                                         class="{{ request()->is('product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                                         Produk</a>
-                                    <a href="/pesanan_list"
+                                    <a href="{{ route('pesanan.list') }}"
                                         class="{{ request()->is('pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                                         Pesanan</a>
                                 @endif

@@ -94,7 +94,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect()->route('/product_list)');
+        return redirect()->route('product.list');
     }
 
     public function showProduct()
