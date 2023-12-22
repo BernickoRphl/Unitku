@@ -24,14 +24,14 @@
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
                     <button class="btn btn-primary text-black" type="submit">
-                        <a href="{{ route('pesanan.create') }}">Tambah Pesanan</a>
+                        <a href="{{ route('pesanan.add') }}">Tambah Pesanan</a>
                     </button>
                 </div>
             </div>
         </div>
 
-        <form action="/pesanan_list" method="GET" class="form-inline w-25 d-flex gap-2">
-            <input type="form-control" type="search" name="search" placeholder="search">
+        <form action="{{ route('pesanan.list') }}" method="GET" class="form-inline w-25 d-flex gap-2">
+            <input class="form-control" type="search" name="search" placeholder="search">
             <button type="submit" class="btn btn-outline-success">Search</button>
         </form>
 
@@ -47,35 +47,40 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($pesanans as $pesanan)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ $pesanan->user->name }}</td>
-                            <td>{{ $pesanan->tanggal_pemesanan }}</td>
-                            <td>{{ $pesanan->description }}</td>
-                            <td>
-                                <form method="POST" action="{{ route('pesanan.edit', $pesanan->id) }}">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button class="btn btn-warning" type="submit">Update</button>
-                                </form>
+                    @foreach ($pesanans as $order)
+                    <tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>
+                            @if ($order->user)
+                                {{ $order->user_id }}
+                            @else
+                                User not available
+                            @endif
+                        </td>
+                        <td>{{ $order->tanggal_pemesanan }}</td>
+                        <td>{{ $order->description }}</td>
+                        <td>
+                            <form method="POST" action="{{ route('pesanan.edit', $order->id) }}">
+                                @csrf
+                                @method('PATCH')
+                                <button class="btn btn-warning" type="submit">Update</button>
+                            </form>
 
-                                <form method="POST" action="{{ route('pesanan.destroy', $pesanan->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger  text-black" type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
+                            <form method="POST" action="{{ route('pesanan.delete', $order->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger text-black" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
-
             <br>
 
             <div>
                 <!-- Pagination links -->
-                {{ $pesanans->links() }}
+                {{-- {{ $pesanans->links() }} --}}
             </div>
         </div>
     </div>
