@@ -29,7 +29,8 @@
             <input type="form-control" type="search" name="search" placeholder="search"
                 class="form-input border rounded-md px-2 py-1">
 
-            <button type="submit" class="btn btn-outline-success">Search</button>
+            <button type="submit"
+                class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-lg px-2 py-1">Search</button>
 
 
         </form>
