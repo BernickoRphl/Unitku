@@ -136,8 +136,8 @@ class ProductSeeder extends Seeder
             [
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
-                'product_desc' => 'images/Sheets Only',
-                'product_image' => 'sheets black.JPG',
+                'product_desc' => 'Sheets Only',
+                'product_image' => 'images/sheets black.JPG',
                 'price' => '75,000',
                 'color' => 'Black'
             ]

@@ -17,7 +17,7 @@ class ListProdukController extends Controller
         if($request->has('search')){
             $product = product::where('product_name', 'like', "%".$request->search."%")->orwhere('color', 'like', "%".$request->search."%")->paginate(5)->withQueryString();
         }else{
-            $product = product::paginate(5);
+            $product = product::paginate(10);
         }
 
         return view(
