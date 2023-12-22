@@ -42,7 +42,6 @@ class PesananController extends Controller
         if ($request->details) {
             foreach ($request->details as $detail) {
                 $pesanan->detailPesanans()->create([
-                    // 'jumlah' => $detail['jumlah'],
                     'product_id' => $detail['product_id'],
                 ]);
             }
@@ -54,7 +53,7 @@ class PesananController extends Controller
     public function show_all_pesanan(Pesanan $pesanan)
     {
         $user = User::all();
-        $pesanans = Pesanan::all();
+        $pesanans = Pesanan::with('details')->get();
         return view('pesanan_list', compact('pesanans', 'user'));
     }
 

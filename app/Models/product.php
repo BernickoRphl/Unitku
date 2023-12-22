@@ -12,7 +12,7 @@ class product extends Model
 
     public function pesanans()
     {
-        return $this->belongsToMany(Pesanan::class, 'detail_pesanans');
+        return $this->belongsToMany(Pesanan::class, 'detail_pesanans', 'product_id', 'pesanan_id');
     }
 
     public function review()

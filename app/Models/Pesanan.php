@@ -12,7 +12,7 @@ class Pesanan extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'detail_pesanans')->withPivot('jumlah');
+        return $this->belongsToMany(Product::class, 'detail_pesanans', 'pesanan_id', 'product_id');
     }
 
     public function user()
@@ -24,10 +24,10 @@ class Pesanan extends Model
         return $this->belongsTo(Status::class);
     }
 
-    // public function product()
-    // {
-    //     return $this->hasMany(product::class);
-    // }
+    public function details()
+    {
+        return $this->hasMany(DetailPesanan::class);
+    }
     protected $fillable = [
         'tanggal_pemesanan',
         'description',

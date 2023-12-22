@@ -14,11 +14,11 @@
 @section('content')
     <div class="container mx-auto mt-10 mb-10 px-16">
 
-          <button
-                class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-full px-4 py-2 mt-5"
-                type="submit">
-                <a href="{{ route('pesanan.add') }}">Tambah Pesanan</a>
-            </button>
+        <button
+            class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-full px-4 py-2 mt-5"
+            type="submit">
+            <a href="{{ route('pesanan.add') }}">Tambah Pesanan</a>
+        </button>
 
         <form action="{{ route('pesanan.list') }}" method="GET" class="flex items-center gap-2 mt-4">
 
@@ -64,12 +64,15 @@
                             </td>
 
                             <td class="border px-4 py-2">
-                                @if ($order->product)
-                                    {{ $order->product->product_name }}
+                                @if ($order->pesanans)
+                                        {{ $pesanans->product->product_name }}
+                                        <br>
                                 @else
-                                    Product Name
+                                    No Products
                                 @endif
                             </td>
+
+
                             <td class="border px-4 py-2">{{ $order->jumlah }}</td>
                             <td class="border px-4 py-2">{{ $order->tanggal_pemesanan }}</td>
                             <td class="border px-4 py-2">{{ $order->status->name }}</td>
