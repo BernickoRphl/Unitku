@@ -16,17 +16,11 @@
 
         <div class="text-end">
 
-            {{-- <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups"> --}}
-
-                {{-- <div class="btn-group me-2" role="group" aria-label="Basic example"> --}}
-
-                    <button class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-full px-4 py-2 mt-5" type="submit">
-                        <a href="{{ route('product.form') }}">Tambah Produk</a>
-                    </button>
-
-                {{-- </div> --}}
-
-            {{-- </div> --}}
+            <button
+                class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-full px-4 py-2 mt-5"
+                type="submit">
+                <a href="{{ route('product.form') }}">Tambah Produk</a>
+            </button>
 
         </div>
 
@@ -34,7 +28,9 @@
 
             <input type="form-control" type="search" name="search" placeholder="search"
                 class="form-input border rounded-md px-2 py-1">
+
             <button type="submit" class="btn btn-outline-success">Search</button>
+
 
         </form>
 
