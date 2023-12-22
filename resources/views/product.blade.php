@@ -136,7 +136,7 @@
 
                 <div class="video-container">
 
-                    <img src="/resources/images/{{ $product->product_image }}" alt="product images" class="productImages">
+                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="product images" class="productImages">
 
                 </div>
 

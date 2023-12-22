@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('link')
-    <link rel="stylesheet" href="resources/css/home.css">
+    <link rel="stylesheet" href="resources/css/home.css">   
 @endsection
 
 @section('content')
