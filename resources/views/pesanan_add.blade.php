@@ -17,7 +17,14 @@
             <div class="row mb-3">
                 <label for="tanggal_pemesanan" class="col-md-4 col-form-label text-md-end">{{ __('Tanggal Pemesanan') }}</label>
                 <div class="col-md-6">
-                    <input id="tanggal_pemesanan" type="date" class="form-control" name="tanggal_pemesanan" required>
+                    <input id="tanggal_pemesanan" type="date" class="form-control" name="tanggal_pemesanan" value="{{ $currentDate }}" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+                <div class="col-md-6">
+                    <input id="address" type="text" class="form-control" name="address" required>
                 </div>
             </div>
 

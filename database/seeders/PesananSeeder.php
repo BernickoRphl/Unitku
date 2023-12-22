@@ -17,12 +17,14 @@ class PesananSeeder extends Seeder
             [
                 'user_id' => 1,
                 'status_id' => 1,
+                'address' => 'Semarang',
                 'tanggal_pemesanan' => now()->toDateTimeString(),
                 'description' => 'Sample order 1 description.',
             ],
             [
                 'user_id' => 2,
                 'status_id' => 1,
+                'address' => 'Surabaya',
                 'tanggal_pemesanan' => now()->toDateTimeString(),
                 'description' => 'Sample order 2 description.',
             ],

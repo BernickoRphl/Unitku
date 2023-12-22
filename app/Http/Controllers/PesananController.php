@@ -15,44 +15,46 @@ class PesananController extends Controller
     {
         $pesanans = Pesanan::all();
         $product = product::all(); // Adjust this based on your model and database structure
+        $currentDate = now()->toDateString(); // Get the current date
 
-        return view('pesanan_add', compact('pesanans', 'product'));
+        return view('pesanan_add', compact('pesanans', 'product', 'currentDate'));
     }
 
     public function create(Request $request)
-{
-    $user = auth()->user();
+    {
+        $user = auth()->user();
 
-    $statusId = 1; // Set the default status ID here
+        $statusId = 1; // Set the default status ID here
 
-    // Only allow admin to change the status later
-    if ($user->isAdmin()) {
-        $statusId = $request->status_id;
-    }
-
-    $pesanan = $user->pesanans()->create([
-        'tanggal_pemesanan' => $request->tanggal_pemesanan,
-        'description' => $request->description,
-        'status_id' => $statusId,
-    ]);
-
-    if ($request->details) {
-        foreach ($request->details as $detail) {
-            $pesanan->detailPesanans()->create([
-                'jumlah' => $detail['jumlah'],
-                'product_id' => $detail['product_id'],
-            ]);
+        // Only allow admin to change the status later
+        if ($user->isAdmin()) {
+            $statusId = $request->status_id;
         }
-    }
 
-    return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
-}
+        $pesanan = $user->pesanans()->create([
+            'tanggal_pemesanan' => now()->toDateString(),
+            'address' => $request->address,
+            'description' => $request->description,
+            'status_id' => $statusId,
+        ]);
+
+        if ($request->details) {
+            foreach ($request->details as $detail) {
+                $pesanan->detailPesanans()->create([
+                    'jumlah' => $detail['jumlah'],
+                    'product_id' => $detail['product_id'],
+                ]);
+            }
+        }
+
+        return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
+    }
 
     public function show_all_pesanan(Pesanan $pesanan)
     {
         $user = User::all();
         $pesanans = Pesanan::all();
-        return view('pesanan_list', compact('pesanans','user'));
+        return view('pesanan_list', compact('pesanans', 'user'));
     }
 
     public function edit(Pesanan $pesanan)
