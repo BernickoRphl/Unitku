@@ -45,7 +45,7 @@
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
                         <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
-                        <th scope="col" class="px-4 py-2 text-center">Action</th>
+                        {{-- <th scope="col" class="px-4 py-2 text-center">Action</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -72,16 +72,16 @@
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
                             <td class="border px-4 py-2">
-                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
+                                {{-- <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
                                     @csrf
                                     @method('PATCH')
                                     <button class="btn btn-warning" type="submit">Update</button>
-                                </form>
-                                <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
+                                </form> --}}
+                                {{-- <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger text-black" type="submit">Delete</button>
-                                </form>
+                                </form> --}}
                             </td>
                         </tr>
                     @endforeach

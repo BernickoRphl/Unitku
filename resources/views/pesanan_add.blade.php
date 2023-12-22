@@ -51,7 +51,7 @@
                 <label for="products" class="col-md-4 col-form-label text-md-end">{{ __('Products') }}</label>
                 <div class="col-md-6">
                     <!-- Use the Select2 library for an enhanced dropdown -->
-                    <select name="products[]" id="products" multiple required>
+                    <select name="products" id="products" multiple required>
                         @foreach ($product as $pro)
                             <option value="{{ $pro->id }}" data-image="{{ asset('storage/' . $pro->product_image) }}">
                                 {{ $pro->product_name }}

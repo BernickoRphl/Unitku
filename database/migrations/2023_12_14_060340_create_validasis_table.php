@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('status_id')->constrained('statuses');
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->date('tanggal_pemesanan');
             $table->integer('jumlah');
             $table->string('address');

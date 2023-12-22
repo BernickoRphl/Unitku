@@ -16,6 +16,7 @@ class PesananSeeder extends Seeder
         $pesanans = [
             [
                 'user_id' => 1,
+                'product_id' => 1,
                 'status_id' => 1,
                 'address' => 'Semarang',
                 'jumlah' => 1,
@@ -25,6 +26,7 @@ class PesananSeeder extends Seeder
             [
                 'user_id' => 2,
                 'status_id' => 1,
+                'product_id' => 2,
                 'address' => 'Surabaya',
                 'jumlah' => 1,
                 'tanggal_pemesanan' => now()->toDateTimeString(),
