@@ -53,7 +53,7 @@
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>
                             @if ($order->user)
-                                {{ $order->user_id }}
+                                {{ $order->user->name }}
                             @else
                                 User not available
                             @endif
