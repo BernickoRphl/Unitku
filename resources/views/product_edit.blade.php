@@ -62,15 +62,11 @@
 
             <div class="row mb-3 flex justify-center items-center">
 
-                <img src="{{ asset('storage/' . $productEdit->product_image) }}" alt="{{ $productEdit->product_name }}">
+                <img id="imagePreview"
+                    src="{{ $productEdit->product_image ? asset('storage/' . $productEdit->product_image) : '#' }}"
+                    alt="{{ $productEdit->product_name }}"
+                    class="w-80 h-auto @if (!$productEdit->product_image) hidden @endif">
 
-                @if ($productEdit->product_image)
-                    <img src="{{ asset('storage/' . $productEdit->product_image) }}"
-                        alt="{{ $productEdit->product_name }}" style="display: none" class="w-60 h-auto">
-                @else
-                    <img id="imagePreview" src="#" alt="Product Image" style="display: none"
-                        class="w-60 h-auto image-fluid mb-3 col-sm-5">
-                @endif
             </div>
 
             <div class="row mb-3">

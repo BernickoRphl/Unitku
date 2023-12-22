@@ -61,7 +61,7 @@
 
             <div class="row mb-3 flex justify-center items-center">
 
-                <img id="imagePreview" src="#" alt="Product Image" style="display: none" class="w-60 h-auto">
+                <img id="imagePreview" src="#" alt="Product Image" style="display: none" class="w-80 h-auto">
 
             </div>
 
