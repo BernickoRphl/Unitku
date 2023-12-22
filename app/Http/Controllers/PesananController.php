@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pesanan;
 use App\Models\DetailPesanan;
 use App\Models\product;
+use App\Models\status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,7 +38,8 @@ class PesananController extends Controller
             'description' => $request->description,
             'jumlah' => $request->jumlah,
             'status_id' => $statusId,
-            'product_id' =>  $request->product_id,
+            'product_id' => $request->products,
+
         ]);
 
         if ($request->details) {
@@ -61,26 +63,30 @@ class PesananController extends Controller
 
     public function edit(Pesanan $pesanan)
     {
-        return view('pesanans.edit', compact('pesanan'));
+        $status = status::all();
+        $detail = DetailPesanan::all();
+        $user = User::all();
+        $pesananEdit = Pesanan::where('id', $pesanan->id)->first();
+        return view('pesanan_edit', compact('pesananEdit','user','detail','status'));
     }
 
     public function update(Request $request, Pesanan $pesanan)
     {
         $pesanan->update([
-            'tanggal_pemesanan' => $request->tanggal_pemesanan,
+            'address' => $request->address,
             'description' => $request->description,
+            'jumlah' => $request->jumlah,
+            'status_id' => $request->status ?? $pesanan->status, // Use the existing value if not provided
+            'product_id' => $request->products,
         ]);
-
-        // Handle details update if needed
-
-        return redirect()->route('pesanans.index')->with('success', 'Pesanan updated successfully');
+        return redirect()->route('pesanan.list')->with('success', 'Pesanan updated successfully');
     }
 
     public function delete(Pesanan $pesanan)
     {
         $pesanan->delete();
 
-        return redirect()->route('pesanans.index')->with('success', 'Pesanan deleted successfully');
+        return redirect()->route('pesanan.list')->with('success', 'Pesanan deleted successfully');
     }
 
 

@@ -27,15 +27,15 @@ Route::get('/about', [TeamController::class, 'showTeam'])->name('about');
 Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.list');
 
 //PESANAN
-Route::delete('/pesanan/delete/{product}', [PesananController::class, 'delete'])->name('pesanan.destroy');
-Route::delete('/pesanan/pesanan_detail/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
-Route::patch('/pesanan/edit/{product}', [PesananController::class, 'edit'])->name('pesanan.edit');
+Route::delete('/pesanan/delete/{pesanan}', [PesananController::class, 'delete'])->name('pesanan.destroy');
+Route::patch('/pesanan/edit/{pesanan}', [PesananController::class, 'edit'])->name('pesanan.edit');
 Route::get('/pesanan/order_history', [ProductController::class, 'showProductOrdered'])->name('pesanan.history');
 Route::get('/pesanan/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
 Route::post('/pesanan/pesanan_create', [PesananController::class, 'create'])->name('pesanan.add');
+Route::delete('/pesanan/pesanan_detail/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
 Route::get('/pesanan/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
 Route::get('/pesanan/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
-Route::put('/pesanan/update/{product}', [PesananController::class, 'update'])->name('pesanan.update');
+Route::put('/pesanan/update/{pesanan}', [PesananController::class, 'update'])->name('pesanan.update');
 // Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
 
 
