@@ -43,12 +43,12 @@
 
             <div class="row mb-3">
 
-                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Update Image') }}</label>
 
                 <div class="col-md-6">
 
                     <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
-                        name="product_image" value="{{ $productEdit->product_image }}" required accept="image/*">
+                        name="product_image" required accept="image/*">
 
                     @error('product_image')
                         <span class="invalid-feedback" role="alert">
@@ -57,6 +57,15 @@
                     @enderror
 
                 </div>
+
+            </div>
+
+            <div class="row mb-3 flex justify-center items-center">
+
+                <img id="imagePreview"
+                    src="{{ $productEdit->product_image ? asset('storage/' . $productEdit->product_image) : '#' }}"
+                    alt="{{ $productEdit->product_name }}"
+                    class="w-80 h-auto @if (!$productEdit->product_image) hidden @endif">
 
             </div>
 
@@ -125,18 +134,40 @@
     </div>
 
     <script>
+        // FORMATER PRICE
         function formatCurrency(input) {
+            let numericValue = input.value.replace(/[^0-9.]/g, '');
 
-            let numericValue = input.value.replace(/[^0-9]/g, '');
+            numericValue = numericValue.replace(/,/g, '');
 
-            input.value = parseFloat(numericValue).toLocaleString('en-US');
+            let floatValue = parseFloat(numericValue);
 
+            if (isNaN(floatValue)) {
+                floatValue = 0;
+            }
+
+            input.value = floatValue.toLocaleString('en-US');
         }
 
         document.getElementById('price').addEventListener('input', function() {
-
             formatCurrency(this);
+        });
 
+        // Tambahkan fungsi untuk menampilkan pratinjau gambar
+        document.getElementById('product_image').addEventListener('change', function(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = reader.result;
+                imagePreview.style.display = 'block';
+            };
+
+            // Membaca file gambar yang dipilih
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
         });
     </script>
 @endsection
