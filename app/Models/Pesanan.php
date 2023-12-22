@@ -9,16 +9,6 @@ class Pesanan extends Model
 {
     use HasFactory;
 
-    public function detail_pesanan()
-    {
-        return $this->hasOne(Detail_Pesanan::class);
-    }
-
-    public function validasi()
-    {
-        return $this->hasOne(Validasi::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -27,9 +17,15 @@ class Pesanan extends Model
     {
         return $this->belongsTo(Status::class);
     }
+
+    // public function product()
+    // {
+    //     return $this->hasMany(product::class);
+    // }
     protected $fillable = [
         'tanggal_pemesanan',
         'description',
+        'jumlah',
         'user_id',
         'status_id'
     ];

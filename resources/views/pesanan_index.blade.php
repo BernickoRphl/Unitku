@@ -43,6 +43,7 @@
                         <th scope="col">User</th>
                         <th scope="col">Product</th>
                         <th scope="col">Tanggal Pemesanan</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -51,9 +52,16 @@
                     @foreach ($pesanan as $pesanans)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ optional($pesanans->user)->name }}</td>
-                            <td>{{ optional($pesanans->product)->name }}</td>
+                            <td>{{ $pesanans->user->name }}</td>
+                            <td>
+                                @if ($pesanans->product)
+                                    {{ $pesanans->product->product_name }}
+                                @else
+                                    Product Name
+                                @endif
+                            </td>
                             <td>{{ $pesanans->tanggal_pemesanan }}</td>
+                            <td>{{ $pesanans->status->name }}</td>
                             <td>{{ $pesanans->description }}</td>
                             <td>
                                 <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
@@ -62,7 +70,7 @@
                                     <button class="btn btn-warning" type="submit">Update</button>
                                 </form>
 
-                                <form method="POST" action="{{ route('pesanan.delete', $pesanans->id) }}">
+                                <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger  text-black" type="submit">Delete</button>

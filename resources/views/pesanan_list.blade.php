@@ -43,6 +43,7 @@
                         <th scope="col">User</th>
                         <th scope="col">Product</th>
                         <th scope="col">Tanggal Pemesanan</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -58,8 +59,9 @@
                                 User not available
                             @endif
                         </td>
-                        <td>{{ $order->product_id }}</td>
+                        {{-- <td>{{ $order->product->name }}</td> --}}
                         <td>{{ $order->tanggal_pemesanan }}</td>
+                        <td>{{ $order->status->name }}</td>
                         <td>{{ $order->description }}</td>
                         <td>
                             <form method="POST" action="{{ route('pesanan.edit', $order->id) }}">

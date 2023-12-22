@@ -25,6 +25,12 @@ class product extends Model
         return $this->belongsToMany(Category::class);
     }
 
+
+    // public function pesanan()
+    // {
+    //     return $this->belongsTo(Pesanan::class);
+    // }
+
     protected $fillable =
     [
         'product_name',
