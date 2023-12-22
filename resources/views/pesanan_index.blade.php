@@ -40,8 +40,10 @@
                         <th scope="col" class="px-4 py-2 text-center">No</th>
                         <th scope="col" class="px-4 py-2 text-center">User</th>
                         <th scope="col" class="px-4 py-2 text-center">Product</th>
+                        <th scope="col" class="px-4 py-2 text-center">Jumlah</th>
                         <th scope="col" class="px-4 py-2 text-center">Tanggal Pemesanan</th>
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
+                        <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
                         <th scope="col" class="px-4 py-2 text-center">Action</th>
                     </tr>
@@ -64,8 +66,10 @@
                                     Product Name
                                 @endif
                             </td>
+                            <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->tanggal_pemesanan }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
+                            <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
                             <td class="border px-4 py-2">
                                 <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">

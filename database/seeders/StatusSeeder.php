@@ -13,6 +13,7 @@ class StatusSeeder extends Seeder
      */
     public function run()
     {
+        status::create(['name' => 'Menunggu Persetujuan']);
         status::create(['name' => 'Dipesan']);
         status::create(['name' => 'Diantar']);
         status::create(['name' => 'Sampai']);

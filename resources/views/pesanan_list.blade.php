@@ -45,15 +45,15 @@
                 <thead class="bg-gray-800 text-white">
 
                     <tr>
-
                         <th scope="col" class="px-4 py-2 text-center">No</th>
                         <th scope="col" class="px-4 py-2 text-center">User</th>
                         <th scope="col" class="px-4 py-2 text-center">Product</th>
+                        <th scope="col" class="px-4 py-2 text-center">Jumlah</th>
                         <th scope="col" class="px-4 py-2 text-center">Tanggal Pemesanan</th>
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
+                        <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
                         <th scope="col" class="px-4 py-2 text-center">Action</th>
-
                     </tr>
 
                 </thead>
@@ -80,9 +80,10 @@
                                     Product Name
                                 @endif
                             </td>
-
+                            <td class="border px-4 py-2">{{ $order->jumlah }}</td>
                             <td class="border px-4 py-2">{{ $order->tanggal_pemesanan }}</td>
                             <td class="border px-4 py-2">{{ $order->status->name }}</td>
+                            <td class="border px-4 py-2">{{ $order->address }}</td>
                             <td class="border px-4 py-2">{{ $order->description }}</td>
 
                             <td class="border px-4 py-2">

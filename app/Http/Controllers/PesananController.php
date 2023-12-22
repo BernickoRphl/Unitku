@@ -35,13 +35,14 @@ class PesananController extends Controller
             'tanggal_pemesanan' => now()->toDateString(),
             'address' => $request->address,
             'description' => $request->description,
+            'jumlah' => $request->jumlah,
             'status_id' => $statusId,
         ]);
 
         if ($request->details) {
             foreach ($request->details as $detail) {
                 $pesanan->detailPesanans()->create([
-                    'jumlah' => $detail['jumlah'],
+                    // 'jumlah' => $detail['jumlah'],
                     'product_id' => $detail['product_id'],
                 ]);
             }

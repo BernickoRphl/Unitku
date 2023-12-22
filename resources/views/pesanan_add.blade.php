@@ -49,11 +49,11 @@
             </div>
 
             <div class="row mb-3">
-                <label for="quantities" class="col-md-4 col-form-label text-md-end">{{ __('Quantities') }}</label>
+                <label for="jumlah" class="col-md-4 col-form-label text-md-end">{{ __('Jumlah') }}</label>
                 <div class="col-md-6">
                     <!-- Add input fields for quantities -->
                     <!-- Example: -->
-                    <input id="quantities" type="text" class="form-control" name="quantities" required>
+                    <input id="jumlah" type="text" class="form-control" name="jumlah" required>
                 </div>
             </div>
 
