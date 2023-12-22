@@ -42,7 +42,7 @@
 
             <div class="row mb-3">
 
-                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Upload Image') }}</label>
 
                 <div class="col-md-6">
 
@@ -136,21 +136,6 @@
                 floatValue = 0;
             }
 
-            input.value = floatValue.toLocaleString('en-US');
-        }
-
-        document.getElementById('price').addEventListener('input', function() {
-            formatCurrency(this);
-        });
-
-        // IMAGES
-        function formatCurrency(input) {
-            let numericValue = input.value.replace(/[^0-9.]/g, '');
-            numericValue = numericValue.replace(/,/g, '');
-            let floatValue = parseFloat(numericValue);
-            if (isNaN(floatValue)) {
-                floatValue = 0;
-            }
             input.value = floatValue.toLocaleString('en-US');
         }
 
