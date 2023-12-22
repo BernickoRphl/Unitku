@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto mt-10 mb-10">
+    <div class="container mx-auto mt-10 mb-10 px-16">
 
         <div class="text-end">
 

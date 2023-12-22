@@ -12,23 +12,13 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto mt-5 mb-5">
+    <div class="container mx-auto mt-10 mb-10 px-16">
 
-        <div class="text-end">
-
-            <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
-
-                <div class="btn-group me-2" role="group" aria-label="Basic example">
-
-                    <button class="btn btn-primary text-black" type="submit">
-                        <a href="{{ route('product.form') }}">Tambah Produk</a>
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
+          <button
+                class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-full px-4 py-2 mt-5"
+                type="submit">
+                <a href="{{ route('pesanan.add') }}">Tambah Pesanan</a>
+            </button>
 
         <form action="{{ route('pesanan.list') }}" method="GET" class="flex items-center gap-2 mt-4">
 
