@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pesanan;
 use App\Models\DetailPesanan;
 use App\Models\product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,22 +27,25 @@ class PesananController extends Controller
         'tanggal_pemesanan' => $request->tanggal_pemesanan,
         'description' => $request->description,
     ]);
+
     if ($request->details) {
         foreach ($request->details as $detail) {
-        $pesanan->detailPesanans()->create([
-            'jumlah' => $detail['jumlah'],
-            'product_id' => $detail['product_id'],
-        ]);
-    }
+            $pesanan->detailPesanans()->create([
+                'jumlah' => $detail['jumlah'],
+                'product_id' => $detail['product_id'],
+            ]);
+        }
     }
 
-    return redirect()->route('pesanan.list')->with('success', 'Pesanan created successfully');
+    return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
 }
 
 
-    public function show_pesanan(Pesanan $pesanan)
+    public function show_all_pesanan(Pesanan $pesanan)
     {
-        return view('pesanan.list', compact('pesanan'));
+        $user = User::all();
+        $pesanans = Pesanan::all();
+        return view('pesanan_list', compact('pesanans','user'));
     }
 
     public function edit(Pesanan $pesanan)
