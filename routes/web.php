@@ -28,7 +28,7 @@ Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('a
 
 //PESANAN
 Route::delete('/pesanan/delete/{product}', [PesananController::class, 'delete'])->name('pesanan.destroy');
-// Route::delete('/pesanan/detail_pesanans/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
+Route::delete('/pesanan/pesanan_detail/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
 Route::patch('/pesanan/edit/{product}', [PesananController::class, 'edit'])->name('pesanan.edit');
 Route::get('/pesanan/order_history', [ProductController::class, 'showProductOrdered'])->name('pesanan.history');
 Route::get('/pesanan/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
