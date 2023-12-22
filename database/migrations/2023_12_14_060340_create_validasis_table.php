@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('status_id')->constrained('statuses');
             $table->date('tanggal_pemesanan');
+            $table->integer('jumlah');
+            $table->string('address');
             $table->string('description');
             $table->timestamps();
         });

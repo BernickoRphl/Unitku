@@ -26,6 +26,7 @@ class Pesanan extends Model
         'tanggal_pemesanan',
         'description',
         'jumlah',
+        'address',
         'user_id',
         'status_id'
     ];
