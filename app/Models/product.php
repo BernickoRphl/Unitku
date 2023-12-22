@@ -10,10 +10,10 @@ class product extends Model
 {
     use HasFactory;
 
-    // public function customer()
-    // {
-    //     return $this->belongsTo(Customer::class);
-    // }
+    public function pesanans()
+    {
+        return $this->belongsToMany(Pesanan::class, 'detail_pesanans');
+    }
 
     public function review()
     {
