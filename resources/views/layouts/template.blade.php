@@ -167,7 +167,7 @@
 
     </nav>
 
-    <div class="mt-40 mb20">
+    <div class="mt-20">
 
         @yield('content')
 
