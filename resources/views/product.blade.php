@@ -17,8 +17,6 @@
 
                 <div class="overflow-hidden relative h-screen rounded-lg sm:h-screen xl:h-screen 2xl:h-screen">
 
-                    {{-- <div class="overflow-hidden relative h-64 rounded-lg sm:h-96 xl:h-96 2xl:h-96"> --}}
-
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
                         <span
