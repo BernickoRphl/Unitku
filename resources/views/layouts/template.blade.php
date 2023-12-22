@@ -66,6 +66,10 @@
                                     <a href="{{ route('pesanan.index') }}"
                                         class="{{ request()->is('pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
                                 @endif
+                                @if (Auth::user()->isSuperadmin())
+                                <a href="{{ route('admin.list') }}"
+                                    class="{{ request()->is('list_admin') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List Admin</a>
+                            @endif
                                 @if (Auth::user()->isAdmin())
                                     <a href="{{ route('product.list') }}"
                                         class="{{ request()->is('product/product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List

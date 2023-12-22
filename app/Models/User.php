@@ -51,20 +51,23 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function isSuperadmin(): bool{
-        if($this->role_id == 1){
+    public function isSuperadmin(): bool
+    {
+        if ($this->role_id == 1) {
             return true;
         }
         return false;
     }
-    public function isAdmin(): bool{
-        if($this->role_id == 2){
+    public function isAdmin(): bool
+    {
+        if ($this->role_id == 2) {
             return true;
         }
         return false;
     }
-    public function isCustomer(): bool{
-        if($this->role_id == 3){
+    public function isCustomer(): bool
+    {
+        if ($this->role_id == 3) {
             return true;
         }
         return false;
@@ -72,5 +75,9 @@ class User extends Authenticatable
     public function pesanans()
     {
         return $this->hasMany(Pesanan::class);
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\DetailPesananController;
 use App\Http\Controllers\ListProdukController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [TeamController::class, 'showTeam'])->name('about');
 
+Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.list');
 
 //PESANAN
 Route::delete('/pesanan/delete/{product}', [PesananController::class, 'delete'])->name('pesanan.destroy');
