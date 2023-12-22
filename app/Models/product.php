@@ -10,6 +10,8 @@ class product extends Model
 {
     use HasFactory;
 
+
+
     public function product_detail()
     {
         return $this->hasMany(DetailPesanan::class, 'product_id', 'id');

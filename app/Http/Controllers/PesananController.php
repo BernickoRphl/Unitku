@@ -50,13 +50,13 @@ class PesananController extends Controller
         return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
     }
 
-    public function show_all_pesanan()
-{
-    // Eager load the necessary relationships
-    $pesanans = Pesanan::with(['user', 'status', 'pesanan_detail'])->get();
-
-    return view('pesanan_list', compact('pesanans'));
-}
+    public function show_all_pesanan(Pesanan $pesanan)
+    {
+        $detail = DetailPesanan::all();
+        $user = User::all();
+        $pesanans = Pesanan::all();
+        return view('pesanan_list', compact('pesanans', 'user', 'detail'));
+    }
 
     public function edit(Pesanan $pesanan)
     {
