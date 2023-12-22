@@ -18,8 +18,6 @@
 @section('content')
     <div class="container mt-5 mb-5">
 
-        <h1>List Product</h1>
-
         <div class="text-end">
 
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
