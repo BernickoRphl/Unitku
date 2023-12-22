@@ -57,6 +57,7 @@
                                 User not available
                             @endif
                         </td>
+                        <td>{{ $order->produk }}</td>
                         <td>{{ $order->tanggal_pemesanan }}</td>
                         <td>{{ $order->description }}</td>
                         <td>
