@@ -86,19 +86,17 @@ class ProductController extends Controller
     }
 
 
-    public function delete($id)
+    public function destroy(Product $product)
     {
-        $product = Product::find($id);
-
-        if (!$product) {
-            return response()->json(['message' => 'Product not found'], 404);
+        if ($product->product_image) {
+            Storage::disk('public')->delete($product->product_image);
         }
 
         $product->delete();
 
-        // Redirect to a specific page after deletion
-        return redirect('/product_list')->with('status', 'Product deleted successfully');
+        return redirect()->route('/product_list)');
     }
+
     public function showProduct()
     {
         $products = Product::all();
@@ -112,6 +110,7 @@ class ProductController extends Controller
 
         return view('order_history', ['products' => $products]);
     }
+
     public function show_product(Product $product)
     {
         return view(

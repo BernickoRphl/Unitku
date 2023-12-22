@@ -10,6 +10,19 @@
 
 @section('content')
     <div class="mt-40 mb-40">
+        @if ($errors->any())
+            <div>
+
+                <ul>
+
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+
+                </ul>
+
+            </div>
+        @endif
 
         <form method="POST" action="{{ route('product.update', $productEdit) }}" enctype="multipart/form-data">
             @csrf
