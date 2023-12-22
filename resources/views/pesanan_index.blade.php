@@ -62,7 +62,7 @@
                                     <button class="btn btn-warning" type="submit">Update</button>
                                 </form>
 
-                                <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
+                                <form method="POST" action="{{ route('pesanan.delete', $pesanans->id) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger  text-black" type="submit">Delete</button>
