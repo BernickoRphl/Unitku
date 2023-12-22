@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -63,25 +64,27 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         if ($request->hasFile('product_image')) {
-            $imageName = time() . '.' . $request->product_image->extension();
-            $request->product_image->move(public_path('uploads'), $imageName);
+            if ($request->oldImage) {
+                Storage::disk('public')->delete($request->oldImage);
+            }
+
+            $productImage = $request->file('product_image')->store('images', ['disk' => 'public']);
         } else {
-            $imageName = $product->product_image;
+            $productImage = $request->oldImage;
         }
 
-        $product->update(
-            [
-                'product_name' => $request->product_name,
-                'product_desc' => $request->product_desc,
-                'product_image' => $imageName,
-                'price' => $request->price,
-                'color' => $request->color,
-                'category_id' => $request->category_id
-            ]
-        );
+        $product->update([
+            'product_name' => $request->product_name,
+            'product_desc' => $request->product_desc,
+            'product_image' => $productImage,
+            'price' => $request->price,
+            'color' => $request->color,
+            'category_id' => $request->category_id
+        ]);
 
         return redirect()->route('product.list')->with('success', 'Product updated successfully');
     }
+
 
     public function delete($id)
     {
