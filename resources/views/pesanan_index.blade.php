@@ -20,7 +20,7 @@
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
                     <button class="btn btn-primary text-black" type="submit">
-                        <a href="{{ route('pesanan.add') }}">Tambah Pesanan</a>
+                        <a href="{{ route('pesanan.form') }}">Tambah Pesanan</a>
                     </button>
                 </div>
             </div>
