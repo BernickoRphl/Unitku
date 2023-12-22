@@ -41,7 +41,7 @@ Route::get('/product', [ProductController::class, 'showProduct'])->name('product
 Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 Route::patch('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
 Route::post('/product/product_create', [ProductController::class, 'create'])->name('product.add');
-Route::get('/product/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
+Route::get('/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
 Route::put('/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/product/{product}', [ProductController::class, 'show_product']);
 Route::get('/product_add', [ProductController::class, 'add_form'])->name('product.form');
