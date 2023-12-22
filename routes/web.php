@@ -24,27 +24,27 @@ Route::get('/about', [TeamController::class, 'showTeam'])->name('about');
 
 
 //PESANAN
-Route::get('/pesanan/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
-Route::get('/pesanan/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
+Route::delete('/pesanan/delete/{product}', [PesananController::class, 'delete'])->name('pesanan.destroy');
+Route::delete('/pesanan/detail_pesanans/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
+Route::patch('/pesanan/edit/{product}', [PesananController::class, 'edit'])->name('pesanan.edit');
 Route::get('/pesanan/order_history', [ProductController::class, 'showProductOrdered'])->name('pesanan.history');
 Route::get('/pesanan/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
 Route::post('/pesanan/pesanan_create', [PesananController::class, 'create'])->name('pesanan.add');
-Route::patch('/pesanan/edit/{product}', [PesananController::class, 'edit'])->name('pesanan.edit');
+Route::get('/pesanan/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
+Route::get('/pesanan/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
 Route::put('/pesanan/update/{product}', [PesananController::class, 'update'])->name('pesanan.update');
-Route::delete('/pesanan/destroy/{product}', [PesananController::class, 'destroy'])->name('pesanan.destroy');
-Route::delete('/pesanan/detail_pesanans/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
 // Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
 
 
 //PRODUCT
 Route::get('/product', [ProductController::class, 'showProduct'])->name('product.show');
+Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+Route::patch('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+Route::post('/product/product_create', [ProductController::class, 'create'])->name('product.add');
 Route::get('/product/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
+Route::put('/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/product/{product}', [ProductController::class, 'show_product']);
 Route::get('/product_add', [ProductController::class, 'add_form'])->name('product.form');
-Route::post('/product/product_create', [ProductController::class, 'create'])->name('product.add');
-Route::patch('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
-Route::put('/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
-Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 // Route::get('/product_add', [ProductController::class, 'store'])->name('product.store');
 
 Auth::routes();
