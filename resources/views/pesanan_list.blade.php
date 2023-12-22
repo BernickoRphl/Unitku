@@ -60,8 +60,8 @@
                             </td>
 
                             <td class="border px-4 py-2">
-                                @if ($order->pesanans)
-                                    {{ $pesanans->product->product_name }}
+                                @if ($order->product_detail)
+                                    {{ $order->product_detail->product_name }}
                                     <br>
                                 @else
                                     No Products
