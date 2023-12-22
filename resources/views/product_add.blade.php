@@ -59,6 +59,12 @@
 
             </div>
 
+            <div class="row mb-3 flex justify-center items-center">
+
+                <img id="imagePreview" src="#" alt="Product Image" style="display: none" class="w-60 h-auto">
+
+            </div>
+
             <div class="row mb-3">
 
                 <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
@@ -118,6 +124,7 @@
     </div>
 
     <script>
+        // FORMATER PRICE
         function formatCurrency(input) {
             let numericValue = input.value.replace(/[^0-9.]/g, '');
 
@@ -134,6 +141,38 @@
 
         document.getElementById('price').addEventListener('input', function() {
             formatCurrency(this);
+        });
+
+        // IMAGES
+        function formatCurrency(input) {
+            let numericValue = input.value.replace(/[^0-9.]/g, '');
+            numericValue = numericValue.replace(/,/g, '');
+            let floatValue = parseFloat(numericValue);
+            if (isNaN(floatValue)) {
+                floatValue = 0;
+            }
+            input.value = floatValue.toLocaleString('en-US');
+        }
+
+        document.getElementById('price').addEventListener('input', function() {
+            formatCurrency(this);
+        });
+
+        // Tambahkan fungsi untuk menampilkan pratinjau gambar
+        document.getElementById('product_image').addEventListener('change', function(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = reader.result;
+                imagePreview.style.display = 'block';
+            };
+
+            // Membaca file gambar yang dipilih
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
         });
     </script>
 @endsection
