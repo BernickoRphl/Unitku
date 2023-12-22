@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
@@ -29,16 +31,18 @@ class ProductController extends Controller
         $product = new Product(); // Instantiate an empty Product
         $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
 
-        return view('product_add', ['product' => $product, 'categories' => $categories]);
+        return view('product_add', compact('product', 'categories'));
     }
 
     public function create(Request $request)
     {
+        $productImage = $request->file('product_image')->store('images', ['disk' => 'public']);
+
         // Create a new product
         Product::create([
             'product_name' => $request->product_name,
             'product_desc' => $request->product_desc,
-            'product_image' => $request->product_image,
+            'product_image' => $productImage,
             'price' => $request->price,
             'color' => $request->color,
             'category_id' => $request->category_id,

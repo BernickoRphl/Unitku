@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set.JPG',
+                'product_image' => 'images/full set.JPG',
                 'price' => '375,000',
                 'color' => 'Dark Green + Pink + White'
             ]
@@ -29,7 +29,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '2',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set white.JPG',
+                'product_image' => 'images/full set white.JPG',
                 'price' => '375,000',
                 'color' => 'Full White'
             ]
@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets.JPG',
+                'product_image' => 'images/sheets.JPG',
                 'price' => '75,000',
                 'color' => 'White'
             ]
@@ -51,7 +51,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets black.JPG',
+                'product_image' => 'images/sheets black.JPG',
                 'price' => '75,000',
                 'color' => 'Black'
             ]
@@ -61,7 +61,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set.JPG',
+                'product_image' => 'images/full set.JPG',
                 'price' => '375,000',
                 'color' => 'Dark Green + Pink + White'
             ]
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '2',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set white.JPG',
+                'product_image' => 'images/full set white.JPG',
                 'price' => '375,000',
                 'color' => 'Full White'
             ]
@@ -83,7 +83,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets.JPG',
+                'product_image' => 'images/sheets.JPG',
                 'price' => '75,000',
                 'color' => 'White'
             ]
@@ -94,7 +94,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets black.JPG',
+                'product_image' => 'images/sheets black.JPG',
                 'price' => '75,000',
                 'color' => 'Black'
             ]
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set.JPG',
+                'product_image' => 'images/full set.JPG',
                 'price' => '375,000',
                 'color' => 'Dark Green + Pink + White'
             ]
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '2',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set white.JPG',
+                'product_image' => 'images/full set white.JPG',
                 'price' => '375,000',
                 'color' => 'Full White'
             ]
@@ -126,7 +126,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets.JPG',
+                'product_image' => 'images/sheets.JPG',
                 'price' => '75,000',
                 'color' => 'White'
             ]
@@ -136,7 +136,7 @@ class ProductSeeder extends Seeder
             [
                 // 'customer_id' => '1',
                 'product_name' => 'Sheets',
-                'product_desc' => 'Sheets Only',
+                'product_desc' => 'images/Sheets Only',
                 'product_image' => 'sheets black.JPG',
                 'price' => '75,000',
                 'color' => 'Black'
@@ -147,7 +147,7 @@ class ProductSeeder extends Seeder
                 // 'customer_id' => '1',
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set.JPG',
+                'product_image' => 'images/full set.JPG',
                 'price' => '375,000',
                 'color' => 'Dark Green + Pink + White'
             ]
@@ -157,7 +157,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set white.JPG',
+                'product_image' => 'images/full set white.JPG',
                 'price' => '375,000',
                 'color' => 'Full White'
             ]
@@ -167,7 +167,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets.JPG',
+                'product_image' => 'images/sheets.JPG',
                 'price' => '75,000',
                 'color' => 'White'
             ]
@@ -177,7 +177,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets black.JPG',
+                'product_image' => 'images/sheets black.JPG',
                 'price' => '75,000',
                 'color' => 'Black'
             ]
@@ -186,7 +186,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set.JPG',
+                'product_image' => 'images/full set.JPG',
                 'price' => '375,000',
                 'color' => 'Dark Green + Pink + White'
             ]
@@ -196,7 +196,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
-                'product_image' => 'full set white.JPG',
+                'product_image' => 'images/full set white.JPG',
                 'price' => '375,000',
                 'color' => 'Full White'
             ]
@@ -206,7 +206,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets.JPG',
+                'product_image' => 'images/sheets.JPG',
                 'price' => '75,000',
                 'color' => 'White'
             ]
@@ -216,7 +216,7 @@ class ProductSeeder extends Seeder
             [
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
-                'product_image' => 'sheets black.JPG',
+                'product_image' => 'images/sheets black.JPG',
                 'price' => '75,000',
                 'color' => 'Black'
             ]

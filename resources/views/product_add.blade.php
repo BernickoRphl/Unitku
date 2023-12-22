@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="mt-40 mb-40">
-        <form method="POST" action="{{ route('product.add') }}">
+        <form method="POST" action="{{ route('product.add') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row mb-3">

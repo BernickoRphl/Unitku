@@ -88,7 +88,8 @@
                             <td>{{ $pro['color'] }}</td>
 
                             <td>
-                                <img src="/resources/images/{{ $pro['product_image'] }}" alt="images" class="w-40 h-auto">
+                                <img src="{{ asset('storage/' . $pro->product_image) }}"
+                                    alt="{{ $pro->product_name }}" class="w-40 h-auto">
                             </td>
 
                             <td>
