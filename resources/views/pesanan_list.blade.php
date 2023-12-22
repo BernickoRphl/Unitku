@@ -17,8 +17,7 @@
 @endsection
 
 @section('content')
-    <div class="container mt-5 mb-5">
-        <h1>List Pesanan</h1>
+    <div class="container mt-40 mb-20">
 
         <div class="text-end">
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
