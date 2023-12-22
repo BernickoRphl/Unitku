@@ -27,11 +27,10 @@ class product extends Model
         return $this->belongsToMany(Category::class);
     }
 
-
-    // public function pesanan()
-    // {
-    //     return $this->belongsTo(Pesanan::class);
-    // }
+    public function pesanan()
+    {
+        return $this->belongsToMany(Pesanan::class);
+    }
 
     protected $fillable =
     [

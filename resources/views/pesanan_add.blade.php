@@ -13,12 +13,11 @@
 @endsection
 
 @section('content')
-
-<style>
-    #products {
-        width: 100%;
-    }
-</style>
+    <style>
+        #products {
+            width: 100%;
+        }
+    </style>
 
     <div class="mt-40 mb-40">
         <form method="POST" action="{{ route('pesanan.add') }}">
@@ -48,23 +47,32 @@
             </div>
 
             <div class="row mb-3">
-                <label for="products" class="col-md-4 col-form-label text-md-end">{{ __('Products') }}</label>
+
+                <label for="product_id" class="col-md-4 col-form-label text-md-end">{{ __('Products') }}</label>
+
                 <div class="col-md-6">
-                    <!-- Use the Select2 library for an enhanced dropdown -->
-                    <select name="products" id="products" multiple required>
-                        @foreach ($product as $pro)
-                            <option value="{{ $pro->id }}" data-image="{{ asset('storage/' . $pro->product_image) }}">
-                                {{ $pro->product_name }}
+
+                    <select name="product_id" id="product_id" multiple required>
+
+                        @foreach ($product as $product)
+                            <option value="{{ $product->id }}"
+                                data-image="{{ asset('storage/' . $product->product_image) }}">
+
+                                {{ $product->product_name }}
+
                             </option>
                         @endforeach
+
                     </select>
+
                 </div>
+
             </div>
 
             <script>
                 // JQUERY
                 $(document).ready(function() {
-                    $('#products').select2({
+                    $('#product_id').select2({
                         templateResult: formatProduct,
                         escapeMarkup: function(m) {
                             return m;
@@ -84,8 +92,6 @@
                     return $product;
                 }
             </script>
-
-
 
             <div class="row mb-3">
                 <label for="jumlah" class="col-md-4 col-form-label text-md-end">{{ __('Jumlah') }}</label>

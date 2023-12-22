@@ -28,6 +28,11 @@ class Pesanan extends Model
     {
         return $this->hasMany(DetailPesanan::class);
     }
+
+    public function belongsToManyProduct() {
+        return $this->belongsToMany(product::class);
+    }
+
     protected $fillable = [
         'tanggal_pemesanan',
         'description',

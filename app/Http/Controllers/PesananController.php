@@ -22,7 +22,6 @@ class PesananController extends Controller
 
     public function create(Request $request)
     {
-        dd($_POST);
         $user = auth()->user();
 
         $statusId = 1; // Set the default status ID here
@@ -38,8 +37,7 @@ class PesananController extends Controller
             'description' => $request->description,
             'jumlah' => $request->jumlah,
             'status_id' => $statusId,
-            'product_id' =>  $request->products,
-
+            'product_id' =>  $request->product_id,
         ]);
 
         if ($request->details) {
