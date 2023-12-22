@@ -9,8 +9,19 @@ class DetailPesanan extends Model
 {
     use HasFactory;
 
-    public function product()
-{
-    return $this->belongsTo(Product::class);
-}
+    public function pesanan_detail()
+    {
+        return $this->belongsTo(Pesanan::class, 'pesanan_id', 'id');
+    }
+
+    public function product_detail()
+    {
+        return $this->belongsTo(product::class, 'product_id', 'id');
+    }
+
+    protected $fillable = [
+        'pesanan_id',
+        'product_id',
+        // 'user_id',
+    ];
 }

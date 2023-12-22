@@ -14,8 +14,10 @@ return new class extends Migration {
     {
         Schema::create('detail_pesanans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pesanan_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('pesanan_id');
+            $table->foreign('pesanan_id')->references('id')->on('pesanans')->onDelete('cascade');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

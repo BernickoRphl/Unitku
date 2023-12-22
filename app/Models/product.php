@@ -10,9 +10,9 @@ class product extends Model
 {
     use HasFactory;
 
-    public function pesanans()
+    public function product_detail()
     {
-        return $this->belongsToMany(Pesanan::class, 'detail_pesanans', 'product_id', 'pesanan_id');
+        return $this->hasMany(DetailPesanan::class, 'product_id', 'id');
     }
 
     public function review()

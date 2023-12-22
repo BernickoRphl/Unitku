@@ -64,14 +64,12 @@
                             </td>
 
                             <td class="border px-4 py-2">
-                                @if ($order->pesanans)
-                                        {{ $pesanans->product->product_name }}
-                                        <br>
+                                @if ($order->pesanan_detail)
+                                        {{ $order->pesanan_detail->product_name }}
                                 @else
                                     No Products
                                 @endif
                             </td>
-
 
                             <td class="border px-4 py-2">{{ $order->jumlah }}</td>
                             <td class="border px-4 py-2">{{ $order->tanggal_pemesanan }}</td>

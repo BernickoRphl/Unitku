@@ -10,14 +10,14 @@ class Pesanan extends Model
     use HasFactory;
 
 
-    public function products()
+    public function pesanan_detail()
     {
-        return $this->belongsToMany(Product::class, 'detail_pesanans', 'pesanan_id', 'product_id');
+        return $this->hasMany(DetailPesanan::class, 'pesanan_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
     public function status()
     {
