@@ -29,6 +29,8 @@ class Pesanan extends Model
     }
     protected $fillable = [
         'tanggal_pemesanan',
-        'description'
+        'description',
+        'user_id',
+        'status_id'
     ];
 }

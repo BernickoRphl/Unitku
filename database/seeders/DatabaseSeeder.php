@@ -21,11 +21,12 @@ class DatabaseSeeder extends Seeder
         CategorySeeder::class,
         CustomerSeeder::class,
         ProductSeeder::class,
-        PesananSeeder::class,
-        DetailPesananSeeder::class,
+        StatusSeeder::class,
         TeamSeeder::class,
-        ValidasiSeeder::class,
+        // ValidasiSeeder::class,
         ReviewSeeder::class,
+        PesananSeeder::class,
+        // DetailPesananSeeder::class,
        ]);
        Model::reguard();
     }

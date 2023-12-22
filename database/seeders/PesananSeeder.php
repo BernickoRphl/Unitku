@@ -16,12 +16,14 @@ class PesananSeeder extends Seeder
         $pesanans = [
             [
                 'user_id' => 1,
-                'tanggal_pemesanan' => now(),
+                'status_id' => 1,
+                'tanggal_pemesanan' => now()->toDateTimeString(),
                 'description' => 'Sample order 1 description.',
             ],
             [
                 'user_id' => 2,
-                'tanggal_pemesanan' => now(),
+                'status_id' => 1,
+                'tanggal_pemesanan' => now()->toDateTimeString(),
                 'description' => 'Sample order 2 description.',
             ],
             // Add more pesanans as needed

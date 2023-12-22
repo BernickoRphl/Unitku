@@ -23,9 +23,17 @@ class PesananController extends Controller
 {
     $user = auth()->user();
 
+    $statusId = 1; // Set the default status ID here
+
+    // Only allow admin to change the status later
+    if ($user->isAdmin()) {
+        $statusId = $request->status_id;
+    }
+
     $pesanan = $user->pesanans()->create([
         'tanggal_pemesanan' => $request->tanggal_pemesanan,
         'description' => $request->description,
+        'status_id' => $statusId,
     ]);
 
     if ($request->details) {
@@ -39,7 +47,6 @@ class PesananController extends Controller
 
     return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
 }
-
 
     public function show_all_pesanan(Pesanan $pesanan)
     {
