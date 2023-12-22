@@ -10,90 +10,133 @@
 
 @section('content')
     <div class="mt-40 mb-40">
-        @if ($productEdit)
-            <form method="POST" action="{{ route('product.update', $productEdit) }}">
-                @csrf
-                @method('PUT')
 
-                <div class="row mb-3">
-                    <label for="product_name" class="col-md-4 col-form-label text-md-end">{{ __('Product Name') }}</label>
+        <form method="POST" action="{{ route('product.add') }}" enctype="multipart/form-data">
+            @csrf
 
-                    <div class="col-md-6">
-                        <input id="product_name" type="text" class="form-control @error('name') is-invalid @enderror"
-                            name="product_name" value="{{ $productEdit->product_name }}" required
-                            autocomplete="product_name" autofocus>
-                    </div>
+            <div class="row mb-3">
+
+                <label for="product_name" class="col-md-4 col-form-label text-md-end">{{ __('Product Name') }}</label>
+
+                <div class="col-md-6">
+
+                    <input id="product_name" type="text" class="form-control @error('name') is-invalid @enderror"
+                        name="product_name" value="{{ $productEdit->product_name }}" required autocomplete="product_name"
+                        autofocus>
+
                 </div>
 
+            </div>
 
-                <div class="row mb-3">
-                    <label for="product_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+            <div class="row mb-3">
 
-                    <div class="col-md-6">
-                        <input id="product_desc" type="text" class="form-control" name="product_desc"
-                            value="{{ $productEdit->product_desc }}" required autocomplete="product_desc">
-                    </div>
+                <label for="product_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+
+                <div class="col-md-6">
+
+                    <input id="product_desc" type="text" class="form-control" name="product_desc"
+                        value="{{ $productEdit->product_desc }}" required autocomplete="product_desc">
+
                 </div>
 
-                <div class="row mb-3">
-                    <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
-                    <div class="col-md-6">
-                        <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
-                            name="product_image" value="{{ $productEdit->product_image }}" required accept="image/*">
-                        @error('product_image')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+            </div>
+
+            <div class="row mb-3">
+
+                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+
+                <div class="col-md-6">
+
+                    <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
+                        name="product_image" value="{{ $productEdit->product_image }}" required accept="image/*">
+
+                    @error('product_image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
                 </div>
 
-                <div class="row mb-3">
-                    <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
+            </div>
 
-                    <div class="col-md-6">
-                        <input id="price" type="number" class="form-control" name="price"
-                            value="{{ $productEdit->price }}" required autocomplete="price">
-                    </div>
+            <div class="row mb-3">
+
+                <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
+
+                <div class="col-md-6">
+
+                    <input id="price" type="text" class="form-control" name="price"
+                        value="{{ $productEdit->price }}" required autocomplete="price">
+
                 </div>
 
-                <div class="row mb-3">
-                    <label for="color" class="col-md-4 col-form-label text-md-end">{{ __('Color') }}</label>
+            </div>
 
-                    <div class="col-md-6">
-                        <input id="color" type="text" class="form-control" name="color"
-                            value="{{ $productEdit->color }}" required autocomplete="color">
-                    </div>
+            <div class="row mb-3">
+
+                <label for="color" class="col-md-4 col-form-label text-md-end">{{ __('Color') }}</label>
+
+                <div class="col-md-6">
+
+                    <input id="color" type="text" class="form-control" name="color"
+                        value="{{ $productEdit->color }}" required autocomplete="color">
+
                 </div>
 
-                <div class="row mb-3">
-                    <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
+            </div>
 
-                    <div class="col-md-6">
-                        <select name="category" id="category" class="form-select" required>
+            <div class="row mb-3">
 
-                            @foreach ($categories as $category)
-                                @if (old('category_id', $productEdit->category_id) === $category->id)
-                                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                @else
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endif
-                            @endforeach
+                <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
 
-                        </select>
-                    </div>
+                <div class="col-md-6">
+
+                    <select name="category" id="category" required>
+
+                        @foreach ($categories as $category)
+                            @if (old('$category->id', $productEdit->category_id) === $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                            @else
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endif
+                        @endforeach
+
+                    </select>
+
                 </div>
 
-                <div class="row mb-0">
-                    <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary text-black">
-                            {{ __('Edit') }}
-                        </button>
-                    </div>
+            </div>
+
+            <div class="row mb-0">
+
+                <div class="col-md-6 offset-md-4">
+
+                    <button type="submit" class="btn btn-primary text-black">
+                        {{ __('Add Product') }}
+                    </button>
+
                 </div>
-            </form>
-        @else
-            <p>Product not found.</p>
-        @endif
+
+            </div>
+
+        </form>
+
     </div>
+
+    <script>
+        function formatCurrency(input) {
+
+            let numericValue = input.value.replace(/[^0-9]/g, '');
+
+            input.value = parseFloat(numericValue).toLocaleString('en-US');
+
+        }
+
+        document.getElementById('price').addEventListener('input', function() {
+
+            formatCurrency(this);
+
+        });
+    </script>
 @endsection

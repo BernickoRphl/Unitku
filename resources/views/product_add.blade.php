@@ -10,10 +10,12 @@
 
 @section('content')
     <div class="mt-40 mb-40">
+
         <form method="POST" action="{{ route('product.add') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row mb-3">
+
                 <label for="product_name" class="col-md-4 col-form-label text-md-end">{{ __('Product Name') }}</label>
 
                 <div class="col-md-6">
@@ -22,65 +24,116 @@
                         name="product_name" value="{{ old('name') }}" required autocomplete="product_name" autofocus>
 
                 </div>
+
             </div>
 
             <div class="row mb-3">
+
                 <label for="product_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
 
                 <div class="col-md-6">
+
                     <input id="product_desc" type="text" class="form-control" name="product_desc" required
                         autocomplete="product_desc">
+
                 </div>
+
             </div>
 
             <div class="row mb-3">
+
                 <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+
                 <div class="col-md-6">
+
                     <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
                         name="product_image" required accept="image/*">
+
                     @error('product_image')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+
                 </div>
+
             </div>
 
             <div class="row mb-3">
+
                 <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Price') }}</label>
 
                 <div class="col-md-6">
-                    <input id="price" type="number" class="form-control" name="price" required autocomplete="price">
+
+                    <input id="price" type="text" class="form-control" name="price" required autocomplete="price">
+
                 </div>
+
             </div>
 
             <div class="row mb-3">
+
                 <label for="color" class="col-md-4 col-form-label text-md-end">{{ __('Color') }}</label>
 
                 <div class="col-md-6">
+
                     <input id="color" type="text" class="form-control" name="color" required autocomplete="color">
+
                 </div>
+
             </div>
 
             <div class="row mb-3">
+
                 <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
 
                 <div class="col-md-6">
+
                     <select name="category" id="category" required>
+
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
+
                     </select>
+
                 </div>
+
             </div>
 
             <div class="row mb-0">
+
                 <div class="col-md-6 offset-md-4">
+
                     <button type="submit" class="btn btn-primary text-black">
                         {{ __('Add Product') }}
                     </button>
+
                 </div>
+
             </div>
+
         </form>
+
     </div>
+
+    <script>
+        function formatCurrency(input) {
+            let numericValue = input.value.replace(/[^0-9.]/g, '');
+
+            numericValue = numericValue.replace(/,/g, '');
+
+            let floatValue = parseFloat(numericValue);
+
+            if (isNaN(floatValue)) {
+                floatValue = 0;
+            }
+
+            input.value = floatValue.toLocaleString('en-US');
+        }
+
+        document.getElementById('price').addEventListener('input', function() {
+            formatCurrency(this);
+        });
+    </script>
 @endsection
