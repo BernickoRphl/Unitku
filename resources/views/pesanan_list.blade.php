@@ -41,6 +41,7 @@
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">User</th>
+                        <th scope="col">Product</th>
                         <th scope="col">Tanggal Pemesanan</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
@@ -57,7 +58,7 @@
                                 User not available
                             @endif
                         </td>
-                        <td>{{ $order->produk }}</td>
+                        <td>{{ $order->product_id }}</td>
                         <td>{{ $order->tanggal_pemesanan }}</td>
                         <td>{{ $order->description }}</td>
                         <td>
