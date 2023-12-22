@@ -82,13 +82,17 @@
                                 <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
                                     @csrf
                                     @method('PATCH')
-                                    <button class="btn btn-warning" type="submit">Update</button>
+                                    <button
+                                        class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                        type="submit">Update</button>
                                 </form>
 
                                 <form action="{{ route('product.destroy', $pro) }}" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <button class="btn btn-danger text-black" type="submit">Delete</button>
+                                    <button
+                                        class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                        type="submit">Delete</button>
                                 </form>
 
                             </td>

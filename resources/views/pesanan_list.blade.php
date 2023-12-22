@@ -12,13 +12,7 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto mt-10 mb-10 px-16">
-
-        <button
-            class="btn text-primary border-blue-950 border-2 hover:bg-blue-950 hover:text-white rounded-full px-4 py-2 mt-5"
-            type="submit">
-            <a href="{{ route('pesanan.add') }}">Tambah Pesanan</a>
-        </button>
+    <div class="container mx-auto mt-60 mb-40 px-16">
 
         <form action="{{ route('pesanan.list') }}" method="GET" class="flex items-center gap-2 mt-4">
 
@@ -65,8 +59,8 @@
 
                             <td class="border px-4 py-2">
                                 @if ($order->pesanans)
-                                        {{ $pesanans->product->product_name }}
-                                        <br>
+                                    {{ $pesanans->product->product_name }}
+                                    <br>
                                 @else
                                     No Products
                                 @endif
@@ -84,13 +78,17 @@
                                 <form method="POST" action="{{ route('pesanan.edit', $order->id) }}">
                                     @csrf
                                     @method('PATCH')
-                                    <button class="btn btn-warning" type="submit">Update</button>
+                                    <button
+                                        class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                        type="submit">Update</button>
                                 </form>
 
                                 <form action="{{ route('pesanan.destroy', $order->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="btn btn-danger text-black" type="submit">Delete</button>
+                                    <button
+                                        class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                        type="submit">Delete</button>
                                 </form>
 
                             </td>
