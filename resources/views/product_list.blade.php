@@ -87,8 +87,8 @@
                             <td>{{ $pro['color'] }}</td>
 
                             <td>
-                                <img src="{{ asset('storage/' . $pro->product_image) }}"
-                                    alt="{{ $pro->product_name }}" class="w-40 h-auto">
+                                <img src="{{ asset('storage/' . $pro->product_image) }}" alt="{{ $pro->product_name }}"
+                                    class="w-40 h-auto">
                             </td>
 
                             <td>
@@ -102,12 +102,12 @@
 
                                 </form>
 
-                                <form method="POST" action="{{ route('product.delete', $pro['id']) }}">
+                                <form action="{{ route('product.destroy', $pro) }}" method="POST">
 
+                                    @method('delete')
                                     @csrf
-                                    @method('DELETE')
 
-                                    <button class="btn btn-danger  text-black" type="submit">Delete</button>
+                                    <button class="btn btn-danger text-black" type="submit">Delete</button>
 
                                 </form>
 

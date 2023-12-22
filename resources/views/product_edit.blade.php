@@ -10,9 +10,23 @@
 
 @section('content')
     <div class="mt-40 mb-40">
+        @if ($errors->any())
+            <div>
 
-        <form method="POST" action="{{ route('product.add') }}" enctype="multipart/form-data">
+                <ul>
+
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+
+                </ul>
+
+            </div>
+        @endif
+
+        <form method="POST" action="{{ route('product.update', $productEdit) }}" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
 
             <div class="row mb-3">
 
@@ -66,6 +80,8 @@
                     src="{{ $productEdit->product_image ? asset('storage/' . $productEdit->product_image) : '#' }}"
                     alt="{{ $productEdit->product_name }}"
                     class="w-80 h-auto @if (!$productEdit->product_image) hidden @endif">
+
+                <input type="hidden" id="oldImage" name="oldImage" value="{{ $productEdit->product_image }}">
 
             </div>
 

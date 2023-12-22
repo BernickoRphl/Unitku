@@ -67,14 +67,14 @@
                                 <button class="btn btn-warning" type="submit">Update</button>
                             </form>
 
-                            <form method="POST" action="{{ route('pesanan.delete', $order->id) }}">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger text-black" type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
+                                <form method="POST" action="{{ route('pesanan.destroy', $order->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger text-black" type="submit">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
             <br>
