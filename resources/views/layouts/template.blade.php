@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="resources/css/template.css">
+    <link rel="stylesheet" href="{{ asset('resources/css/template.css') }}">
     @yield('link')
     <title>INTRIC</title>
 </head>
@@ -45,7 +45,8 @@
 
                     <div class="flex flex-shrink-0 items-center">
 
-                        <img class="h-12 w-auto" src="{{ asset('resources/images/Logo Transparent White.png') }}" alt="Your Company">
+                        <img class="h-12 w-auto" src="{{ asset('resources/images/Logo Transparent White.png') }}"
+                            alt="Your Company">
 
                     </div>
 
@@ -67,10 +68,10 @@
                                 @endif
                                 @if (Auth::user()->isAdmin())
                                     <a href="{{ route('product.list') }}"
-                                        class="{{ request()->is('product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                                        class="{{ request()->is('product/product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                                         Produk</a>
                                     <a href="{{ route('pesanan.list') }}"
-                                        class="{{ request()->is('pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                                        class="{{ request()->is('pesanan/pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                                         Pesanan</a>
                                 @endif
 
@@ -256,7 +257,7 @@
 
     </footer>
 
-    <script src="resources/js/app.js" defer></script>
+    <script src="{{ asset('resources/js/app.js') }}" defer></script>
 
 </body>
 

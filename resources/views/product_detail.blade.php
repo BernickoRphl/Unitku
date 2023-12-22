@@ -5,13 +5,15 @@
 @endsection --}}
 
 @section('content')
-    <h1>Product Details</h1>
-    <div class= "mt-4 p-5 bg-primary text-white rounded">
-        <h1>{{ $product['product_name'] }}</h1>
-        <p>Description: {{ $product['product_desc'] }} </p>
-        <p>Image: {{ asset('storage/' . $product->product_image) }} </p>
-        <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->product_name }}" class="w-40 h-auto">
-        <p>Price: {{ $product['price'] }} </p>
-        <p>Color: {{ $product['color'] }} </p>
+    <div class="flex justify-center items-center h-screen">
+        <div class="text-center p-5 bg-primary text-white rounded">
+            <h1 class="text-3xl mb-4">{{ $product['product_name'] }}</h1>
+            <p class="mb-2">Description: {{ $product['product_desc'] }}</p>
+            <p class="mb-2">Image:</p>
+            <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->product_name }}"
+                class="w-40 h-auto mb-2 mx-auto">
+            <p class="mb-2">Price: {{ $product['price'] }}</p>
+            <p class="mb-2">Color: {{ $product['color'] }}</p>
+        </div>
     </div>
 @endsection
