@@ -30,7 +30,7 @@ Route::get('/pesanan/order_history', [ProductController::class, 'showProductOrde
 Route::get('/pesanan/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
 Route::post('/pesanan/pesanan_add', [PesananController::class, 'create'])->name('pesanan.add');
 Route::get('/pesanan/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
-Route::get('/pesanan/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
+Route::get('/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
 Route::put('/pesanan/update/{product}', [PesananController::class, 'update'])->name('pesanan.update');
 // Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
 

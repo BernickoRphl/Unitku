@@ -17,8 +17,6 @@
 
                 <div class="overflow-hidden relative h-screen rounded-lg sm:h-screen xl:h-screen 2xl:h-screen">
 
-                    {{-- <div class="overflow-hidden relative h-64 rounded-lg sm:h-96 xl:h-96 2xl:h-96"> --}}
-
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
                         <span
@@ -270,39 +268,6 @@
                 }
             }
         </style> --}}
-
-        {{-- @foreach ($products as $product)
-            <div class="row">
-
-                <div class="video-container">
-
-                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="product images" class="productImages">
-
-                </div>
-
-                <div class="content">
-
-                    <a href="/product/{{ $product['id'] }}">
-
-                        <h3>{{ $product->product_name }}</h3>
-
-                    </a>
-
-                    <p>Unique and customable shirt or longsleeves-shirt by take the buttons off-and-on based on your moods
-                        and
-                        needs!
-                    </p>
-
-                    <p>Color: {{ $product->color }}</p>
-
-                </div>
-
-            </div>
-        @endforeach --}}
-
-        {{-- <div class="models">
-            <h3>Models</h3>
-        </div> --}}
 
         <p class="mt-5">This is our product available now, more to come. You can see the details in the <a
                 class="text-blue-600 hover:underline" href="https://www.instagram.com/intric.id/" target="_blank">Intric
