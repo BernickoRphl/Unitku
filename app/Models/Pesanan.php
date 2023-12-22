@@ -9,6 +9,12 @@ class Pesanan extends Model
 {
     use HasFactory;
 
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'detail_pesanans')->withPivot('jumlah');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
