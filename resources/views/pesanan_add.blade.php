@@ -16,7 +16,7 @@
 
 <style>
     #products {
-        width: 50%;
+        width: 100%;
     }
 </style>
 
