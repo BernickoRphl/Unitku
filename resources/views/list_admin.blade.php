@@ -16,14 +16,6 @@
 @section('content')
     <div class="container mx-auto mt-60 mb-40 px-16">
 
-        <form action="{{ route('admin.list') }}" method="GET" class="flex items-center gap-2 mt-4">
-
-            <input type="form-control" type="search" name="search" placeholder="search"
-                class="form-input border rounded-md px-2 py-1">
-            <button type="submit" class="btn btn-outline-success">Search</button>
-
-        </form>
-
         <div class="card-body mt-4">
 
             <table class="table-auto w-full mx-auto">
@@ -45,7 +37,6 @@
 
                     @foreach ($admin as $admins)
                         <tr class="text-center">
-
                             <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                             <td class="border px-4 py-2">{{ $admins->name }}</td>
                             <td class="border px-4 py-2">{{ $admins->email }}</td>
@@ -53,7 +44,6 @@
                             <td class="border px-4 py-2">{{ $admins->is_active }}</td>
 
                             <td class="border px-4 py-2">
-
                                 <form method="POST" action="{{ route('admin.edit', $admins->id) }}">
                                     @csrf
                                     @method('PATCH')
@@ -69,11 +59,10 @@
                                         class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
                                         type="submit">Delete</button>
                                 </form>
-
                             </td>
-
                         </tr>
                     @endforeach
+
 
                 </tbody>
 

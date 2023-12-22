@@ -9,14 +9,11 @@ class RoleController extends Controller
 {
     public function listUsersWithRole()
 {
-    // Get users with role ID 2
+    // Get users with the role 'Admin'
     $admin = User::with('roles')->whereHas('roles', function ($query) {
-        $query->where('roles.id', 2); // Specify the table name (roles) along with the column name (id)
+        $query->where('role_name', 'Admin');
     })->get();
-
-    dd($admin->toArray()); // Check the retrieved users
 
     return view('list_admin', compact('admin'));
 }
-
 }
