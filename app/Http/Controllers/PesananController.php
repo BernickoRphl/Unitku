@@ -39,7 +39,6 @@ class PesananController extends Controller
             'jumlah' => $request->jumlah,
             'status_id' => $statusId,
             'product_id' => $request->products,
-
         ]);
 
         if ($request->details) {
@@ -67,7 +66,7 @@ class PesananController extends Controller
         $detail = DetailPesanan::all();
         $user = User::all();
         $pesananEdit = Pesanan::where('id', $pesanan->id)->first();
-        return view('pesanan_edit', compact('pesananEdit','user','detail','status'));
+        return view('pesanan_edit', compact('pesananEdit', 'user', 'detail', 'status'));
     }
 
     public function update(Request $request, Pesanan $pesanan)
