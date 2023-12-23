@@ -14,25 +14,29 @@ class PesananController extends Controller
 {
     public function add_form()
     {
-        $pesanans = Pesanan::all();
-        $product = product::all(); // Adjust this based on your model and database structure
-        $currentDate = now()->toDateString(); // Get the current date
+        $product = product::all();
+        $currentDate = now()->toDateString();
 
-        return view('pesanan_add', compact('pesanans', 'product', 'currentDate'));
+        return view('pesanan_add', compact('product', 'currentDate'));
     }
 
     public function create(Request $request)
     {
         $user = auth()->user();
 
-        $pesanan = $user->pesanans()->create([
-            'tanggal_pemesanan' => now()->toDateString(),
-            'address' => $request->address,
-            'description' => $request->description,
-            'jumlah' => $request->jumlah,
-            'status_id' => $request->status_id,
-            'product_id' => $request->product_id,
-        ]);
+        $product = $request->product_id;
+
+        foreach ($product as $product) {
+            $pesanan = $user->pesanans()->create([
+                'tanggal_pemesanan' => now()->toDateString(),
+                'address' => $request->address,
+                'description' => $request->description,
+                'jumlah' => $request->jumlah,
+                'status_id' => $request->status_id,
+                'product_id' => $product,
+
+            ]);
+        }
 
         if ($request->details) {
             foreach ($request->details as $detail) {
@@ -42,8 +46,7 @@ class PesananController extends Controller
             }
         }
 
-        $product = $request->product_id;
-        $pesanan->products()->attach($product);
+        $pesanan->products()->sync($request->product_id);
 
         return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
     }

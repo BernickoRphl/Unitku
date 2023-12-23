@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto mt-5 mb-5 pt-4"> <!-- Added pt-4 for padding-top -->
+    <div class="container mx-auto mt-5 mb-20 pt-20">
         <div class="text-start">
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group me-2" role="group" aria-label="Basic example">
@@ -44,7 +44,7 @@
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
                         <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
-                        {{-- <th scope="col" class="px-4 py-2 text-center">Action</th> --}}
+                        <th scope="col" class="px-4 py-2 text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,16 +73,20 @@
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
                             <td class="border px-4 py-2">
-                                {{-- <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
+                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
                                     @csrf
                                     @method('PATCH')
-                                    <button class="btn btn-warning" type="submit">Update</button>
-                                </form> --}}
-                                {{-- <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
+                                    <button
+                                        class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-2"
+                                        type="submit">Update</button>
+                                </form>
+                                <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger text-black" type="submit">Delete</button>
-                                </form> --}}
+                                    <button
+                                        class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-2"
+                                        type="submit">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
