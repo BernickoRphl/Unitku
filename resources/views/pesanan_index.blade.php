@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-
     <div class="container mx-auto mt-5 mb-5 pt-4"> <!-- Added pt-4 for padding-top -->
         <div class="text-start">
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
@@ -60,8 +59,10 @@
                                 @endif
                             </td>
                             <td class="border px-4 py-2">
-                                @if ($pesanans->product)
-                                    {{ $pesanans->product->product_name }}
+                                @if ($pesanans->products->isNotEmpty())
+                                    @foreach ($pesanans->products as $product)
+                                        {{ $product->product_name }}<br>
+                                    @endforeach
                                 @else
                                     Product Name
                                 @endif

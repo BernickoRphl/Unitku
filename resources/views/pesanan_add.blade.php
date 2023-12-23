@@ -67,7 +67,7 @@
 
                 <div class="col-md-6">
 
-                    <select name="product_id" id="product_id" class="form-select" multiple required>
+                    <select name="product_id" id="product_id" class="form-select" required>
 
                         @foreach ($product as $product)
                             <option value="{{ $product->id }}"

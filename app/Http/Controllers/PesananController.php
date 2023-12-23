@@ -42,6 +42,9 @@ class PesananController extends Controller
             }
         }
 
+        $product = $request->product_id;
+        $pesanan->products()->attach($product);
+
         return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
     }
 
