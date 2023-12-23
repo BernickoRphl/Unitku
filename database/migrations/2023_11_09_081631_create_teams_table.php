@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -9,24 +10,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
-    public function up()
-{
-    Schema::create('teams', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('position');
-        $table->string('team_image');
-        $table->text('desc');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('categories');
     }
 };

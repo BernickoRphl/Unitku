@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\edition;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -30,9 +31,10 @@ class ProductController extends Controller
     public function add_form()
     {
         $product = new Product(); // Instantiate an empty Product
+        $edition = edition::all();
         $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
 
-        return view('product_add', compact('product', 'categories'));
+        return view('product_add', compact('product', 'categories','edition'));
     }
 
     public function create(Request $request)
@@ -47,6 +49,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'color' => $request->color,
             'category_id' => $request->category_id,
+            'edition_id' => $request->edition_id,
         ]);
 
         return redirect()->route('product.list');
@@ -57,8 +60,9 @@ class ProductController extends Controller
         $productEdit = Product::where('id', $product->id)->first();
         $products = Product::all();
         $categories = Category::all();
+        $edition = edition::all();
 
-        return view('product_edit', compact('productEdit', 'products', 'categories'));
+        return view('product_edit', compact('productEdit', 'products', 'categories','edition'));
     }
 
     public function update(Request $request, Product $product)
@@ -79,7 +83,8 @@ class ProductController extends Controller
             'product_image' => $productImage,
             'price' => $request->price,
             'color' => $request->color,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'edition_id' => $request->edition_id,
         ]);
 
         return redirect()->route('product.list')->with('success', 'Product updated successfully');

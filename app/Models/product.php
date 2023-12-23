@@ -27,6 +27,10 @@ class product extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function edition()
+    {
+        return $this->belongsToMany(edition::class);
+    }
     public function pesanan()
     {
         return $this->belongsToMany(Pesanan::class);
@@ -40,5 +44,6 @@ class product extends Model
         'price',
         'color',
         'category_id',
+        'edition_id',
     ];
 }

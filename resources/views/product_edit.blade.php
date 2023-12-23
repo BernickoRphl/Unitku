@@ -133,6 +133,28 @@
 
             </div>
 
+            <div class="row mb-3">
+
+                <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
+
+                <div class="col-md-6">
+
+                    <select name="category" id="category" required>
+
+                        @foreach ($edition as $edit)
+                            @if (old('$edit->id', $productEdit->edition_id) === $edit->id)
+                                <option value="{{ $edit->id }}" selected>{{ $edit->name }}</option>
+                            @else
+                                <option value="{{ $edit->id }}">{{ $edit->name }}</option>
+                            @endif
+                        @endforeach
+
+                    </select>
+
+                </div>
+
+            </div>
+
             <div class="row mb-0">
 
                 <div class="col-md-6 offset-md-4">

@@ -49,6 +49,7 @@
                         <th scope="col" class="px-4 py-2 text-center">Price</th>
                         <th scope="col" class="px-4 py-2 text-center">Color</th>
                         <th scope="col" class="px-4 py-2 text-center">Image</th>
+                        <th scope="col" class="px-4 py-2 text-center">Edition</th>
                         <th scope="col" class="px-4 py-2 text-center">Action</th>
 
                     </tr>
@@ -77,6 +78,9 @@
                                     class="w-40 h-auto">
                             </td>
 
+                            <td class="border px-4 py-2">
+                                {{ $pro->edition->name }}
+                            </td>
                             <td class="border px-4 py-2">
 
                                 <form method="POST" action="{{ route('product.edit', $pro['id']) }}">

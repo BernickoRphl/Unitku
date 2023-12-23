@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert(
             [
+                'edition_id' => 1,
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
                 'product_image' => 'images/full set.JPG',
@@ -25,6 +26,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
+                'edition_id' => 1,
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
                 'product_image' => 'images/full set white.JPG',
@@ -35,6 +37,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
+                'edition_id' => 1,
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
                 'product_image' => 'images/sheets.JPG',
@@ -45,6 +48,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
+                'edition_id' => 1,
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
                 'product_image' => 'images/sheets black.JPG',

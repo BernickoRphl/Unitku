@@ -107,6 +107,24 @@
 
             </div>
 
+            <div class="row mb-3">
+
+                <label for="edition" class="col-md-4 col-form-label text-md-end">{{ __('Edition') }}</label>
+
+                <div class="col-md-6">
+
+                    <select name="edition" id="edition" required>
+
+                        @foreach ($edition as $editions) <!-- Assuming $editions is the variable for editions -->
+                            <option value="{{ $editions->id }}">{{ $editions->name }}</option>
+                        @endforeach
+
+                    </select>
+
+                </div>
+
+            </div>
+
             <div class="row mb-0">
 
                 <div class="col-md-6 offset-md-4">

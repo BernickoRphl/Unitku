@@ -23,6 +23,7 @@ return new class extends Migration
                 $table->string('price')->nullable(true);
                 $table->string('color')->nullable(true);
                 // $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+                $table->foreignId('edition_id')->nullable()->constrained()->cascadeOnDelete();
             }
         );
     }
