@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('status_id')->constrained('statuses');
+            $table->foreignId('status_id')->constrained('statuses')->default(1);
             $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->date('tanggal_pemesanan');
             $table->integer('jumlah');

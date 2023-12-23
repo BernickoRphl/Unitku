@@ -31,7 +31,7 @@ class product extends Model
     {
         return $this->belongsToMany(edition::class);
     }
-    public function pesanan()
+    public function pesanans()
     {
         return $this->belongsToMany(Pesanan::class);
     }

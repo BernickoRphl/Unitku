@@ -25,20 +25,13 @@ class PesananController extends Controller
     {
         $user = auth()->user();
 
-        $statusId = 1; // Set the default status ID here
-
-        // Only allow admin to change the status later
-        if ($user->isAdmin()) {
-            $statusId = $request->status_id;
-        }
-
         $pesanan = $user->pesanans()->create([
             'tanggal_pemesanan' => now()->toDateString(),
             'address' => $request->address,
             'description' => $request->description,
             'jumlah' => $request->jumlah,
-            'status_id' => $statusId,
-            'product_id' => $request->products,
+            'status_id' => $request->status_id,
+            'product_id' => $request->product_id,
         ]);
 
         if ($request->details) {
@@ -94,6 +87,8 @@ class PesananController extends Controller
         // Get the authenticated user's orders
         $user = Auth::user();
         $pesanan = Pesanan::where('user_id', $user->id)->get();
+        $pesanans = Pesanan::class;
+        $product = product::class;
 
         return view('pesanan_index', compact('pesanan'));
     }

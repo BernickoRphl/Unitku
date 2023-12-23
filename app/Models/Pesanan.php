@@ -29,7 +29,8 @@ class Pesanan extends Model
         return $this->hasMany(DetailPesanan::class);
     }
 
-    public function belongsToManyProduct() {
+    public function products()
+    {
         return $this->belongsToMany(product::class);
     }
 
@@ -39,6 +40,7 @@ class Pesanan extends Model
         'jumlah',
         'address',
         'user_id',
-        'status_id'
+        'status_id',
+        'product_id'
     ];
 }
