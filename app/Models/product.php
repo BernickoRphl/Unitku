@@ -29,7 +29,7 @@ class product extends Model
 
     public function edition()
     {
-        return $this->belongsToMany(edition::class);
+        return $this->belongsTo(edition::class);
     }
     public function pesanans()
     {

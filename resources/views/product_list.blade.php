@@ -78,9 +78,15 @@
                                     class="w-40 h-auto">
                             </td>
 
+                            <!-- Assuming this is inside your Blade table -->
                             <td class="border px-4 py-2">
-                                {{ $pro->edition->name }}
+                                @if ($pro->edition)
+                                    {{ $pro->edition->name }}
+                                @else
+                                    No Edition
+                                @endif
                             </td>
+
                             <td class="border px-4 py-2">
 
                                 <form method="POST" action="{{ route('product.edit', $pro['id']) }}">
