@@ -64,7 +64,7 @@
                                 @if (Auth::user()->isCustomer() || Auth::user()->isSuperadmin())
                                     {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
                                     <a href="{{ route('pesanan.index') }}"
-                                        class="{{ request()->is('pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
+                                        class="{{ request()->is('pesanan/pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
                                 @endif
                                 @if (Auth::user()->isSuperadmin())
                                 <a href="{{ route('admin.list') }}"
@@ -128,8 +128,8 @@
 
                                 <h2 class="block px-4 py-2 text-md text-black">{{ Auth::user()->name }}</h2>
 
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                                {{-- <a href="#" class="block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a> --}}
 
                                 <a class="dropdown-item text-black block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
                                     href="{{ route('logout') }}"
