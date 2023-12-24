@@ -48,25 +48,29 @@
                     @php
                         $deletedRow = 0;
                     @endphp
+
                     @foreach ($pesanan as $pesanans)
-                    <tr class="text-center">
-                        <td class="border px-4 py-2">{{ $loop->iteration - $deletedRow }}</td>
-                        <td class="border px-4 py-2">
-                            @if ($pesanans->user)
-                                {{ $pesanans->user->name }}
-                            @else
-                                User not available
-                            @endif
-                        </td>
-                        <td class="border px-4 py-2">
-                            @if ($pesanans->products->isNotEmpty())
-                                @foreach ($pesanans->products as $product)
-                                    {{ $product->product_name }}<br>
-                                @endforeach
-                            @else
-                                <input type="text" class="delete-input" value="{{ $pesanans->product_name }}">
-                            @endif
-                        </td>
+                        <tr class="text-center">
+                            <td class="border px-4 py-2">{{ $loop->iteration - $deletedRow }}</td>
+                            <td class="border px-4 py-2">
+                                @if ($pesanans->user)
+                                    {{ $pesanans->user->name }}
+                                @else
+                                    User not available
+                                @endif
+                            </td>
+                            <td class="border px-4 py-2">
+                                @if ($pesanans->products->isNotEmpty())
+                                    @foreach ($pesanans->products as $product)
+                                        {{ $product->product_name }}<br>
+                                    @endforeach
+                                @else
+                                    <input type="text" class="delete-input" value="{{ $pesanans->product_name }}">
+                                    @php
+                                        $deletedRow++;
+                                    @endphp
+                                @endif
+                            </td>
 
                             <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->tanggal_pemesanan }}</td>
@@ -109,4 +113,23 @@
         </div>
 
     </div>
+
+    <script>
+        function deleteRowOnEmpty() {
+            var deleteInputs = document.querySelectorAll('.delete-input');
+
+            deleteInputs.forEach(function(input) {
+                var row = input.closest('tr');
+                var productName = input.value;
+
+                if (!productName || productName.trim() === '') {
+                    row.remove();
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            deleteRowOnEmpty();
+        });
+    </script>
 @endsection
