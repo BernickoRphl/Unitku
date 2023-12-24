@@ -25,6 +25,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/about', [TeamController::class, 'showTeam'])->name('about');
 
 Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.list');
+Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.edit');
+Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.delete');
+
+
 
 //PESANAN
 Route::delete('/pesanan/delete/{pesanan}', [PesananController::class, 'delete'])->name('pesanan.destroy');

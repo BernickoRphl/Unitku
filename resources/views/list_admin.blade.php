@@ -25,26 +25,28 @@
                     <tr>
                         <th scope="col" class="px-4 py-2 text-center">No</th>
                         <th scope="col" class="px-4 py-2 text-center">User</th>
+                        <th scope="col" class="px-4 py-2 text-center">Role ID</th>
                         <th scope="col" class="px-4 py-2 text-center">Email</th>
                         <th scope="col" class="px-4 py-2 text-center">Is Login</th>
                         <th scope="col" class="px-4 py-2 text-center">Is Active</th>
-                        <th scope="col" class="px-4 py-2 text-center">Action</th>
+                        {{-- <th scope="col" class="px-4 py-2 text-center">Action</th> --}}
                     </tr>
 
                 </thead>
 
                 <tbody>
 
-                    @foreach ($admin as $admins)
+                    @foreach ($users as $user)
                         <tr class="text-center">
                             <td class="border px-4 py-2">{{ $loop->iteration }}</td>
-                            <td class="border px-4 py-2">{{ $admins->name }}</td>
-                            <td class="border px-4 py-2">{{ $admins->email }}</td>
-                            <td class="border px-4 py-2">{{ $admins->is_login }}</td>
-                            <td class="border px-4 py-2">{{ $admins->is_active }}</td>
+                            <td class="border px-4 py-2">{{ $user->name }}</td>
+                            <td class="border px-4 py-2">{{ $user->role_id}}</td>
+                            <td class="border px-4 py-2">{{ $user->email }}</td>
+                            <td class="border px-4 py-2">{{ $user->is_login }}</td>
+                            <td class="border px-4 py-2">{{ $user->is_active }}</td>
 
-                            <td class="border px-4 py-2">
-                                <form method="POST" action="{{ route('admin.edit', $admins->id) }}">
+                            {{-- <td class="border px-4 py-2">
+                                <form method="POST" action="{{ route('admin.edit', $user->id) }}">
                                     @csrf
                                     @method('PATCH')
                                     <button
@@ -52,17 +54,16 @@
                                         type="submit">Update</button>
                                 </form>
 
-                                <form action="{{ route('admin.destroy', $admins->id) }}" method="POST">
+                                <form action="{{ route('admin.destroy', $user->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button
                                         class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
                                         type="submit">Delete</button>
                                 </form>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
-
 
                 </tbody>
 
@@ -70,7 +71,7 @@
 
             <div class="mt-4">
                 <!-- Pagination links -->
-                {{-- {{ $admin->links() }} --}}
+                {{-- {{ $users->links() }} --}}
             </div>
 
         </div>
