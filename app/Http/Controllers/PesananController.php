@@ -45,10 +45,11 @@ class PesananController extends Controller
 
     public function show_all_pesanan(Pesanan $pesanan)
     {
+        $product = product::all();
         $detail = DetailPesanan::all();
         $user = User::all();
-        $pesanans = Pesanan::all();
-        return view('pesanan_list', compact('pesanans', 'user', 'detail'));
+        $pesanan = Pesanan::all();
+        return view('pesanan_list', compact('pesanan', 'user', 'detail', 'product'));
     }
 
     public function edit(Pesanan $pesanan)
@@ -82,7 +83,6 @@ class PesananController extends Controller
 
     public function listPesananUser()
     {
-        // Get the authenticated user's orders
         $user = Auth::user();
         $pesanan = Pesanan::where('user_id', $user->id)->get();
         $pesanans = Pesanan::class;
