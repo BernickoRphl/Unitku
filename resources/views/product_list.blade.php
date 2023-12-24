@@ -24,7 +24,7 @@
 
         </div>
 
-        <form action="/product_list" method="GET" class="flex items-center gap-2 mt-4">
+        <form action="{{ route('product.list') }}" method="GET" class="flex items-center gap-2 mt-4">
 
             <input type="form-control" type="search" name="search" placeholder="search"
                 class="form-input border rounded-md px-2 py-1">
