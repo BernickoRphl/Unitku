@@ -128,8 +128,8 @@
 
                                 <h2 class="block px-4 py-2 text-md text-black">{{ Auth::user()->name }}</h2>
 
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                                {{-- <a href="#" class="block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a> --}}
 
                                 <a class="dropdown-item text-black block px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
                                     href="{{ route('logout') }}"
