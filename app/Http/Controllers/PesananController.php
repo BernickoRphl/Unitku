@@ -38,14 +38,6 @@ class PesananController extends Controller
             ]);
         }
 
-        if ($request->details) {
-            foreach ($request->details as $detail) {
-                $pesanan->detailPesanans()->create([
-                    'product_id' => $detail['product_id'],
-                ]);
-            }
-        }
-
         $pesanan->products()->sync($request->product_id);
 
         return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');

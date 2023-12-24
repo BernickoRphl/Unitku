@@ -48,9 +48,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $deletedRow = 0;
+                    @endphp
+
                     @foreach ($pesanan as $pesanans)
                         <tr class="text-center">
-                            <td class="border px-4 py-2">{{ $loop->iteration }}</td>
+                            <td class="border px-4 py-2">{{ $loop->iteration - $deletedRow }}</td>
                             <td class="border px-4 py-2">
                                 @if ($pesanans->user)
                                     {{ $pesanans->user->name }}
@@ -64,7 +68,10 @@
                                         {{ $product->product_name }}<br>
                                     @endforeach
                                 @else
-                                    Product Name
+                                    <input type="text" class="delete-input" value="{{ $pesanans->product_name }}">
+                                    @php
+                                        $deletedRow++;
+                                    @endphp
                                 @endif
                             </td>
                             <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
@@ -98,4 +105,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function deleteRowOnEmpty() {
+            var deleteInputs = document.querySelectorAll('.delete-input');
+
+            deleteInputs.forEach(function(input) {
+                var row = input.closest('tr');
+                var productName = input.value;
+
+                if (!productName || productName.trim() === '') {
+                    row.remove();
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            deleteRowOnEmpty();
+        });
+    </script>
 @endsection
