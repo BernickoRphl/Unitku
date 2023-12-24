@@ -64,7 +64,7 @@
                                 @if (Auth::user()->isCustomer() || Auth::user()->isSuperadmin())
                                     {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
                                     <a href="{{ route('pesanan.index') }}"
-                                        class="{{ request()->is('pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
+                                        class="{{ request()->is('pesanan/pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
                                 @endif
                                 @if (Auth::user()->isSuperadmin())
                                 <a href="{{ route('admin.list') }}"
