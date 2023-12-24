@@ -24,6 +24,39 @@ class UserSeeder extends Seeder
             'is_active' => '1',
             'remember_token' => Str::random(10),
         ]);
+
+        User::create([
+            'name' => 'Daniel',
+            'email' => 'daniel@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('12345678'),
+            'role_id' => 2,
+            'is_login' => '0',
+            'is_active' => '1',
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'name' => 'Aldrich',
+            'email' => 'aldrich@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('12345678'),
+            'role_id' => 2,
+            'is_login' => '0',
+            'is_active' => '1',
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'name' => 'Bryanna',
+            'email' => 'bryanna@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('12345678'),
+            'role_id' => 2,
+            'is_login' => '0',
+            'is_active' => '1',
+            'remember_token' => Str::random(10),
+        ]);
         User::factory(3)->create();
 
         User::create([

@@ -49,6 +49,7 @@
                         <th scope="col" class="px-4 py-2 text-center">Price</th>
                         <th scope="col" class="px-4 py-2 text-center">Color</th>
                         <th scope="col" class="px-4 py-2 text-center">Image</th>
+                        <th scope="col" class="px-4 py-2 text-center">Category</th>
                         <th scope="col" class="px-4 py-2 text-center">Edition</th>
                         <th scope="col" class="px-4 py-2 text-center">Action</th>
 
@@ -79,6 +80,15 @@
                             </td>
 
                             <!-- Assuming this is inside your Blade table -->
+
+                            <td class="border px-4 py-2">
+                                @if ($pro->category)
+                                    {{ $pro->category->name }}
+                                @else
+                                    No Category
+                                @endif
+                            </td>
+
                             <td class="border px-4 py-2">
                                 @if ($pro->edition)
                                     {{ $pro->edition->name }}
