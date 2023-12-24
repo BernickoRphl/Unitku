@@ -45,38 +45,38 @@
                 </thead>
 
                 <tbody>
+                    @php
+                        $deletedRow = 0;
+                    @endphp
+                    @foreach ($pesanan as $pesanans)
+                    <tr class="text-center">
+                        <td class="border px-4 py-2">{{ $loop->iteration - $deletedRow }}</td>
+                        <td class="border px-4 py-2">
+                            @if ($pesanans->user)
+                                {{ $pesanans->user->name }}
+                            @else
+                                User not available
+                            @endif
+                        </td>
+                        <td class="border px-4 py-2">
+                            @if ($pesanans->products->isNotEmpty())
+                                @foreach ($pesanans->products as $product)
+                                    {{ $product->product_name }}<br>
+                                @endforeach
+                            @else
+                                <input type="text" class="delete-input" value="{{ $pesanans->product_name }}">
+                            @endif
+                        </td>
 
-                    @foreach ($pesanans as $order)
-                        <tr class="text-center">
-
-                            <td class="border px-4 py-2">{{ $loop->iteration }}</td>
+                            <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
+                            <td class="border px-4 py-2">{{ $pesanans->tanggal_pemesanan }}</td>
+                            <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
+                            <td class="border px-4 py-2">{{ $pesanans->address }}</td>
+                            <td class="border px-4 py-2">{{ $pesanans->description }}</td>
 
                             <td class="border px-4 py-2">
-                                @if ($order->user)
-                                    {{ $order->user->name }}
-                                @else
-                                    User not available
-                                @endif
-                            </td>
 
-                            <td class="border px-4 py-2">
-                                @if ($order->product_detail)
-                                    {{ $order->product_detail->product_name }}
-                                    <br>
-                                @else
-                                    No Products
-                                @endif
-                            </td>
-
-                            <td class="border px-4 py-2">{{ $order->jumlah }}</td>
-                            <td class="border px-4 py-2">{{ $order->tanggal_pemesanan }}</td>
-                            <td class="border px-4 py-2">{{ $order->status->name }}</td>
-                            <td class="border px-4 py-2">{{ $order->address }}</td>
-                            <td class="border px-4 py-2">{{ $order->description }}</td>
-
-                            <td class="border px-4 py-2">
-
-                                <form method="POST" action="{{ route('pesanan.edit', $order->id) }}">
+                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
                                     @csrf
                                     @method('PATCH')
                                     <button
@@ -84,7 +84,7 @@
                                         type="submit">Update</button>
                                 </form>
 
-                                <form action="{{ route('pesanan.destroy', $order->id) }}" method="POST">
+                                <form action="{{ route('pesanan.destroy', $pesanans->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button
