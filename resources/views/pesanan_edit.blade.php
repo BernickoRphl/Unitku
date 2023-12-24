@@ -47,6 +47,46 @@
 
             <div class="row mb-3">
 
+                <label for="product_id" class="col-md-4 col-form-label text-md-end">Select Product</label>
+
+                <div class="col-md-6">
+
+                    <select name="product_id[]" id="product_id" class="form-select" multiple readonly>
+
+                        @foreach ($product as $product)
+                            <option value="{{ $product->id }}" selected>{{ $product->name }}</option>
+                        @endforeach
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    $('#product_id').select2({
+                        templateResult: formatProduct,
+                        escapeMarkup: function(m) {
+                            return m;
+                        }
+                    });
+                });
+
+                function formatProduct(product) {
+                    if (!product.id) {
+                        return product.text;
+                    }
+                    var $product = $(
+                        '<span><img src="' + $(product.element).data('image') + '" class="w-10 h-auto" /> ' + product.text +
+                        '</span>'
+                    );
+                    return $product;
+                }
+            </script>
+
+            <div class="row mb-3">
+
                 <label for="jumlah" class="col-md-4 col-form-label text-md-end">{{ __('Jumlah') }}</label>
 
                 <div class="col-md-6">

@@ -57,8 +57,10 @@ class PesananController extends Controller
         $status = status::all();
         $detail = DetailPesanan::all();
         $user = User::all();
+        $product = product::all();
         $pesananEdit = Pesanan::where('id', $pesanan->id)->first();
-        return view('pesanan_edit', compact('pesananEdit', 'user', 'detail', 'status'));
+
+        return view('pesanan_edit', compact('pesananEdit', 'user', 'detail', 'status', 'product'));
     }
 
     public function update(Request $request, Pesanan $pesanan)
