@@ -153,7 +153,7 @@
 
         </div>
 
-        <div class="sm:hidden" id="mobile-menu">
+        <div class="hidden sm:hidden" id="mobile-menu">
 
             <div class="space-y-1 px-2 pb-3 pt-2">
 
