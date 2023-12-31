@@ -100,28 +100,19 @@ section {
 @media(max-width: 991px) {
     html {
         font-size: 85%;
-
     }
 }
 
 @media(max-width: 450px) {
     html {
         font-size: 60%;
-
     }
-    .paddings {
-        padding-top: 10rem;
-
-}
 }
 
 @media(max-width: 640px) {
     html {
         font-size: 60%;
     }
-    .paddings {
-        padding-top: 9rem;
-}
 }
 
 .about .row {

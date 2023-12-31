@@ -104,17 +104,11 @@ section {
     html {
         font-size: 85%;
     }
-    .about  .heading {
-        padding-top: 5rem;
-    }
 }
 
 @media(max-width: 450px) {
     html {
         font-size: 60%;
-    }
-    .about .heading {
-        padding-top: 10rem;
     }
 }
 
