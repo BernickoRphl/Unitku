@@ -79,8 +79,6 @@
                                     class="w-40 h-auto">
                             </td>
 
-                            <!-- Assuming this is inside your Blade table -->
-
                             <td class="border px-4 py-2">
                                 @if ($pro->category)
                                     {{ $pro->category->name }}
