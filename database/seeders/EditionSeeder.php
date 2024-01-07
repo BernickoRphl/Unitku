@@ -14,13 +14,13 @@ class EditionSeeder extends Seeder
     public function run(): void
     {
         edition::create([
-            'name' => "Basic"
+            'edition_name' => "Basic"
         ]);
         edition::create([
-            'name' => "Special"
+            'edition_name' => "Special"
         ]);
         edition::create([
-            'name' => "Limited"
+            'edition_name' => "Limited"
         ]);
     }
 }

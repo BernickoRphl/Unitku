@@ -15,7 +15,7 @@ class edition extends Model
     }
 
     protected $fillable = [
-        'name',
+        'edition_name',
         'description',
     ];
 }

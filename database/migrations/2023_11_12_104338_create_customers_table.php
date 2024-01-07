@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('edition_name');
             $table->timestamps();
         });
     }

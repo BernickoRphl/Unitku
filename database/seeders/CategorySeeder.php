@@ -15,18 +15,18 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert(
             [
-                'name' => 'Full Set',
+                'category_name' => 'Full Set',
                 'description' => 'Spine + Sleves + Sheets',
             ]
         );
         DB::table('categories')->insert(
             [
-                'name' => 'Sleeves',
+                'category_name' => 'Sleeves',
                 'description' => 'Sleves Only',
             ]
         );DB::table('categories')->insert(
             [
-                'name' => 'Sheets',
+                'category_name' => 'Sheets',
                 'description' => 'Sheets Only',
             ]
         );

@@ -59,6 +59,7 @@
                                 class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
                             <a href="{{ route('about') }}"
                                 class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
+
                             @auth
                                 @if (Auth::user()->isCustomer())
                                     {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
@@ -78,8 +79,8 @@
                                         class="{{ request()->is('pesanan/pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                                         Pesanan</a>
                                 @endif
-
                             @endauth
+
                         </div>
 
                     </div>
@@ -147,14 +148,33 @@
         <div class="sm:hidden hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pb-3 pt-2">
 
-                <a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-                    aria-current="page">Home</a>
-                <a href="/product"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Products</a>
-                <a href="/about"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-                <a href="https://www.jotform.com/form/231542125038447"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Order</a>
+                <a href="{{ route('home') }}"
+                    class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Home</a>
+                <a href="{{ route('product.show') }}"
+                    class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
+                <a href="{{ route('about') }}"
+                    class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
+
+                @auth
+                    @if (Auth::user()->isCustomer())
+                        {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
+                        <a href="{{ route('pesanan.index') }}"
+                            class="{{ request()->is('pesanan/pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
+                    @endif
+                    @if (Auth::user()->isSuperadmin())
+                        <a href="{{ route('admin.list') }}"
+                            class="{{ request()->is('list_admin') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                            Admin</a>
+                    @endif
+                    @if (Auth::user()->isAdmin())
+                        <a href="{{ route('product.list') }}"
+                            class="{{ request()->is('product/product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                            Produk</a>
+                        <a href="{{ route('pesanan.list') }}"
+                            class="{{ request()->is('pesanan/pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                            Pesanan</a>
+                    @endif
+                @endauth
 
             </div>
 
@@ -252,6 +272,18 @@
     </footer>
 
     <script src="{{ asset('resources/js/app.js') }}" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -20,10 +20,10 @@
     </style>
 
     <div class="mt-40 mb-40">
-        <form method="POST" action="{{ route('pesanan.add') }}">
+        <form method="POST" action="{{ route('pesanan.add') }}" enctype="multipart/form-data">
             @csrf
 
-            <div class="row mb-3">
+            {{-- <div class="row mb-3">
 
                 <label for="tanggal_pemesanan"
                     class="col-md-4 col-form-label text-md-end">{{ __('Tanggal Pemesanan') }}</label>
@@ -35,7 +35,7 @@
 
                 </div>
 
-            </div>
+            </div> --}}
 
             <div class="row mb-3">
 
@@ -48,6 +48,26 @@
                 </div>
 
             </div>
+
+            <div class="row mb-3">
+
+                <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Bukti Transfer') }}</label>
+
+                <div class="col-md-6">
+
+                    <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image[]" required accept="image/*">
+
+                    <img id="imagePreview" class="mt-2" style="display:none; max-width: 100%;" />
+
+                    @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+
 
             <div class="row mb-3">
 
@@ -81,27 +101,6 @@
 
             </div>
 
-            <script>
-                $(document).ready(function() {
-                    $('#product_id').select2({
-                        templateResult: formatProduct,
-                        escapeMarkup: function(m) {
-                            return m;
-                        }
-                    });
-                });
-
-                function formatProduct(product) {
-                    if (!product.id) {
-                        return product.text;
-                    }
-                    var $product = $(
-                        '<span><img src="' + $(product.element).data('image') + '" class="w-10 h-auto" /> ' + product.text +
-                        '</span>'
-                    );
-                    return $product;
-                }
-            </script>
 
             <input type="number" name="status_id" id="status_id" value="1" hidden readonly>
 
@@ -134,4 +133,43 @@
         </form>
 
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#product_id').select2({
+                templateResult: formatProduct,
+                escapeMarkup: function(m) {
+                    return m;
+                }
+            });
+        });
+
+        function formatProduct(product) {
+            if (!product.id) {
+                return product.text;
+            }
+            var $product = $(
+                '<span><img src="' + $(product.element).data('image') + '" class="w-10 h-auto" /> ' + product.text +
+                '</span>'
+            );
+            return $product;
+        }
+
+        // Tambahkan fungsi untuk menampilkan pratinjau gambar
+        document.getElementById('image').addEventListener('change', function(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = reader.result;
+                imagePreview.style.display = 'block';
+            };
+
+            // Membaca file gambar yang dipilih
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
+    </script>
 @endsection

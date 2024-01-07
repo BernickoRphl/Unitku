@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto mt-5 mb-20 pt-20">
+<div class="container mx-auto mt-10 mb-10 px-16">
 
         <div class="text-start">
 
@@ -40,14 +40,16 @@
         </form> --}}
 
         <div class="card-body mt-4">
-            <table class="table-auto w-full mx-auto">
-                <thead class="bg-gray-800 text-white">
+
+            <div class="overflow-x-auto">
+                <table class="table-auto w-full">
                     <tr>
                         <th scope="col" class="px-4 py-2 text-center">No</th>
                         <th scope="col" class="px-4 py-2 text-center">User</th>
                         <th scope="col" class="px-4 py-2 text-center">Product</th>
                         <th scope="col" class="px-4 py-2 text-center">Jumlah</th>
                         <th scope="col" class="px-4 py-2 text-center">Tanggal Pemesanan</th>
+                        <th scope="col" class="px-4 py-2 text-center">Bukti Pembayaran</th>
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
                         <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
@@ -83,6 +85,12 @@
                             </td>
                             <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->tanggal_pemesanan }}</td>
+
+                            <td class="border px-4 py-2">
+                                <img src="{{ asset('storage/' . $pesanans->image) }}" alt="{{ $pesanans->product_name }}"
+                                    class="w-40 h-auto">
+                            </td>
+
                             <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>

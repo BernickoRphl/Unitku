@@ -28,14 +28,15 @@ class ProductController extends Controller
      */
 
 
-    public function add_form()
-    {
-        $product = new Product(); // Instantiate an empty Product
-        $edition = edition::all();
-        $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
+     public function add_form()
+     {
+         $product = new Product(); // Instantiate an empty Product
+         $edition = edition::all();
+         $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
 
-        return view('product_add', compact('product', 'categories','edition'));
-    }
+         return view('product_add', compact('product', 'categories', 'edition'));
+     }
+
 
     public function create(Request $request)
     {
@@ -126,9 +127,9 @@ class ProductController extends Controller
         );
     }
     public function index1()
-    {
-        $products = Product::with('categories')->get();
+{
+    $products = Product::with('category')->get();
 
-        return view('product.create', compact('products'));
-    }
+    return view('product.list', compact('products'));
+}
 }
