@@ -25,31 +25,25 @@ class PesananController extends Controller
         $user = auth()->user();
         $productIds = $request->product_id;
 
-        $images = $request->file('image');
-
-        foreach ($productIds as $key => $productId) {
+        foreach ($productIds as $productId) {
             // Validate if the file is present
-            if (isset($images[$key]) && $images[$key]->isValid()) {
-                $productImage = $images[$key]->store('images', ['disk' => 'public']);
+            $productImage = $request->file('product_image')->store('images', ['disk' => 'public']);
 
-                $pesanan = $user->pesanans()->create([
-                    'tanggal_pemesanan' => now()->toDateString(),
-                    'address' => $request->address,
-                    'description' => $request->description,
-                    'jumlah' => $request->jumlah,
-                    'image' => $productImage, // Store only the first image, modify as needed
-                    'status_id' => $request->status_id,
-                    'product_id' => $productId,
-                ]);
-            }
+            $pesanan = $user->pesanans()->create([
+                'tanggal_pemesanan' => now()->toDateString(),
+                'address' => $request->address,
+                'description' => $request->description,
+                'jumlah' => $request->jumlah,
+                'image' => $productImage,
+                'status_id' => $request->status_id,
+                'product_id' => $productId,
+            ]);
         }
 
-        // Sync product IDs with the pesanan
         $pesanan->products()->sync($productIds);
 
         return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
     }
-
 
 
     public function show_all_pesanan(Pesanan $pesanan)
