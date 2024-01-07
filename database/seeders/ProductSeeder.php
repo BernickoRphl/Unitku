@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert(
             [
+                'category_id' => 1,
                 'edition_id' => 1,
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
@@ -26,6 +27,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
+                'category_id' => 1,
                 'edition_id' => 1,
                 'product_name' => 'Full Set',
                 'product_desc' => 'Spine + Sleeves + Sheets',
@@ -37,6 +39,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
+                'category_id' => 2,
                 'edition_id' => 1,
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',
@@ -48,6 +51,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert(
             [
+                'category_id' => 3,
                 'edition_id' => 1,
                 'product_name' => 'Sheets',
                 'product_desc' => 'Sheets Only',

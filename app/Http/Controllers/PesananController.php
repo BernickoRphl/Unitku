@@ -23,25 +23,34 @@ class PesananController extends Controller
     public function create(Request $request)
     {
         $user = auth()->user();
+        $productIds = $request->product_id;
 
-        $product = $request->product_id;
+        $images = $request->file('image');
 
-        foreach ($product as $product) {
-            $pesanan = $user->pesanans()->create([
-                'tanggal_pemesanan' => now()->toDateString(),
-                'address' => $request->address,
-                'description' => $request->description,
-                'jumlah' => $request->jumlah,
-                'status_id' => $request->status_id,
-                'product_id' => $product,
+        foreach ($productIds as $key => $productId) {
+            // Validate if the file is present
+            if (isset($images[$key]) && $images[$key]->isValid()) {
+                $productImage = $images[$key]->store('images', ['disk' => 'public']);
 
-            ]);
+                $pesanan = $user->pesanans()->create([
+                    'tanggal_pemesanan' => now()->toDateString(),
+                    'address' => $request->address,
+                    'description' => $request->description,
+                    'jumlah' => $request->jumlah,
+                    'image' => $productImage, // Store only the first image, modify as needed
+                    'status_id' => $request->status_id,
+                    'product_id' => $productId,
+                ]);
+            }
         }
 
-        $pesanan->products()->sync($request->product_id);
+        // Sync product IDs with the pesanan
+        $pesanan->products()->sync($productIds);
 
         return redirect()->route('pesanan.index')->with('success', 'Pesanan created successfully');
     }
+
+
 
     public function show_all_pesanan(Pesanan $pesanan)
     {
@@ -69,9 +78,11 @@ class PesananController extends Controller
             'address' => $request->address,
             'description' => $request->description,
             'jumlah' => $request->jumlah,
+            'image' => $request->image,
             'status_id' => $request->status ?? $pesanan->status, // Use the existing value if not provided
-            'product_id' => $request->products,
+            'product_id' => $request->products ?? $pesanan->product_id, // Use the existing value if not provided
         ]);
+
         return redirect()->route('pesanan.list')->with('success', 'Pesanan updated successfully');
     }
 

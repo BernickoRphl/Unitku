@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('status_id')->constrained('statuses')->default(1);
             $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->date('tanggal_pemesanan');
+            $table->string('image')->nullable(true);
             $table->integer('jumlah');
             $table->string('address');
             $table->string('description');

@@ -112,47 +112,25 @@
             </div>
 
             <div class="row mb-3">
-
-                <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
-
+                <label for="category_id" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
                 <div class="col-md-6">
-
-                    <select name="category" id="category" required>
-
+                    <select name="category_id" id="category_id" required>
                         @foreach ($categories as $category)
-                            @if (old('$category->id', $productEdit->category_id) === $category->id)
-                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                            @else
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endif
+                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                         @endforeach
-
                     </select>
-
                 </div>
-
             </div>
 
             <div class="row mb-3">
-
-                <label for="category" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
-
+                <label for="edition_id" class="col-md-4 col-form-label text-md-end">{{ __('Edition') }}</label>
                 <div class="col-md-6">
-
-                    <select name="category" id="category" required>
-
-                        @foreach ($edition as $edit)
-                            @if (old('$edit->id', $productEdit->edition_id) === $edit->id)
-                                <option value="{{ $edit->id }}" selected>{{ $edit->name }}</option>
-                            @else
-                                <option value="{{ $edit->id }}">{{ $edit->name }}</option>
-                            @endif
+                    <select name="edition_id" id="edition_id" required>
+                        @foreach ($edition as $editions)
+                            <option value="{{ $editions->id }}">{{ $editions->edition_name }}</option>
                         @endforeach
-
                     </select>
-
                 </div>
-
             </div>
 
             <div class="row mb-0">
