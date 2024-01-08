@@ -48,7 +48,7 @@
                             <td class="border px-4 py-2">{{ $user->is_active }}</td>
                             <td class="border px-4 py-2">
 
-                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
+                                <form method="POST" action="">
                                     @csrf
                                     @method('PATCH')
                                     <button
@@ -56,7 +56,7 @@
                                         type="submit">Update</button>
                                 </form>
 
-                                <form action="{{ route('pesanan.destroy', $pesanans->id) }}" method="POST">
+                                <form action="" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button
