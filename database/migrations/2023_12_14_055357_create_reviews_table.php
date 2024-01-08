@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,12 +12,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->id();
-            $table->string('description');
-            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
-            $table->timestamps();
-        });
+        Schema::create(
+            'customers',
+            function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+                $table->string('name');
+                $table->string('email')->unique();
+                $table->string('phone_number');
+            }
+        );
     }
 
     /**
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('customers');
     }
 };

@@ -4,6 +4,7 @@ use App\Http\Controllers\DetailPesananController;
 use App\Http\Controllers\ListProdukController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Auth;
@@ -29,8 +30,9 @@ Route::delete('/admin/delete', [RoleController::class, 'listAdmin'])->name('admi
 Route::patch('/admin/edit', [RoleController::class, 'listAdmin'])->name('admin.edit');
 Route::get('/admin/list', [RoleController::class, 'listAdmin'])->name('admin.list');
 
-
-
+//REVIEW
+Route::get('/review_add/{pesanan}', [ReviewController::class, 'create'])->name('review.form');
+Route::post('/review/store', [ReviewController::class, 'store'])->name('reviews.store');
 
 //PESANAN
 Route::delete('/pesanan/delete/{pesanan}', [PesananController::class, 'delete'])->name('pesanan.destroy');

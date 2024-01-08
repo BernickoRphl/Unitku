@@ -22,6 +22,5 @@ class DetailPesanan extends Model
     protected $fillable = [
         'pesanan_id',
         'product_id',
-        // 'user_id',
     ];
 }

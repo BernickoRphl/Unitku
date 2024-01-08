@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         TeamSeeder::class,
         // ValidasiSeeder::class,
         ProductSeeder::class,
-        ReviewSeeder::class,
+        // ReviewSeeder::class,
         PesananSeeder::class,
         // DetailPesananSeeder::class,
        ]);

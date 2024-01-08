@@ -16,8 +16,8 @@ class ReviewSeeder extends Seeder
 
             // Define sample reviews data
             $reviews = [
-                ['description' => 'Great product!', 'product_id' => 1],
-                ['description' => 'Excellent quality.', 'product_id' => 2],
+                ['description' => 'Great product!', 'pesanan_id' => 0],
+                ['description' => 'Excellent quality.', 'pesanan_id' => 0],
                 // Add more reviews as needed
             ];
 

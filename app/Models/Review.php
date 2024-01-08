@@ -14,9 +14,9 @@ class Review extends Model
         return self::find($id);
     }
 
-    public function product_review()
+    public function pesanan()
     {
-        return $this->belongsTo(product::class);
+        return $this->belongsTo(Pesanan::class);
     }
 
     protected $fillable = [

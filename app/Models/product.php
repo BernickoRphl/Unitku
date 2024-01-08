@@ -17,11 +17,6 @@ class product extends Model
         return $this->hasMany(DetailPesanan::class, 'product_id', 'id');
     }
 
-    public function review()
-    {
-        return $this->hasMany(Review::class);
-    }
-
     public function categories()
     {
         return $this->belongsTo(Category::class);

@@ -53,7 +53,7 @@
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
                         <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
-                        <th scope="col" class="px-4 py-2 text-center">Action</th>
+                        {{-- <th scope="col" class="px-4 py-2 text-center">Action</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -94,12 +94,11 @@
                             <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
-
-                            <td class="border px-4 py-2">
-                                <a href="https://wa.me/082124187011" target="_blank"
-                                class="bg-blue-950 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Customer Service
-                                </a>
-                             </td>
+                            <td>
+                            {{-- <button class="btn text-primary" type="submit">
+                                <a href="{{ route('review.form') }}">Tambah Review</a>
+                            </button> --}}
+                        </td>
                         </tr>
                     @endforeach
                 </tbody>

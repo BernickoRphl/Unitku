@@ -34,6 +34,11 @@ class Pesanan extends Model
         return $this->belongsToMany(product::class);
     }
 
+    public function review()
+    {
+        return $this->hasOne(Review::class);
+    }
+
     protected $fillable = [
         'tanggal_pemesanan',
         'image',
@@ -42,6 +47,7 @@ class Pesanan extends Model
         'address',
         'user_id',
         'status_id',
-        'product_id'
+        'product_id',
+        'review_id'
     ];
 }
