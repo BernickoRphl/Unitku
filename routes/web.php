@@ -24,9 +24,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/about', [TeamController::class, 'showTeam'])->name('about');
 
-Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.list');
-Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.edit');
-Route::get('/list_admin', [RoleController::class, 'listUsersWithRole'])->name('admin.delete');
+Route::post('/admin/create', [RoleController::class, 'createAdmin'])->name('admin.create');
+Route::delete('/admin/delete', [RoleController::class, 'listAdmin'])->name('admin.delete');
+Route::patch('/admin/edit', [RoleController::class, 'listAdmin'])->name('admin.edit');
+Route::get('/admin/list', [RoleController::class, 'listAdmin'])->name('admin.list');
+
 
 
 
