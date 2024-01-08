@@ -33,6 +33,8 @@
                         <th scope="col" class="px-4 py-2 text-center">Email</th>
                         <th scope="col" class="px-4 py-2 text-center">Is Login</th>
                         <th scope="col" class="px-4 py-2 text-center">Is Active</th>
+                        <th scope="col" class="px-4 py-2 text-center">Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +46,25 @@
                             <td class="border px-4 py-2">{{ $user->email }}</td>
                             <td class="border px-4 py-2">{{ $user->is_login }}</td>
                             <td class="border px-4 py-2">{{ $user->is_active }}</td>
+                            <td class="border px-4 py-2">
+
+                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button
+                                        class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                        type="submit">Update</button>
+                                </form>
+
+                                <form action="{{ route('pesanan.destroy', $pesanans->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button
+                                        class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                        type="submit">Delete</button>
+                                </form>
+
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
