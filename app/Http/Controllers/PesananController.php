@@ -38,6 +38,7 @@ class PesananController extends Controller
                 'image' => $productImage,
                 'status_id' => $request->status_id,
                 'product_id' => $productId,
+                'review_id' => $request->review_id,
             ]);
         }
 

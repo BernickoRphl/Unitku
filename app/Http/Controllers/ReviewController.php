@@ -16,10 +16,12 @@ class ReviewController extends Controller
     public function store(Request $request, Pesanan $pesanan)
     {
 
-        $pesanan->review()->create([
+
+        Review::create([
             'description' => $request->input('description'),
+            'pesanan_id' => $pesanan->id,
         ]);
 
-        return redirect()->route('pesanan.list'); 
+        return redirect()->route('pesanan.index'); // Adjust this to the desired route
     }
 }

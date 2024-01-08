@@ -53,7 +53,7 @@
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
                         <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
-                        {{-- <th scope="col" class="px-4 py-2 text-center">Action</th> --}}
+                        <th scope="col" class="px-4 py-2 text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,11 +94,11 @@
                             <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
-                            <td>
-                            {{-- <button class="btn text-primary" type="submit">
-                                <a href="{{ route('review.form') }}">Tambah Review</a>
-                            </button> --}}
-                        </td>
+                                <td class="border px-4 py-2">
+                                    <button class="btn text-primary" type="submit">
+                                        <a href="{{ route('review.form', ['pesanan' => $pesanans->id]) }}">Tambah Review</a>
+                                    </button>
+                                </td>
                         </tr>
                     @endforeach
                 </tbody>
