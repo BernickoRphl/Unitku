@@ -22,13 +22,14 @@ class PesananController extends Controller
 
     public function create(Request $request)
     {
+        // dd($_POST);
         $user = auth()->user();
         $productIds = $request->product_id;
 
-        foreach ($productIds as $productId) {
-            // Validate if the file is present
-            $productImage = $request->file('product_image')->store('images', ['disk' => 'public']);
+        $productImage = $request->file('image')->store('images', ['disk' => 'public']);
 
+
+        foreach ($productIds as $productId) {
             $pesanan = $user->pesanans()->create([
                 'tanggal_pemesanan' => now()->toDateString(),
                 'address' => $request->address,

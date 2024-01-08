@@ -51,13 +51,12 @@
 
             <div class="row mb-3">
 
-                <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Bukti Transfer') }}</label>
+                <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Upload Image Bukti Transfer') }}</label>
 
                 <div class="col-md-6">
 
-                    <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image[]" required accept="image/*">
-
-                    <img id="imagePreview" class="mt-2" style="display:none; max-width: 100%;" />
+                    <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" required accept="image/*">
+                    <img id="imagePreviewSelect" class="mt-2" style="display:none; max-width: 100%;" />
 
                     @error('image')
                         <span class="invalid-feedback" role="alert">
@@ -104,16 +103,12 @@
 
             <input type="number" name="status_id" id="status_id" value="1" hidden readonly>
 
-            <div class="row mb-3">
-
+            <<div class="row mb-3">
                 <label for="jumlah" class="col-md-4 col-form-label text-md-end">{{ __('Jumlah') }}</label>
-
                 <div class="col-md-6">
-
                     <input id="jumlah" type="text" class="form-control" name="jumlah" required>
-
+                    <div id="jumlah-warning"></div>
                 </div>
-
             </div>
 
             <div class="row mb-0">
@@ -157,19 +152,40 @@
 
         // Tambahkan fungsi untuk menampilkan pratinjau gambar
         document.getElementById('image').addEventListener('change', function(event) {
-            const input = event.target;
-            const reader = new FileReader();
+    const input = event.target;
+    const reader = new FileReader();
 
-            reader.onload = function() {
-                const imagePreview = document.getElementById('imagePreview');
-                imagePreview.src = reader.result;
-                imagePreview.style.display = 'block';
-            };
+    reader.onload = function() {
+        const imagePreview = document.getElementById('imagePreviewSelect'); // Change 'imagePreview' to 'imagePreviewSelect'
+        imagePreview.src = reader.result;
+        imagePreview.style.display = 'block';
+    };
 
-            // Membaca file gambar yang dipilih
-            if (input.files && input.files[0]) {
-                reader.readAsDataURL(input.files[0]);
+    // Membaca file gambar yang dipilih
+    if (input.files && input.files[0]) {
+        reader.readAsDataURL(input.files[0]);
+    }
+});
+
+    $(document).ready(function () {
+        $('#jumlah').on('input', function () {
+            var value = $(this).val();
+
+            if (!/^\d+$/.test(value)) {
+                $('#jumlah-warning').text('Please enter a valid integer value.').show();
+            } else {
+                $('#jumlah-warning').hide();
             }
         });
-    </script>
+    });
+</script>
+
+<style>
+    #jumlah-warning {
+        color: red;
+        display: none;
+        margin-top: 5px;
+    }
+</style>
+
 @endsection

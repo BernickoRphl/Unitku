@@ -94,22 +94,12 @@
                             <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
+
                             <td class="border px-4 py-2">
-                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button
-                                        class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-2"
-                                        type="submit">Update</button>
-                                </form>
-                                <form method="POST" action="{{ route('pesanan.destroy', $pesanans->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button
-                                        class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-2"
-                                        type="submit">Delete</button>
-                                </form>
-                            </td>
+                                <a href="https://wa.me/082124187011" target="_blank"
+                                class="bg-blue-950 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Customer Service
+                                </a>
+                             </td>
                         </tr>
                     @endforeach
                 </tbody>
