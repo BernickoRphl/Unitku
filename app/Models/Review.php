@@ -9,12 +9,14 @@ class Review extends Model
 {
     use HasFactory;
 
+
     public function pesanan()
     {
-        return $this->hasOne(Pesanan::class, 'pesanan_id');
+        return $this->belongsTo(Pesanan::class, 'review_id');
     }
 
     protected $fillable = [
         'description'
     ];
+
 }

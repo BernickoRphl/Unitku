@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::table('pesanans', function (Blueprint $table) {
             $table->unsignedBigInteger('review_id')->nullable();
-            $table->foreign('review_id')->references('id')->on('reviews')->onDelete('set null');
+            $table->foreign('review_id')->references('id')->default(1)->on('reviews')->onDelete('set null');
         });
     }
 

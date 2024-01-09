@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pesanan;
 use App\Models\DetailPesanan;
 use App\Models\product;
+use App\Models\Review;
 use App\Models\status;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -54,7 +55,9 @@ class PesananController extends Controller
         $detail = DetailPesanan::all();
         $user = User::all();
         $pesanan = Pesanan::all();
-        return view('pesanan_list', compact('pesanan', 'user', 'detail', 'product'));
+        $review = Review::all();
+
+        return view('pesanan_list', compact('pesanan', 'user', 'detail', 'product', 'review'));
     }
 
     public function edit(Pesanan $pesanan)
@@ -63,24 +66,61 @@ class PesananController extends Controller
         $detail = DetailPesanan::all();
         $user = User::all();
         $product = product::all();
+        $review = Review::all();
+
         $pesananEdit = Pesanan::where('id', $pesanan->id)->first();
 
-        return view('pesanan_edit', compact('pesananEdit', 'user', 'detail', 'status', 'product'));
+        return view('pesanan_edit', compact('pesananEdit', 'user', 'detail', 'status', 'product', 'review'));
     }
 
     public function update(Request $request, Pesanan $pesanan)
     {
+        $productImage = $request->file('image');
+
+        // Cek apakah ada gambar baru yang diunggah
+        if ($productImage) {
+            $productImage = $productImage->store('images', ['disk' => 'public']);
+        } else {
+            // Jika tidak ada gambar baru, gunakan gambar yang sudah ada
+            $productImage = $pesanan->image;
+        }
+
         $pesanan->update([
             'address' => $request->address,
             'description' => $request->description,
             'jumlah' => $request->jumlah,
-            'image' => $request->image,
-            'status_id' => $request->status ?? $pesanan->status, // Use the existing value if not provided
-            'product_id' => $request->products ?? $pesanan->product_id, // Use the existing value if not provided
+            'image' => $productImage,
+            'status_id' => $request->status ?? $pesanan->status,
+            'product_id' => $request->products ?? $pesanan->product_id,
+            'review_id' => $request->review_id ?? $pesanan->review_id,
         ]);
+
 
         return redirect()->route('pesanan.list')->with('success', 'Pesanan updated successfully');
     }
+
+    public function editReview(Pesanan $pesanan)
+    {
+        $status = status::all();
+        $detail = DetailPesanan::all();
+        $user = User::all();
+        $product = product::all();
+        $review = Review::all();
+
+        $pesananEdit = Pesanan::where('id', $pesanan->id)->first();
+
+        return view('review_add', compact('pesananEdit', 'user', 'detail', 'status', 'product', 'review'));
+    }
+
+    public function updateReview(Request $request, Pesanan $pesanan)
+    {
+        $pesanan->update([
+            'review_id' => $request->review_id ?? $pesanan->review_id,
+        ]);
+
+        return redirect()->route('pesanan.index')->with('success', 'Pesanan updated successfully');
+    }
+
 
     public function delete(Pesanan $pesanan)
     {
@@ -96,6 +136,7 @@ class PesananController extends Controller
         $pesanan = Pesanan::where('user_id', $user->id)->get();
         $pesanans = Pesanan::class;
         $product = product::class;
+        $review = Review::all();
 
         return view('pesanan_index', compact('pesanan'));
     }

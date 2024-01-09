@@ -95,9 +95,13 @@
                             <td class="border px-4 py-2">{{ $pesanans->address }}</td>
                             <td class="border px-4 py-2">{{ $pesanans->description }}</td>
                                 <td class="border px-4 py-2">
-                                    <button class="btn text-primary" type="submit">
-                                        <a href="{{ route('review.form', ['pesanan' => $pesanans->id]) }}">Tambah Review</a>
-                                    </button>
+                                    <form method="POST" action="{{ route('pesanan.editReview', $pesanans->id) }}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button
+                                            class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                            type="submit">Review</button>
+                                    </form>
                                 </td>
                         </tr>
                     @endforeach

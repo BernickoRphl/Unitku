@@ -13,22 +13,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       Model::unguard();
+        Model::unguard();
 
-       $this->call ([
-        RoleSeeder::class,
-        UserSeeder::class,
-        CategorySeeder::class,
-        CustomerSeeder::class,
-        EditionSeeder::class,
-        StatusSeeder::class,
-        TeamSeeder::class,
-        // ValidasiSeeder::class,
-        ProductSeeder::class,
-        // ReviewSeeder::class,
-        PesananSeeder::class,
-        // DetailPesananSeeder::class,
-       ]);
-       Model::reguard();
+        $this->call([
+            RoleSeeder::class,
+            UserSeeder::class,
+            CategorySeeder::class,
+            CustomerSeeder::class,
+            EditionSeeder::class,
+            StatusSeeder::class,
+            TeamSeeder::class,
+            ProductSeeder::class,
+            PesananSeeder::class,
+            ReviewSeeder::class,
+        ]);
+        Model::reguard();
     }
 }

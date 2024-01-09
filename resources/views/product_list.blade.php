@@ -98,7 +98,7 @@
                                         @else
                                             No Edition
                                         @endif
-                                    </td>
+                                    </td>       
 
                                     <td class="border px-4 py-2">
 

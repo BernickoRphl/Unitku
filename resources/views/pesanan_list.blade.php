@@ -39,103 +39,132 @@
                         <th scope="col" class="px-4 py-2 text-center">Status</th>
                         <th scope="col" class="px-4 py-2 text-center">Address</th>
                         <th scope="col" class="px-4 py-2 text-center">Description</th>
+                        <th scope="col" class="px-4 py-2 text-center">Review</th>
                         <th scope="col" class="px-4 py-2 text-center">Action</th>
                     </tr>
 
-                </thead>
+                    </thead>
 
-                <tbody>
-                    @php
-                        $deletedRow = 0;
-                    @endphp
+                    <tbody>
+                        @php
+                            $deletedRow = 0;
+                        @endphp
 
-                    @foreach ($pesanan as $pesanans)
-                        <tr class="text-center">
-                            <td class="border px-4 py-2">{{ $loop->iteration - $deletedRow }}</td>
-                            <td class="border px-4 py-2">
-                                @if ($pesanans->user)
-                                    {{ $pesanans->user->name }}
-                                @else
-                                    User not available
-                                @endif
-                            </td>
-                            <td class="border px-4 py-2">
-                                @if ($pesanans->products->isNotEmpty())
-                                    @foreach ($pesanans->products as $product)
-                                        {{ $product->product_name }}<br>
-                                    @endforeach
-                                @else
-                                    <input type="text" class="delete-input" value="{{ $pesanans->product_name }}">
-                                    @php
-                                        $deletedRow++;
-                                    @endphp
-                                @endif
-                            </td>
+                        @foreach ($pesanan as $pesanans)
+                            <tr class="text-center">
+                                <td class="border px-4 py-2">{{ $loop->iteration - $deletedRow }}</td>
+                                <td class="border px-4 py-2">
+                                    @if ($pesanans->user)
+                                        {{ $pesanans->user->name }}
+                                    @else
+                                        User not available
+                                    @endif
+                                </td>
+                                <td class="border px-4 py-2">
+                                    @if ($pesanans->products->isNotEmpty())
+                                        @foreach ($pesanans->products as $product)
+                                            {{ $product->product_name }}<br>
+                                        @endforeach
+                                    @else
+                                        <input type="text" class="delete-input" value="{{ $pesanans->product_name }}">
+                                        @php
+                                            $deletedRow++;
+                                        @endphp
+                                    @endif
+                                </td>
 
-                            <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
-                            <td class="border px-4 py-2">{{ $pesanans->tanggal_pemesanan }}</td>
+                                <td class="border px-4 py-2">{{ $pesanans->jumlah }}</td>
+                                <td class="border px-4 py-2">{{ $pesanans->tanggal_pemesanan }}</td>
 
-                            <td class="border px-4 py-2">
-                                <img src="{{ asset('storage/' . $pesanans->image) }}" alt="{{ $pesanans->product_name }}"
-                                    class="w-40 h-auto">
-                            </td>
+                                <td class="border px-4 py-2">
+                                    <img src="{{ asset('storage/' . $pesanans->image) }}"
+                                        alt="{{ $pesanans->product_name }}" class="w-40 h-auto">
+                                </td>
 
-                            <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
-                            <td class="border px-4 py-2">{{ $pesanans->address }}</td>
-                            <td class="border px-4 py-2">{{ $pesanans->description }}</td>
+                                <td class="border px-4 py-2">{{ $pesanans->status->name }}</td>
+                                <td class="border px-4 py-2">{{ $pesanans->address }}</td>
+                                <td class="border px-4 py-2">{{ $pesanans->description }}</td>
 
-                            <td class="border px-4 py-2">
+                                <td class="border px-4 py-2">
+                                    @if ($pesanans->review_id)
+                                        @if ($pesanans->review_id == 1)
+                                            <span class="text-black-500">No Review</span>
+                                        @elseif ($pesanans->review_id == 2)
+                                            <span class="text-black-500">Jelek banget, buruk sekali!</span>
+                                        @elseif ($pesanans->review_id == 3)
+                                            <span class="text-black-500">Kualitas sangat buruk.</span>
+                                        @elseif ($pesanans->review_id == 4)
+                                            <span class="text-black-500">Tidak sesuai ekspektasi.</span>
+                                        @elseif ($pesanans->review_id == 5)
+                                            <span class="text-black-500">Biasa saja, perlu perbaikan.</span>
+                                        @elseif ($pesanans->review_id == 6)
+                                            <span class="text-black-500">Cukup bagus, tetapi bisa ditingkatkan lagi.</span>
+                                        @elseif ($pesanans->review_id == 7)
+                                            <span class="text-black-500">Produk bagus dengan harga yang wajar.</span>
+                                        @elseif ($pesanans->review_id == 8)
+                                            <span class="text-black-500">Kualitas luar biasa, sangat memuaskan!</span>
+                                        @elseif ($pesanans->review_id == 9)
+                                            <span class="text-black-500">'Sempurna! Sangat direkomendasikan.</span>
+                                        @else
+                                            {{ $pesanans->review_id }}
+                                        @endif
+                                    @else
+                                        No Review
+                                    @endif
+                                </td>
 
-                                <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button
-                                        class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-5"
-                                        type="submit">Update</button>
-                                </form>
+                                <td class="border px-4 py-2">
 
-                                <form action="{{ route('pesanan.destroy', $pesanans->id) }}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button
-                                        class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
-                                        type="submit">Delete</button>
-                                </form>
+                                    <form method="POST" action="{{ route('pesanan.edit', $pesanans->id) }}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button
+                                            class="btn textprimary border-orange-600 border-2 hover:bg-orange-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                            type="submit">Update</button>
+                                    </form>
 
-                            </td>
+                                    <form action="{{ route('pesanan.destroy', $pesanans->id) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button
+                                            class="btn text-red-600 border-red-600 border-2 hover:bg-red-600 hover:text-white rounded-full px-4 py-2 mt-5"
+                                            type="submit">Delete</button>
+                                    </form>
 
-                        </tr>
-                    @endforeach
+                                </td>
 
-                </tbody>
+                            </tr>
+                        @endforeach
 
-            </table>
+                    </tbody>
 
-            <div class="mt-4">
-                <!-- Pagination links -->
-                {{-- {{ $pesanans->links() }} --}}
+                </table>
+
+                <div class="mt-4">
+                    <!-- Pagination links -->
+                    {{-- {{ $pesanans->links() }} --}}
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <script>
+            function deleteRowOnEmpty() {
+                var deleteInputs = document.querySelectorAll('.delete-input');
 
-    <script>
-        function deleteRowOnEmpty() {
-            var deleteInputs = document.querySelectorAll('.delete-input');
+                deleteInputs.forEach(function(input) {
+                    var row = input.closest('tr');
+                    var productName = input.value;
 
-            deleteInputs.forEach(function(input) {
-                var row = input.closest('tr');
-                var productName = input.value;
+                    if (!productName || productName.trim() === '') {
+                        row.remove();
+                    }
+                });
+            }
 
-                if (!productName || productName.trim() === '') {
-                    row.remove();
-                }
+            document.addEventListener("DOMContentLoaded", function() {
+                deleteRowOnEmpty();
             });
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            deleteRowOnEmpty();
-        });
-    </script>
-@endsection
+        </script>
+    @endsection

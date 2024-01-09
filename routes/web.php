@@ -34,10 +34,10 @@ Route::get('/admin/list', [RoleController::class, 'listAdmin'])->name('admin.lis
 Route::get('/review_add/{pesanan}', [ReviewController::class, 'create'])->name('review.form');
 Route::post('/review/store', [ReviewController::class, 'store'])->name('reviews.store');
 
-
 //PESANAN
 Route::delete('/pesanan/delete/{pesanan}', [PesananController::class, 'delete'])->name('pesanan.destroy');
 Route::patch('/pesanan/edit/{pesanan}', [PesananController::class, 'edit'])->name('pesanan.edit');
+Route::patch('/pesanan/edit-review/{pesanan}', [PesananController::class, 'editReview'])->name('pesanan.editReview');
 Route::get('/pesanan/order_history', [ProductController::class, 'showProductOrdered'])->name('pesanan.history');
 Route::get('/pesanan/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
 Route::post('/pesanan/pesanan_create', [PesananController::class, 'create'])->name('pesanan.add');
@@ -45,6 +45,7 @@ Route::delete('/pesanan/pesanan_detail/{detailPesanan}', [DetailPesananControlle
 Route::get('/pesanan/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
 Route::get('/pesanan/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
 Route::put('/pesanan/update/{pesanan}', [PesananController::class, 'update'])->name('pesanan.update');
+Route::put('/pesanan/update-review/{pesanan}', [PesananController::class, 'updateReview'])->name('pesanan.updateReview');
 // Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
 
 

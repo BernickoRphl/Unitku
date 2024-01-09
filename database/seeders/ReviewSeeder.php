@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,17 +12,58 @@ class ReviewSeeder extends Seeder
      */
     public function run(): void
     {
+        // Define sample reviews data with a range of sentiments
+        $reviews = [
+            [
+                'description' => "No Review",
+                // 'pesanan_id' => 1,
+            ],
+            [
+                'description' => 'Jelek banget, buruk sekali!',
+                // 'pesanan_id' => 1,
 
-            // Define sample reviews data
-            $reviews = [
-                ['description' => 'Great product!', 'pesanan_id' => 0],
-                ['description' => 'Excellent quality.', 'pesanan_id' => 0],
-                // Add more reviews as needed
-            ];
+            ],
+            [
+                'description' => 'Kualitas sangat buruk.',
+                // 'pesanan_id' => 1,
 
-            // Insert reviews into the 'reviews' table
-            foreach ($reviews as $review) {
-                DB::table('reviews')->insert($review);
-            }
-     }
+            ],
+            [
+                'description' => 'Tidak sesuai ekspektasi.',
+                // 'pesanan_id' => 1,
+
+            ],
+            [
+                'description' => 'Biasa saja, perlu perbaikan.',
+                // 'pesanan_id' => 1,
+
+            ],
+            [
+                'description' => 'Cukup bagus, tetapi bisa ditingkatkan lagi.',
+                // 'pesanan_id' => 1,
+
+            ],
+            [
+                'description' => 'Produk bagus dengan harga yang wajar.',
+                // 'pesanan_id' => 1,
+
+            ],
+            [
+                'description' => 'Kualitas luar biasa, sangat memuaskan!',
+                // 'pesanan_id' => 1,
+
+            ],
+            [
+                'description' => 'Sempurna! Sangat direkomendasikan.',
+                // 'pesanan_id' => 1,
+
+            ],
+            // Add more reviews as needed
+        ];
+
+        // Insert reviews into the 'reviews' table
+        foreach ($reviews as $review) {
+            DB::table('reviews')->insert($review);
+        }
+    }
 }
