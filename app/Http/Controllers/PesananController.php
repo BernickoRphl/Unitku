@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Pesanan;
 use App\Models\DetailPesanan;
-use App\Models\product;
+use App\Models\Product;
 use App\Models\Review;
-use App\Models\status;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

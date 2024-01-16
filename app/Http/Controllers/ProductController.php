@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\edition;
+use App\Models\Edition;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
