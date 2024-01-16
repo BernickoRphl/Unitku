@@ -31,7 +31,7 @@ class Pesanan extends Model
 
     public function products()
     {
-        return $this->belongsToMany(product::class);
+        return $this->belongsToMany(Product::class);
     }
 
     public function review()

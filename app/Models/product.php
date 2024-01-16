@@ -24,8 +24,9 @@ class product extends Model
 
     public function edition()
     {
-        return $this->belongsTo(edition::class);
+        return $this->belongsTo(Edition::class);
     }
+
     public function pesanans()
     {
         return $this->belongsToMany(Pesanan::class);

@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 class ListProdukController extends Controller
 {
     public function show($code) {
-        $product = product::dataWithCode($code);
+        $product = Product::dataWithCode($code);
         return view('list_product', ['product' => $product]);
     }
 
     public function show_list_product(Request $request){
 
         if($request->has('search')){
-            $product = product::where('product_name', 'like', "%".$request->search."%")->orwhere('color', 'like', "%".$request->search."%")->paginate(5)->withQueryString();
+            $product = Product::where('product_name', 'like', "%".$request->search."%")->orwhere('color', 'like', "%".$request->search."%")->paginate(5)->withQueryString();
         }else{
-            $product = product::paginate(10);
+            $product = Product::paginate(10);
         }
 
         return view(
@@ -33,7 +33,7 @@ class ListProdukController extends Controller
         return view('product.create');
     }
 
-    public function showproduct(product $product){
+    public function showproduct(Product $product){
         return view('product_list',
             [
                 'product' => $product

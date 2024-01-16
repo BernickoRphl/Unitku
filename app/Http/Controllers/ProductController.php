@@ -31,7 +31,7 @@ class ProductController extends Controller
      public function add_form()
      {
          $product = new Product(); // Instantiate an empty Product
-         $edition = edition::all();
+         $edition = Edition::all();
          $categories = Category::all(); // Fetch all categories (adjust based on your actual model)
 
          return view('product_add', compact('product', 'categories', 'edition'));
@@ -61,7 +61,7 @@ class ProductController extends Controller
         $productEdit = Product::where('id', $product->id)->first();
         $products = Product::all();
         $categories = Category::all();
-        $edition = edition::all();
+        $edition = Edition::all();
 
         return view('product_edit', compact('productEdit', 'products', 'categories','edition'));
     }

@@ -15,7 +15,7 @@ class PesananController extends Controller
 {
     public function add_form()
     {
-        $product = product::all();
+        $product = Product::all();
         $currentDate = now()->toDateString();
 
         return view('pesanan_add', compact('product', 'currentDate'));
@@ -51,7 +51,7 @@ class PesananController extends Controller
 
     public function show_all_pesanan(Pesanan $pesanan)
     {
-        $product = product::all();
+        $product = Product::all();
         $detail = DetailPesanan::all();
         $user = User::all();
         $pesanan = Pesanan::all();
@@ -62,7 +62,7 @@ class PesananController extends Controller
 
     public function edit(Pesanan $pesanan)
     {
-        $status = status::all();
+        $status = Status::all();
         $detail = DetailPesanan::all();
         $user = User::all();
         $product = product::all();
@@ -81,7 +81,6 @@ class PesananController extends Controller
         if ($productImage) {
             $productImage = $productImage->store('images', ['disk' => 'public']);
         } else {
-            // Jika tidak ada gambar baru, gunakan gambar yang sudah ada
             $productImage = $pesanan->image;
         }
 
@@ -101,10 +100,10 @@ class PesananController extends Controller
 
     public function editReview(Pesanan $pesanan)
     {
-        $status = status::all();
+        $status = Status::all();
         $detail = DetailPesanan::all();
         $user = User::all();
-        $product = product::all();
+        $product = Product::all();
         $review = Review::all();
 
         $pesananEdit = Pesanan::where('id', $pesanan->id)->first();
@@ -135,7 +134,7 @@ class PesananController extends Controller
         $user = Auth::user();
         $pesanan = Pesanan::where('user_id', $user->id)->get();
         $pesanans = Pesanan::class;
-        $product = product::class;
+        $product = Product::class;
         $review = Review::all();
 
         return view('pesanan_index', compact('pesanan'));

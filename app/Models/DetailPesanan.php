@@ -16,7 +16,7 @@ class DetailPesanan extends Model
 
     public function product_detail()
     {
-        return $this->belongsTo(product::class, 'product_id', 'id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
     protected $fillable = [
