@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\edition;
+use App\Models\Edition;
 use Illuminate\Http\Request;
 
 class EditionController extends Controller
