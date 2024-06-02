@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\DetailPesananController;
-use App\Http\Controllers\ListProdukController;
-use App\Http\Controllers\PesananController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ListUnitController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 //SHOW
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/about', [TeamController::class, 'showTeam'])->name('about');
 
 Route::post('/admin/create', [RoleController::class, 'createAdmin'])->name('admin.create');
 Route::delete('/admin/delete', [RoleController::class, 'listAdmin'])->name('admin.delete');
@@ -31,33 +26,18 @@ Route::patch('/admin/edit', [RoleController::class, 'listAdmin'])->name('admin.e
 Route::get('/admin/list', [RoleController::class, 'listAdmin'])->name('admin.list');
 
 //REVIEW
-Route::get('/review_add/{pesanan}', [ReviewController::class, 'create'])->name('review.form');
-Route::post('/review/store', [ReviewController::class, 'store'])->name('reviews.store');
 
 //PESANAN
-Route::delete('/pesanan/delete/{pesanan}', [PesananController::class, 'delete'])->name('pesanan.destroy');
-Route::patch('/pesanan/edit/{pesanan}', [PesananController::class, 'edit'])->name('pesanan.edit');
-Route::patch('/pesanan/edit-review/{pesanan}', [PesananController::class, 'editReview'])->name('pesanan.editReview');
-Route::get('/pesanan/order_history', [ProductController::class, 'showProductOrdered'])->name('pesanan.history');
-Route::get('/pesanan/pesanan_add', [PesananController::class, 'add_form'])->name('pesanan.form');
-Route::post('/pesanan/pesanan_create', [PesananController::class, 'create'])->name('pesanan.add');
-Route::delete('/pesanan/pesanan_detail/{detailPesanan}', [DetailPesananController::class, 'delete'])->name('detail_pesanans.delete');
-Route::get('/pesanan/pesanan_index', [PesananController::class, 'listPesananUser'])->name('pesanan.index');
-Route::get('/pesanan/pesanan_list', [PesananController::class, 'show_all_pesanan'])->name('pesanan.list');
-Route::put('/pesanan/update/{pesanan}', [PesananController::class, 'update'])->name('pesanan.update');
-Route::put('/pesanan/update-review/{pesanan}', [PesananController::class, 'updateReview'])->name('pesanan.updateReview');
-// Route::get('/list_pesanan_user', [PesananController::class, 'listPesananUser'])->name('pesanan.user');
+Route::get('/pesanan/order_history', [UnitController::class, 'showUnitOrdered'])->name('pesanan.history');
 
-
-//PRODUCT
-Route::get('/product', [ProductController::class, 'showProduct'])->name('product.show');
-Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
-Route::patch('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
-Route::post('/product/product_create', [ProductController::class, 'create'])->name('product.add');
-Route::get('/product/product_list', [ListProdukController::class, 'show_list_product'])->name('product.list');
-Route::put('/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
-Route::get('/product/{product}', [ProductController::class, 'show_product']);
-Route::get('/product_add', [ProductController::class, 'add_form'])->name('product.form');
-// Route::get('/product_add', [ProductController::class, 'store'])->name('product.store');
+//UNIT
+Route::get('/unit', [UnitController::class, 'showUnit'])->name('unit.show');
+Route::delete('/unit/destroy/{unit}', [UnitController::class, 'destroy'])->name('unit.destroy');
+Route::patch('/unit/edit/{unit}', [UnitController::class, 'edit'])->name('unit.edit');
+Route::post('/unit/unit_create', [UnitController::class, 'create'])->name('unit.add');
+Route::get('/unit/unit_list', [ListUnitController::class, 'show_list_unit'])->name('unit.list');
+Route::put('/unit/update/{unit}', [UnitController::class, 'update'])->name('unit.update');
+Route::get('/unit/{unit}', [UnitController::class, 'show_unit']);
+Route::get('/unit_add', [UnitController::class, 'add_form'])->name('unit.form');
 
 Auth::routes();

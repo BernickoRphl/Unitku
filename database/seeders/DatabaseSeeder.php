@@ -18,14 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
-            CategorySeeder::class,
-            CustomerSeeder::class,
-            EditionSeeder::class,
-            StatusSeeder::class,
-            TeamSeeder::class,
-            ProductSeeder::class,
-            PesananSeeder::class,
-            ReviewSeeder::class,
+            UnitSeeder::class,
         ]);
         Model::reguard();
     }

@@ -44,8 +44,8 @@
 
                     <div class="flex flex-shrink-0 items-center">
 
-                        <img class="h-12 w-auto" src="{{ asset('resources/images/Logo Transparent White.png') }}"
-                            alt="Your Company">
+                        <img class="h-12 w-auto" src="{{ asset('') }}"
+                            alt="Unitku">
 
                     </div>
 
@@ -55,29 +55,13 @@
 
                             <a href="{{ route('home') }}"
                                 class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Home</a>
-                            <a href="{{ route('product.show') }}"
-                                class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
-                            <a href="{{ route('about') }}"
-                                class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
-
+                            <a href="{{ route('unit.show') }}"
+                                class="{{ request()->is('unit') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Unit</a>
                             @auth
-                                @if (Auth::user()->isCustomer())
-                                    {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
-                                    <a href="{{ route('pesanan.index') }}"
-                                        class="{{ request()->is('pesanan/pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
-                                @endif
-                                @if (Auth::user()->isSuperadmin())
-                                    <a href="{{ route('admin.list') }}"
-                                        class="{{ request()->is('list_admin') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
-                                        Admin</a>
-                                @endif
                                 @if (Auth::user()->isAdmin())
-                                    <a href="{{ route('product.list') }}"
-                                        class="{{ request()->is('product/product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                                    <a href="{{ route('unit.list') }}"
+                                        class="{{ request()->is('unit/unit') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                                         Produk</a>
-                                    <a href="{{ route('pesanan.list') }}"
-                                        class="{{ request()->is('pesanan/pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
-                                        Pesanan</a>
                                 @endif
                             @endauth
 
@@ -150,29 +134,13 @@
 
                 <a href="{{ route('home') }}"
                     class="{{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Home</a>
-                <a href="{{ route('product.show') }}"
-                    class="{{ request()->is('product') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Product</a>
-                <a href="{{ route('about') }}"
-                    class="{{ request()->is('about') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">About</a>
-
+                <a href="{{ route('unit.show') }}"
+                    class="{{ request()->is('unit') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Unit</a>
                 @auth
-                    @if (Auth::user()->isCustomer())
-                        {{-- <a href="https://www.jotform.com/form/231542125038447" --}}
-                        <a href="{{ route('pesanan.index') }}"
-                            class="{{ request()->is('pesanan/pesanan_index') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">Order</a>
-                    @endif
-                    @if (Auth::user()->isSuperadmin())
-                        <a href="{{ route('admin.list') }}"
-                            class="{{ request()->is('list_admin') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
-                            Admin</a>
-                    @endif
                     @if (Auth::user()->isAdmin())
-                        <a href="{{ route('product.list') }}"
-                            class="{{ request()->is('product/product_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
+                        <a href="{{ route('unit.list') }}"
+                            class="{{ request()->is('unit/unit_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
                             Produk</a>
-                        <a href="{{ route('pesanan.list') }}"
-                            class="{{ request()->is('pesanan/pesanan_list') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} block rounded-md px-3 py-2 text-xl font-medium">List
-                            Pesanan</a>
                     @endif
                 @endauth
 
@@ -201,9 +169,8 @@
                         <ul class="list-disc list-inside space-y-8">
 
                             <li><a href="/" class="hover:text-sky-400 transition">Home</a></li>
-                            <li><a href="/product" class="hover:text-sky-400 transition">Product</a></li>
-                            <li><a href="/about" class="hover:text-sky-400 transition">About</a></li>
-                            <li><a href="https://wa.me/082124187011" target="_blank"
+                            <li><a href="/unit" class="hover:text-sky-400 transition">Unit</a></li>
+                            <li><a href="/" target="_blank"
                                     class="hover:text-sky-400 transition">Contact</a></li>
 
                         </ul>
@@ -212,7 +179,7 @@
 
                             <li>
 
-                                <a href="https://wa.me/082124187011" target="_blank"
+                                <a href="/" target="_blank"
                                     class="flex items-center space-x-3 hover:text-sky-400 transition">
                                     <img class="w-5 h-5"
                                         src="https://seeklogo.com/images/W/whatsapp-logo-8AE44BBBB0-seeklogo.com.png"
@@ -225,7 +192,7 @@
 
                             <li>
 
-                                <a href="https://www.instagram.com/intric.id/" target="_blank"
+                                <a href="/" target="_blank"
                                     class="flex items-center space-x-3 hover:text-sky-400 transition">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5"
                                         viewBox="0 0 16 16">
@@ -244,11 +211,11 @@
 
                     <div class="w-10/12 m-auto  mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
 
-                        <span class="block text-gray-300">We are the first detachable clothing in Indonesia!</span>
+                        <span class="block text-gray-300">Terpercaya dan terdepan dalam layanan penyewaan apartemen!</span>
 
-                        <span class="block text-gray-300">Bernicko Raphael & Widhyastanto Ramadhian © 2023</span>
+                        <span class="block text-gray-300">Unitku © 2024</span>
 
-                        <span class="block text-gray-300">Need help? <a href="https://wa.me/082124187011"
+                        <span class="block text-gray-300">Need help? <a href="/"
                                 target="_blank" class="font-semibold text-white"> Contact Us</a></span>
                     </div>
 

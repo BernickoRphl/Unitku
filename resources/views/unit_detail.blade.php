@@ -9,9 +9,9 @@
 
         <div class="flex flex-col gap-5 items-center">
 
-            <h1 class="text-8xl font-semi-bold">{{ $product['product_name'] }}</h1>
+            <h1 class="text-8xl font-semi-bold">{{ $unit['unit_name'] }}</h1>
 
-            <p class="text-2xl">Description: {{ $product['product_desc'] }}</p>
+            <p class="text-2xl">Description: {{ $unit['unit_desc'] }}</p>
 
             <table>
 
@@ -23,16 +23,14 @@
 
                 <td>
 
-                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->product_name }}"
+                    <img src="{{ asset('storage/' . $unit->unit_image) }}" alt="{{ $unit->unit_name }}"
                         class="w-40 h-auto mb-2 mx-auto ml-2">
 
                 </td>
 
             </table>
 
-            <p class="text-2xl">Price: {{ $product['price'] }}</p>
-
-            <p class="text-2xl">Color: {{ $product['color'] }}</p>
+            <p class="text-2xl">Price: {{ $unit['price'] }}</p>
 
         </div>
 

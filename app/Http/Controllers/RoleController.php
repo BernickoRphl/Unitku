@@ -10,23 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class RoleController extends Controller
 {
-    // public function listUsersWithRole()
-    // {
-    //     // Get users with the role 'Admin'
-    //     $admin = User::with('roles')->whereHas('roles', function ($query) {
-    //         $query->where('role_name', 'Admin');
-    //     })->get();
-
-    //     return view('list_admin', compact('admin'));
-    // }
-
-    // public function listUsersWithRole()
-    // {
-    //     // Get all users
-    //     $users = User::all();
-    //     $role = Role::all();
-    //     return view('list_admin', compact('users', 'role'));
-    // }
     public function listAdmin()
     {
         $users = User::all();

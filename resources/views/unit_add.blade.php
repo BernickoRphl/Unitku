@@ -11,17 +11,17 @@
 @section('content')
     <div class="mt-40 mb-40">
 
-        <form method="POST" action="{{ route('product.add') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('unit.add') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row mb-3">
 
-                <label for="product_name" class="col-md-4 col-form-label text-md-end">{{ __('Product Name') }}</label>
+                <label for="unit_name" class="col-md-4 col-form-label text-md-end">{{ __('Unit Name') }}</label>
 
                 <div class="col-md-6">
 
-                    <input id="product_name" type="text" class="form-control @error('name') is-invalid @enderror"
-                        name="product_name" value="{{ old('name') }}" required autocomplete="product_name" autofocus>
+                    <input id="unit_name" type="text" class="form-control @error('name') is-invalid @enderror"
+                        name="unit_name" value="{{ old('name') }}" required autocomplete="unit_name" autofocus>
 
                 </div>
 
@@ -29,12 +29,12 @@
 
             <div class="row mb-3">
 
-                <label for="product_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+                <label for="unit_desc" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
 
                 <div class="col-md-6">
 
-                    <input id="product_desc" type="text" class="form-control" name="product_desc" required
-                        autocomplete="product_desc">
+                    <input id="unit_desc" type="text" class="form-control" name="unit_desc" required
+                        autocomplete="unit_desc">
 
                 </div>
 
@@ -42,14 +42,14 @@
 
             <div class="row mb-3">
 
-                <label for="product_image" class="col-md-4 col-form-label text-md-end">{{ __('Upload Image') }}</label>
+                <label for="unit_image" class="col-md-4 col-form-label text-md-end">{{ __('Upload Image') }}</label>
 
                 <div class="col-md-6">
 
-                    <input id="product_image" type="file" class="form-control @error('image') is-invalid @enderror"
-                        name="product_image" required accept="image/*">
+                    <input id="unit_image" type="file" class="form-control @error('image') is-invalid @enderror"
+                        name="unit_image" required accept="image/*">
 
-                    @error('product_image')
+                    @error('unit_image')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -61,7 +61,7 @@
 
             <div class="row mb-3 flex justify-center items-center">
 
-                <img id="imagePreview" src="#" alt="Product Image" style="display: none" class="w-80 h-auto">
+                <img id="imagePreview" src="#" alt="Unit Image" style="display: none" class="w-80 h-auto">
 
             </div>
 
@@ -77,7 +77,7 @@
 
             </div>
 
-            <div class="row mb-3">
+            {{-- <div class="row mb-3">
 
                 <label for="color" class="col-md-4 col-form-label text-md-end">{{ __('Color') }}</label>
 
@@ -87,36 +87,15 @@
 
                 </div>
 
-            </div>
+            </div> --}}
 
-            <div class="row mb-3">
-                <label for="category_id" class="col-md-4 col-form-label text-md-end">{{ __('Category') }}</label>
-                <div class="col-md-6">
-                    <select name="category_id" id="category_id" required>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label for="edition_id" class="col-md-4 col-form-label text-md-end">{{ __('Edition') }}</label>
-                <div class="col-md-6">
-                    <select name="edition_id" id="edition_id" required>
-                        @foreach ($edition as $editions)
-                            <option value="{{ $editions->id }}">{{ $editions->edition_name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
 
             <div class="row mb-0">
 
                 <div class="col-md-6 offset-md-4">
 
                     <button type="submit" class="btn btn-primary text-black">
-                        {{ __('Add Product') }}
+                        {{ __('Add Unit') }}
                     </button>
 
                 </div>
@@ -128,7 +107,7 @@
     </div>
 
     <script>
-        // FORMATER PRICE
+        // FORMAT PRICE
         function formatCurrency(input) {
             let numericValue = input.value.replace(/[^0-9.]/g, '');
 
@@ -148,7 +127,7 @@
         });
 
         // Tambahkan fungsi untuk menampilkan pratinjau gambar
-        document.getElementById('product_image').addEventListener('change', function(event) {
+        document.getElementById('unit_image').addEventListener('change', function(event) {
             const input = event.target;
             const reader = new FileReader();
 

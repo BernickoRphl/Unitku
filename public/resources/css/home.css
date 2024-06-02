@@ -90,7 +90,7 @@ section {
 
 @keyframes backgroundSlideshow {
     0% {
-        background-image: url("/resources/images/homeintric2.png");
+        background-image: url("/resources/images/apartment.jpeg");
     }
     40% {
         background-image: url("https://img.freepik.com/free-photo/gray-surface-with-white-cloth_114579-30381.jpg?size=626&ext=jpg&ga=GA1.1.153618704.1699328592&semt=ais");
@@ -99,6 +99,6 @@ section {
         background-image: url("https://img.freepik.com/free-photo/smooth-red-textile-brown-fabric-background_23-2147921511.jpg?size=626&ext=jpg&ga=GA1.1.153618704.1699328592&semt=ais");
     }
     100% {
-        background-image: url("/resources/images/homeintric2.png");
+        background-image: url("/resources/images/apartment2.jpg");
     }
 }
